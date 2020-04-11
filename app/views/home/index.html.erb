@@ -1,12 +1,16 @@
+<<<<<<< HEAD
 <html>
     <body class="Login-body">
         <h2 class="Login-title">Login</h2>
     
+=======
+<body class="LoginSection">
+    <h2 class="Login-title">Login</h2>
+>>>>>>> acb8a7c7bc856a6db5e4cf2c2fb4b4a46453c25e
         <%= form_with(url: "/todos", method: "post", class: "AddTodo") do %>
             <p>Login ID :<%= text_field(nil, nil, placeholder: "Enter your ID here", class: "") %></p>
             <p>Password :<%= password_field(nil, nil, placeholder: "Enter your password here", class: "") %></p>
             <p><%= submit_tag(:SignIn, class: "AddTodo-button") %>
             <%= button_tag(:SignUp, onclick: "window.location.href = 'https://w3docs.com';") %><p>
         <% end %>
-    </body>
-</html>
+</body>
