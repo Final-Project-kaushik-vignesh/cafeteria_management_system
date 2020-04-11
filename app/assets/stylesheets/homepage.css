@@ -9,9 +9,19 @@
     display: flex;
 }
 
+.Home-welcome {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    max-width: 500px;
+    background-image: url(Cafe.jpg);
+    background-size: cover;
+}
+
 .Login-title {
     margin: 0 auto;
     font-size: 34px;
+    font-weight: 400;
     margin-bottom: 20px;
     margin-top: 20px;
     max-width: 500px;
@@ -31,12 +41,6 @@
     width: 150px;
     height: 25px;
     padding: 6px 12px;
-}
-
-.Home-welcome {
-    margin-top: 20px;
-    margin-right: 20px;
-    max-width: 500px;
 }
 
 .SignIn-button {
