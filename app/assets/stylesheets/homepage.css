@@ -1,9 +1,4 @@
-.Login-title {
-    margin: 0 auto;
-    font-size: 34px;
-}
-
-body {
+.Login-body {
     font-family: sans-serif;
     padding: 32px;
     width: 1000px;
@@ -13,6 +8,11 @@ body {
     margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.Login-title {
+    margin: 0 auto;
+    font-size: 34px;
 }
 
 h1 {
