@@ -1,12 +1,64 @@
+.Home {
+    font-family: sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.Login-section {
+    display: flex;
+}
+
 .Login-title {
     margin: 0 auto;
     font-size: 34px;
     margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 500px;
 }
 
-.LoginSection {
+.Login-form {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.Login-details {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 12px;
     font-family: sans-serif;
-    padding: 32px;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 150px;
+    height: 25px;
+    padding: 6px 12px;
+}
+
+.Home-welcome {
+    margin-top: 20px;
+    margin-right: 20px;
+    max-width: 500px;
+}
+
+.SignIn-button {
+    margin-right: 20px;
+    border-radius: 4px;
+    background-color: #48bb78;
+    font-size: 12px;
+    font-family: sans-serif;
+    width: auto;
+    height: 30px;
+    box-shadow: none;
+}
+
+.SignUp-button {
+    margin-right: 20px;
+    border-radius: 4px;
+    background-color: #48bb78;
+    font-size: 12px;
+    font-family: sans-serif;
+    width: auto;
+    height: 30px;
+    box-shadow: none;
+}
+
+
 }
