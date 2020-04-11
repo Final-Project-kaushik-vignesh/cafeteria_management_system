@@ -6,8 +6,10 @@
             <%= form_with(url: "/todos", method: "post", class: "Login-form") do %>
                 <%= text_field(nil, nil, placeholder: "Enter your ID here", class:"Login-details") %>
                 <p><%= password_field(nil, nil, placeholder: "Enter your password here", class:"Login-details") %></p>
-                <p><%= submit_tag(:"Sign In", class: "Sign-button") %>
-                <%= button_tag(:"Sign Up", onclick: "window.location.href = 'https://w3docs.com';", class: "Sign-button") %><p>
+                <p>
+                    <%= submit_tag(:"Sign In", class: "Sign-button") %>
+                    <%= button_tag(:"Sign Up", onclick: "window.location.href = 'https://w3docs.com';", class: "Sign-button") %>
+                </p>
             <% end %>
         </div>
     </main>
