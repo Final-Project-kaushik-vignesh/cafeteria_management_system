@@ -2,6 +2,7 @@
     font-family: sans-serif;
     max-width: 1000px;
     margin: 0 auto;
+    margin-top: 32px;
 }
 
 .Login-section {
@@ -58,7 +59,4 @@
     width: auto;
     height: 30px;
     box-shadow: none;
-}
-
-
 }
