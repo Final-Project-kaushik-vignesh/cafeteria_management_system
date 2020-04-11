@@ -9,7 +9,7 @@
     h1 {
         font-size: 48px !important;
         align-items: stretch;
-        background: gray;
+        background: rgb(62, 104, 100);
         border-radius: 10px;
         opacity: 80%;
         height: 75px;
@@ -71,7 +71,7 @@
         background-color: rgb(74, 36, 124);
         font-size: 12px;
         font-family: sans-serif;
-        width: 70px;
+        width: 80px;
         height: 40px;
         box-shadow: none;
         color: white;
