@@ -1,66 +1,93 @@
-.Home {
-    font-family: sans-serif;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-top: 32px;
-}
-
-.Login-section {
-    display: flex;
-}
-
-.Home-welcome {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
-    max-width: 500px;
-    background-image: url(Cafe.jpg);
-    background-size: cover;
-}
-
-.Login-title {
-    margin: 0 auto;
-    font-size: 34px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    max-width: 500px;
-}
-
-.Login-form {
-    padding-left: 20px;
-    margin-bottom: 30px;
-}
-
-.Login-details {
-    margin-left: 20px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-family: sans-serif;
-    width: 160px;
-    height: auto;
-    padding: 6px 12px;
-}
-
-.SignIn-button {
-    margin-right: 20px;
-    border-radius: 4px;
-    background-color: #48bb78;
-    font-size: 12px;
-    font-family: sans-serif;
-    width: auto;
-    height: 30px;
-    box-shadow: none;
-}
-
-.SignUp-button {
-    margin-right: 20px;
-    border-radius: 4px;
-    background-color: #48bb78;
-    font-size: 12px;
-    font-family: sans-serif;
-    width: auto;
-    height: 30px;
-    box-shadow: none;
-}
+    .Home {
+        font-family: sans-serif;
+        width: 100%;
+        margin: 0 auto;
+        background-image: url(Cafe.jpg);
+        background-size: cover;
+    }
+    
+    h1 {
+        font-size: 48px !important;
+        align-items: stretch;
+        background: gray;
+        border-radius: 10px;
+        opacity: 80%;
+        height: 75px;
+        padding-top: 26px !important;
+        color: wheat;
+        padding-left: 50px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .Login-section {
+        display: flex;
+    }
+    
+    .Home-welcome {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-right: 20px;
+        max-width: 500px;
+        color: white;
+        opacity: 200%;
+        border-radius: 10px;
+        font-family: sans-serif;
+    }
+    
+    .Login-title {
+        margin: 0 auto;
+        font-size: 34px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        max-width: 500px;
+        color: rgb(14, 10, 73);
+        text-align: center;
+    }
+    
+    .Login-form {
+        padding-left: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .Login-details {
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: sans-serif;
+        width: auto;
+        height: 20px;
+        padding: 6px 12px;
+        color: black;
+        font-weight: bold;
+        align-content: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        background-color: wheat;
+    }
+    
+    .Sign-button {
+        margin-right: 20px;
+        border-radius: 8px;
+        background-color: rgb(74, 36, 124);
+        font-size: 12px;
+        font-family: sans-serif;
+        width: 70px;
+        height: 40px;
+        box-shadow: none;
+        color: white;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    .User-authentication-bck {
+        background-color: gray;
+        opacity: 50%;
+    }
+    
+    .User-authentication {
+        border-radius: 15px;
+        padding: 10px;
+        margin-left: 250px;
+        right: 10px;
+        position: absolute;
+    }

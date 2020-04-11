@@ -1,13 +1,13 @@
 <body class="Home">
     <main class="Login-section">
-        <p class="Home-welcome">Welcome to the cafeteria management system</p>
-        <div>
+        
+        <div class="User-authentication-bck User-authentication">
             <h2 class="Login-title">User Authentication</h2>
             <%= form_with(url: "/todos", method: "post", class: "Login-form") do %>
-                <p >Login ID :<%= text_field(nil, nil, placeholder: "Enter your ID here", class:"Login-details") %></p>
-                <p>Password :<%= password_field(nil, nil, placeholder: "Enter your password here", class:"Login-details") %></p>
-                <p><%= submit_tag(:SignIn, class: "SignIn-button") %>
-                <%= button_tag(:SignUp, onclick: "window.location.href = 'https://w3docs.com';", class: "SignUp-button") %><p>
+                <%= text_field(nil, nil, placeholder: "Enter your ID here", class:"Login-details") %>
+                <p><%= password_field(nil, nil, placeholder: "Enter your password here", class:"Login-details") %></p>
+                <p><%= submit_tag(:"Sign In", class: "Sign-button") %>
+                <%= button_tag(:"Sign Up", onclick: "window.location.href = 'https://w3docs.com';", class: "Sign-button") %><p>
             <% end %>
         </div>
     </main>
