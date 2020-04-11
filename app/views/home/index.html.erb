@@ -1,5 +1,12 @@
 <html>
     <body>
+        <h2 class="Login-title">Login</h2>
     
+        <%= form_with(url: "/todos", method: "post", class: "AddTodo") do %>
+            <p>Login ID :</p><%= text_field(nil, nil, placeholder: "Enter your ID here", class: "") %>
+            <p>Password :</p><%= password_field(nil, nil, placeholder: "Enter your password here", class: "") %>
+            <%= submit_tag(:SignIn, class: "AddTodo-button") %>
+            <%= button_tag(:SignUp, onclick: "window.location.href = 'https://w3docs.com';") %>
+        <% end %>
     </body>
 </html>
