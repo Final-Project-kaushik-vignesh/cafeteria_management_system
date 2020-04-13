@@ -6,7 +6,7 @@
     background-size: cover;
 }
 
-h1 {
+.Header-title {
     font-size: 48px !important;
     height: 75px;
     align-items: stretch;
@@ -17,6 +17,7 @@ h1 {
     color: rgb(122, 80, 0);
     padding-left: 50px !important;
     margin-bottom: 20px !important;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .Home-welcome {
@@ -27,7 +28,7 @@ h1 {
     color: rgb(85, 12, 12);
     opacity: 90%;
     border-radius: 10px;
-    background-color: rgb(124, 228, 210);
+    background-color: rgb(221, 255, 249);
     margin: 50px auto;
     border-radius: 10px;
 }
@@ -58,23 +59,20 @@ h1 {
     height: 20px;
     padding: 6px 12px;
     color: black;
-    font-weight: bold;
     align-content: center;
     margin-top: 10px;
-    margin-bottom: 20px;
-    background-color: wheat;
-}
-
-.User-authentication-bck {
-    background-color: gray;
-    opacity: 50%;
+    margin-bottom: 15px;
+    background-color: rgb(252, 243, 227);
+    border: 0;
 }
 
 .User-authentication {
     padding: 10px;
     margin: 50px auto;
     max-width: 400px;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: rgb(202, 200, 200);
+    opacity: 80%;
 }
 
 h2 {
@@ -84,6 +82,7 @@ h2 {
     text-align: center !important;
     margin-left: 250px;
     margin-top: 20px;
+    margin-bottom: 20px !important;
 }
 
 .HomeSign-button {
@@ -100,8 +99,23 @@ h2 {
     margin-top: 10px;
     align-items: center;
     padding: 10px;
+    text-decoration: none;
 }
 
 .Home-welcomeContent {
     margin-bottom: 20px;
+}
+
+.Footer {
+    margin-right: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: lightgray;
+    display: flex;
+    width: 100%;
+}
+
+.Footer-content {
+    margin-right: 10px;
+    padding: 6px 12px;
 }

@@ -1,9 +1,12 @@
-<div class="User-authentication-bck User-authentication">
-            <h2 class="Login-title">User Authentication</h2>
+<body class="Signin">
+    <div class="User-authentication">
+            <h2 class="Login-title">Sign In</h2>
             <%= form_with(url: "/menus", method: "post", class: "Login-form") do %>
                 <%= text_field(nil, nil, placeholder: "Enter your ID here", class:"Login-details") %>
                 <p><%= password_field(nil, nil, placeholder: "Enter your password here", class:"Login-details") %></p>
                 <p>
                 <%= submit_tag(:"Sign In", class: "Sign-button") %></p>
             <% end %>
-</div>
+    </div>
+</body>
+
