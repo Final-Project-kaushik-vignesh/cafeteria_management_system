@@ -8,11 +8,11 @@
     
     h1 {
         font-size: 48px !important;
+        height: 75px;
         align-items: stretch;
         background: rgb(227, 243, 241);
         border-radius: 10px;
         opacity: 80%;
-        height: 75px;
         padding-top: 26px !important;
         color: rgb(122, 80, 0);
         padding-left: 50px !important;
@@ -21,20 +21,35 @@
     
     .Home-welcome {
         font-size: 20px;
+<<<<<<< HEAD
+=======
+        font-family: sans-serif;
+        margin-top: 20px;
+        margin-right: 20px;
+>>>>>>> 9d586469562d09df570009497199ea985f3b3688
         max-width: 500px;
+        padding: 20px;
+        left: 50px;
+        position: absolute;
         color: rgb(85, 12, 12);
+<<<<<<< HEAD
         opacity: 90%;
         border-radius: 10px;
         font-family: sans-serif;
         background-color: rgb(124, 228, 210);
         padding: 20px;
         margin: 50px auto;
+=======
+        background-color: rgb(9, 184, 155);
+        opacity: 70%;
+        border-radius: 10px;
+>>>>>>> 9d586469562d09df570009497199ea985f3b3688
     }
     
     .Login-title {
-        margin: 0 auto;
         font-size: 34px;
         font-weight: bold;
+        margin: 0 auto;
         margin-bottom: 20px;
         margin-top: 20px;
         max-width: 500px;
@@ -84,8 +99,8 @@
     }
     
     .User-authentication {
-        border-radius: 15px;
         padding: 10px;
+<<<<<<< HEAD
         margin: 50px auto;
         max-width: 400px;
     }
@@ -95,4 +110,11 @@
         color: rgb(146, 18, 18);
         opacity: 150% !important;
         text-align: center !important;
+=======
+        margin-left: 250px;
+        margin-top: 20px;
+        right: 10px;
+        position: absolute;
+        border-radius: 15px;
+>>>>>>> 9d586469562d09df570009497199ea985f3b3688
     }
