@@ -5,7 +5,7 @@
         background-image: url(Cafe.jpg);
         background-size: cover;
     }
-    
+
     h1 {
         font-size: 48px !important;
         height: 75px;
@@ -18,34 +18,28 @@
         padding-left: 50px !important;
         margin-bottom: 20px !important;
     }
-    
+
     .Home-welcome {
         font-size: 20px;
-<<<<<<< HEAD
-=======
         font-family: sans-serif;
         margin-top: 20px;
         margin-right: 20px;
->>>>>>> 9d586469562d09df570009497199ea985f3b3688
         max-width: 500px;
         padding: 20px;
         left: 50px;
         position: absolute;
         color: rgb(85, 12, 12);
-<<<<<<< HEAD
         opacity: 90%;
         border-radius: 10px;
         font-family: sans-serif;
         background-color: rgb(124, 228, 210);
         padding: 20px;
         margin: 50px auto;
-=======
         background-color: rgb(9, 184, 155);
         opacity: 70%;
         border-radius: 10px;
->>>>>>> 9d586469562d09df570009497199ea985f3b3688
     }
-    
+
     .Login-title {
         font-size: 34px;
         font-weight: bold;
@@ -56,13 +50,13 @@
         color: rgb(14, 10, 73);
         text-align: center;
     }
-    
+
     .Login-form {
         padding-left: 20px;
         margin-bottom: 30px;
         margin-left: 60px;
     }
-    
+
     .Login-details {
         border-radius: 8px;
         font-size: 14px;
@@ -77,7 +71,7 @@
         margin-bottom: 20px;
         background-color: wheat;
     }
-    
+
     .Sign-button {
         margin-right: 20px;
         border-radius: 8px;
@@ -92,29 +86,27 @@
         margin-top: 10px;
         align-items: center;
     }
-    
+
     .User-authentication-bck {
         background-color: gray;
         opacity: 50%;
     }
-    
+
     .User-authentication {
         padding: 10px;
-<<<<<<< HEAD
-        margin: 50px auto;
+        <<<<<<< HEAD margin: 50px auto;
         max-width: 400px;
     }
-    
+
     h2 {
         font-size: 36px !important;
         color: rgb(146, 18, 18);
         opacity: 150% !important;
         text-align: center !important;
-=======
-        margin-left: 250px;
+        =======margin-left: 250px;
         margin-top: 20px;
         right: 10px;
         position: absolute;
         border-radius: 15px;
->>>>>>> 9d586469562d09df570009497199ea985f3b3688
+        >>>>>>>9d586469562d09df570009497199ea985f3b3688
     }
