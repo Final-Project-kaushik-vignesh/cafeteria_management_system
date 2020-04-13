@@ -1,103 +1,107 @@
-        .Home {
-            font-family: sans-serif;
-            width: 100%;
-            margin: 0 auto;
-            background-image: url(Cafe.jpg);
-            background-size: cover;
-        }
-        
-        h1 {
-            font-size: 48px !important;
-            height: 75px;
-            align-items: stretch;
-            background: rgb(227, 243, 241);
-            border-radius: 10px;
-            opacity: 80%;
-            padding-top: 26px !important;
-            color: rgb(122, 80, 0);
-            padding-left: 50px !important;
-            margin-bottom: 20px !important;
-        }
-        
-        .Home-welcome {
-            font-size: 20px;
-            font-family: sans-serif;
-            max-width: 500px;
-            padding: 20px;
-            color: rgb(85, 12, 12);
-            opacity: 90%;
-            border-radius: 10px;
-            background-color: rgb(124, 228, 210);
-            margin: 50px auto;
-            border-radius: 10px;
-        }
-        
-        .Login-title {
-            font-size: 34px;
-            font-weight: bold;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            max-width: 500px;
-            color: rgb(14, 10, 73);
-            text-align: center;
-            font-family: sans-serif;
-        }
-        
-        .Login-form {
-            padding-left: 20px;
-            margin-bottom: 30px;
-            margin-left: 60px;
-        }
-        
-        .Login-details {
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: sans-serif;
-            width: auto;
-            height: 20px;
-            padding: 6px 12px;
-            color: black;
-            font-weight: bold;
-            align-content: center;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            background-color: wheat;
-        }
-        
-        .Sign-button {
-            margin-right: 20px;
-            border-radius: 8px;
-            background-color: rgb(74, 36, 124);
-            font-size: 12px;
-            font-family: sans-serif;
-            width: 80px;
-            height: 40px;
-            box-shadow: none;
-            color: white;
-            font-weight: bold;
-            margin-top: 10px;
-            align-items: center;
-        }
-        
-        .User-authentication-bck {
-            background-color: gray;
-            opacity: 50%;
-        }
-        
-        .User-authentication {
-            padding: 10px;
-            margin: 50px auto;
-            max-width: 400px;
-            border-radius: 5px;
-        }
-        
-        h2 {
-            font-size: 36px !important;
-            color: rgb(146, 18, 18);
-            opacity: 150% !important;
-            text-align: center !important;
-            margin-left: 250px;
-            margin-top: 20px;
-            border-radius: 15px;
-        }
+.Home {
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(Cafe.jpg);
+    background-size: cover;
+}
+
+h1 {
+    font-size: 48px !important;
+    height: 75px;
+    align-items: stretch;
+    background: rgb(227, 243, 241);
+    border-radius: 10px;
+    opacity: 80%;
+    padding-top: 26px !important;
+    color: rgb(122, 80, 0);
+    padding-left: 50px !important;
+    margin-bottom: 20px !important;
+}
+
+.Home-welcome {
+    font-size: 20px;
+    font-family: sans-serif;
+    max-width: 500px;
+    padding: 20px;
+    color: rgb(85, 12, 12);
+    opacity: 90%;
+    border-radius: 10px;
+    background-color: rgb(124, 228, 210);
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+.Login-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 500px;
+    color: rgb(14, 10, 73);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.Login-form {
+    padding-left: 20px;
+    margin-bottom: 30px;
+    margin-left: 60px;
+}
+
+.Login-details {
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: sans-serif;
+    width: auto;
+    height: 20px;
+    padding: 6px 12px;
+    color: black;
+    font-weight: bold;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: wheat;
+}
+
+.User-authentication-bck {
+    background-color: gray;
+    opacity: 50%;
+}
+
+.User-authentication {
+    padding: 10px;
+    margin: 50px auto;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 36px !important;
+    color: rgb(146, 18, 18);
+    opacity: 150% !important;
+    text-align: center !important;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+.HomeSign-button {
+    margin-right: 20px;
+    border-radius: 8px;
+    background-color: rgb(74, 36, 124);
+    font-size: 12px;
+    font-family: sans-serif;
+    width: 80px;
+    height: 40px;
+    box-shadow: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    align-items: center;
+    padding: 10px;
+}
+
+.Home-welcomeContent {
+    margin-bottom: 20px;
+}

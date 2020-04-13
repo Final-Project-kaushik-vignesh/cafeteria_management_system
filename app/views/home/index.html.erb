@@ -3,10 +3,13 @@
         
             <h2>Welcome to the Cafeteria Management System</h2>
             <br>
-            If you are a new user click below !
-            <%= button_to "Sign Up" , new_user_path , class: "Sign-button" %>
-            <br>
-            If you are an existing user click below !
-            <%= button_to "Sign In" , new_sessions_path , class: "Sign-button" %>
+            <p class="Home-welcomeContent">
+                If you are a new user click below ! 
+                <%= link_to "Sign Up" , new_user_path , class: "HomeSign-button" %>
+            </p>
+            <p>
+                If you are an existing user click below !
+                <%= link_to "Sign In" , new_sessions_path , class: "HomeSign-button" %>
+            </p>
     </main>
 </body>
