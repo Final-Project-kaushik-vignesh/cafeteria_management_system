@@ -1,1 +1,9 @@
-<body>
+<body class="AddMenu-body">
+    <main class="Add-menu">
+        <%= form_with(url: "/menus" , method: "post") do |menu|%>
+                    <%= menu.text_field :name, placeholder: "Enter Menu Name", class: "Addmenu-field" %>
+                    <%= menu.submit :Add, class:"AddMenu-submit"%>
+        <% end %>
+        render
+    </main>
+</body>

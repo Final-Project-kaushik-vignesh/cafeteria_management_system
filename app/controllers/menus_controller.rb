@@ -5,5 +5,8 @@ class MenusController < ApplicationController
   end
 
   def create
+    Menu.create!(
+      name: params[:name].capitalize,
+    )
   end
 end
