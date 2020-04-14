@@ -10,7 +10,15 @@
   </head>
 
   <body>
-    <h1 class="Header-title">Cafeteria Management System</h1>
+  <div class="Header-title">
+      <h1 >Cafeteria Management System</h1>
+      <% if @current_user %>
+        <p class="User-details">
+           <%= @current_user.first_name %>
+        <%= link_to "Sign-out", destroy_session_path, method: "delete", class:"Sign-button" %>
+        </p>
+      <% end %>
+  </div>
     <%= yield %>
     
    <div style="bottom: 0px; position: absolute">
