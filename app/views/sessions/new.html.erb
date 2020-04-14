@@ -1,11 +1,11 @@
 <body class="Signin">
     <div class="User-authentication">
             <h2 class="Login-title">Sign In</h2>
-            <%= form_with(url: "/menus", method: "post", class: "Login-form") do %>
-                <%= text_field(nil, nil, placeholder: "Enter your ID here", class:"Login-details") %>
-                <p><%= password_field(nil, nil, placeholder: "Enter your password here", class:"Login-details") %></p>
+            <%= form_with(url: sessions_path, class: "Login-form") do |form|%>
+                <%= form.email_field :email, placeholder: "Enter your ID here", class:"Login-details", required: true %>
+                <p><%= form.password_field :password, placeholder: "Enter your password here", class:"Login-details", required: true %></p>
                 <p>
-                <%= submit_tag(:"Sign In", class: "Sign-button") %></p>
+                <%= form.submit(:"Sign In", class: "Sign-button") %></p>
             <% end %>
     </div>
 </body>
