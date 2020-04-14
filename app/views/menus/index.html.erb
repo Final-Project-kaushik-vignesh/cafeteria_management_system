@@ -1,13 +1,19 @@
 <html>
     <body >
         <main class="Menu">
+            
             <img src="Menu_img1.jpg" class="Menu-image"/>
-            <p class="Menu-displayList"> 
-                <%= link_to "Add-Menu", new_menu_path, class: "Add-button" %>
+            <p class="Menu-displayList">
+                <% if @user_role=="owner"%>
+                    <%= link_to "Modify", new_menu_path, class: "Sign-button" %>
+                <% end %>
+                
                 <ul class="Menu-list">
                     <li class="Menu-listTitle">Pick your favourite menu !!</li>
                 </ul>
             </p>
         </main>
+
+               
     </body>
 </html>
