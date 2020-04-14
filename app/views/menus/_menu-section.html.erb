@@ -5,11 +5,13 @@
             <div class="Menu-list">
                 <li class="Menu-listDetails">
                     <%= menu.name %>
-                    <% if @user_role == "owner" %>
+                    <% if show_edit==true && @user_role == "owner"  %>
                         <%= form_with(url: "/menus/#{menu.id}", method: "delete") do %>
                             <%= image_submit_tag("delete.png", options = {class: "MenuSection-icon"}) %>
+                        <% end%>
+                        <%= form_with(url: menu_items_path, method: "get") do %>
                             <%= image_submit_tag("delete.png", options = {class: "MenuSection-icon"}) %>
-                        <%end%>
+                        <%end %>
                     <% end %>
                 </li>
             </div>

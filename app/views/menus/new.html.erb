@@ -5,6 +5,8 @@
                     <%= menu.submit :Add, class:"AddMenu-submit"%>
         <% end %>
         <h3 class="Menu-available">Available Menu</h3>
-        <%= render partial: "menu-section"%>
+        <%= render partial: "menu-section", locals: {
+        show_edit: true,
+        }%>
     </main>
 </body>
