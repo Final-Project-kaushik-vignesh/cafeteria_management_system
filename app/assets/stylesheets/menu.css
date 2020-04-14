@@ -1,4 +1,4 @@
-.Menu-main {
+.Menu {
     display: flex;
 }
 
@@ -6,10 +6,14 @@
     max-width: 50%;
 }
 
+.Menu-displayList {
+    background-color: red;
+}
+
 .Menu-list {
-    margin: 1.5vw auto;
+    margin: auto;
     padding: 1.5vw;
-    max-width: max-content;
+    max-width: 50%;
     align-self: center;
 }
 

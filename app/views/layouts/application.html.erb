@@ -14,8 +14,8 @@
       <h1 >Cafeteria Management System</h1>
       <% if @current_user %>
         <p class="User-details">
-           <%= @current_user.first_name %>
-        <%= link_to "Sign-out", destroy_session_path, method: "delete", class:"Sign-button" %>
+          Hello <%= @current_user.first_name %> (._.)
+          <%= link_to "Sign-out", destroy_session_path, method: "delete", class:"Sign-button" %>
         </p>
       <% end %>
   </div>
