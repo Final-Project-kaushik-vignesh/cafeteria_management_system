@@ -4,6 +4,7 @@
                     <%= menu.text_field :name, placeholder: "Enter Menu Name", class: "Addmenu-field" %>
                     <%= menu.submit :Add, class:"AddMenu-submit"%>
         <% end %>
-        <%= render partial: "menu-section" %>
+        <h3>Available Menu</h3>
+        <%= render partial: "menu-section"%>
     </main>
 </body>
