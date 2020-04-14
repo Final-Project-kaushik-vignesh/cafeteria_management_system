@@ -4,13 +4,30 @@
 
 .Menu-image {
     max-width: 50%;
+    opacity: 50%;
+}
+
+.Menu-modifyButton {
+    align-content: flex-end;
+    right: 1vw;
+    position: absolute;
+    border-radius: 0.4vw;
+    background-color: rgb(102, 230, 140);
+    font-size: 0.75vw;
+    font-family: sans-serif;
+    width: max-content;
+    padding: 0.75vw;
+    box-shadow: none;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    margin-left: 3vw;
+    text-decoration: none;
 }
 
 .Menu-list {
-    margin: auto;
     padding: 1.5vw;
     max-width: 50%;
-    align-self: center;
 }
 
 .Menu-listTitle {
@@ -19,9 +36,11 @@
     font-weight: 700;
     font-style: italic;
     padding: 1vw;
-    border-color: whitesmoke;
+    border-color: rgb(223, 127, 127);
+    color: rgb(214, 161, 75);
     border-style: solid;
     border-radius: 2vw;
+    border-width: 0.2vw;
 }
 
 .Menu-listDetails {
