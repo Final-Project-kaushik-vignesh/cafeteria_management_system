@@ -1,9 +1,9 @@
 .Signup {
     margin: 0 auto;
     height: max-content;
-    width: 100%;
     background-image: url(back1.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .NewUsers-title {
@@ -22,7 +22,8 @@
     margin: 0 auto;
     width: max-content;
     background-color: rgb(110, 120, 143);
-    padding: 20px 20px;
+    background-size: 5vw;
+    padding: 2vw;
     opacity: 85%;
     border-radius: 15px;
 }
@@ -30,17 +31,17 @@
 .Form-section {
     margin-bottom: 15px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
+    font-size: 1vw;
     color: white;
     font-weight: bold;
     margin: 15 auto;
 }
 
 .Form-input {
-    padding: 6px 12px;
-    margin: 15px 10px;
+    padding: 0.5vw 1vw;
+    margin: 1vw 1.5vw;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 0.75vw;
     font-weight: bold;
     border: 0;
     height: 20px;
@@ -50,8 +51,8 @@
     background-color: rgb(158, 255, 198);
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 14px;
-    padding: 10px 12px;
+    font-size: 0.75vw;
+    padding: 1vw 1.2vw;
     margin-left: 10px;
     border-radius: 4px;
     border: 0;
@@ -88,5 +89,6 @@
 
 .Signin {
     background-image: url(bck.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
