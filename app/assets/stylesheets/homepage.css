@@ -49,18 +49,17 @@
 }
 
 .Login-form {
-    padding-left: 20px;
     margin-bottom: 30px;
-    margin-left: 60px;
+    padding: 2vw 2vw;
 }
 
 .Login-details {
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 0.755vw;
     font-family: sans-serif;
     width: auto;
     height: 20px;
-    padding: 6px 12px;
+    padding: 0.5vw 0.5vw;
     color: black;
     align-content: center;
     margin-top: 10px;
@@ -72,7 +71,7 @@
 .User-authentication {
     padding: 10px;
     margin: 50px auto;
-    max-width: 400px;
+    max-width: max-content;
     border-radius: 10px;
     background-color: rgb(202, 200, 200);
     opacity: 80%;

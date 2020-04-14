@@ -72,19 +72,18 @@
 }
 
 .Sign-button {
-    margin-right: 20px;
     border-radius: 8px;
     background-color: rgb(74, 36, 124);
-    font-size: 12px;
+    font-size: 0.75vw;
     font-family: sans-serif;
-    width: 80px;
-    height: 40px;
+    width: max-content;
+    padding: 0.75vw;
     box-shadow: none;
     color: white;
     font-weight: bold;
     margin-top: 10px;
-    align-items: center;
     border: 0;
+    margin-left: 3vw;
 }
 
 .Signin {
