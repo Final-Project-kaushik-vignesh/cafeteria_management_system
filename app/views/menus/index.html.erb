@@ -4,16 +4,17 @@
             
             <img src="Menu_img1.jpg" class="Menu-image"/>
             <p class="Menu-displayList">
-                <% if @user_role=="owner"%>
-                    <%= link_to "Modify", new_menu_path, class: "Sign-button" %>
-                <% end %>
                 
                 <ul class="Menu-list">
-                    <li class="Menu-listTitle">Pick your favourite menu !!</li>
+                    <li class="Menu-listTitle">
+                        Pick your favourite menu !!
+                    <% if @user_role == "owner"%>
+                        <%= link_to "Modify", new_menu_path, class: "Menu-modifyButton" %>
+                    <% end %>   
+                    </li>
+                    <%= render partial: "menu-section" %>
                 </ul>
             </p>
-        </main>
-
-               
+        </main>        
     </body>
 </html>

@@ -8,5 +8,6 @@ class MenusController < ApplicationController
     Menu.create!(
       name: params[:name].capitalize,
     )
+    redirect_to new_menu_path
   end
 end
