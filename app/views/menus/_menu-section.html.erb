@@ -1,20 +1,19 @@
 <section class="Menu-display">
-    
     <% Menu.all.each do |menu| %>
         <ul>
-            <div class="Menu-list">
-                <li class="Menu-listDetails">
-                    <%= menu.name %>
+            <li>
+                <div class="Menu-listDetails">
+                    <p><%= menu.name %></p>
                     <% if show_edit==true && @user_role == "owner"  %>
                         <%= form_with(url: "/menus/#{menu.id}", method: "delete") do %>
                             <%= image_submit_tag("delete.png", options = {class: "MenuSection-icon"}) %>
                         <% end%>
                         <%= form_with(url: menu_items_path, method: "get") do %>
-                            <%= image_submit_tag("delete.png", options = {class: "MenuSection-icon"}) %>
+                            <%= image_submit_tag("edit.png", options = {class: "MenuSection-icon"}) %>
                         <%end %>
                     <% end %>
-                </li>
-            </div>
+                </div>
+            </li>
         </ul>
     <% end %>
 </section>

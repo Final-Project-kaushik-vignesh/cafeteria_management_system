@@ -4,7 +4,7 @@
                     <%= menu.text_field :name, placeholder: "Enter Menu Name", class: "Addmenu-field" %>
                     <%= menu.submit :Add, class:"AddMenu-submit"%>
         <% end %>
-        <h3 class="Menu-available">Available Menu</h3>
+        <h3 class="Menu-listTitle">Available Menu</h3>
         <%= render partial: "menu-section", locals: {
         show_edit: true,
         }%>

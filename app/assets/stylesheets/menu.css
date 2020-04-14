@@ -1,119 +1,119 @@
-    .Menu {
-        display: flex;
-    }
+.Menu {
+    display: flex;
+}
 
-    .Menu-image {
-        max-width: 50%;
-    }
+.Menu-image {
+    max-width: 50%;
+}
 
-    .Menu-modifyButton {
-        right: 1vw;
-        position: absolute;
-        border-radius: 0.4vw;
-        background-color: rgb(102, 230, 140);
-        font-size: 0.75vw;
-        font-family: sans-serif;
-        width: max-content;
-        padding: 0.75vw;
-        box-shadow: none;
-        color: white;
-        font-weight: bold;
-        border: 0;
-        margin-left: 3vw;
-        text-decoration: none;
-    }
+.Menu-modifyButton {
+    right: 1vw;
+    position: absolute;
+    border-radius: 0.4vw;
+    background-color: rgb(102, 230, 140);
+    font-size: 0.75vw;
+    font-family: sans-serif;
+    width: max-content;
+    padding: 0.75vw;
+    box-shadow: none;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    margin-left: 3vw;
+    text-decoration: none;
+}
 
-    .Menu-list {
-        padding: 1.5vw;
-        max-width: 50%;
-    }
+.Menu-list {
+    padding: 1.5vw;
+}
 
-    .Menu-listTitle {
-        font-size: 2.5vw;
-        font-family: sans-serif;
-        font-weight: 700;
-        padding: 1vw;
-        border-color: rgb(223, 127, 127);
-        color: rgb(214, 161, 75);
-        border-style: solid;
-        border-radius: 2vw;
-        border-width: 0.2vw;
-    }
+.Menu-listTitle {
+    font-size: 2.5vw;
+    font-family: sans-serif;
+    font-weight: 700;
+    padding: 1vw;
+    margin: 1vw;
+    border-color: rgb(214, 86, 86);
+    color: rgb(12, 15, 47);
+    border-style: solid;
+    border-radius: 2vw;
+    border-width: 0.2vw;
+}
 
-    .Menu-listDetails {
-        font-size: 1.5vw;
-        font-family: sans-serif;
-        font-weight: 700;
-        padding: 1vw;
-        border-color: black;
-        border-style: solid;
-        border-radius: 0.75vw;
-        text-align: justify;
-        background-color: rgb(250, 213, 202);
-        max-width: max-content;
-        display: flex;
-    }
+.Menu-listDetails {
+    font-size: 1.5vw;
+    font-family: sans-serif;
+    font-weight: 600;
+    height: stretch;
+    padding: 1vw;
+    margin: 1vw;
+    border: solid black;
+    border-width: 0.02vw;
+    border-radius: 0.75vw;
+    background-color: rgb(137, 130, 231);
+    display: flex;
+}
 
-    .Menu-listDetails:hover .MenuSection-icon {
-        border-width: 0.2vw;
-        color: white;
-        border: whitesmoke;
-        background-color: rgb(180, 181, 187);
-        visibility: visible;
-    }
+.MenuSection-icon {
+    height: max-content;
+    width: 2.3vw;
+    margin-left: 1.5vw;
+    visibility: hidden;
+}
 
-    .AddMenu-body {
-        font-size: 2vw;
-        background-image: url(menu.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        align-content: center;
-        margin: auto;
-    }
+.Menu-listDetails:hover .MenuSection-icon {
+    border-width: 0.2vw;
+    border: solid rgb(0, 0, 0);
+    border-radius: 1vw;
+    visibility: visible;
+}
 
-    .Add-menu {
-        max-width: max-content;
-        margin: 5vw auto;
-    }
+.AddMenu-body {
+    font-size: 2vw;
+    background-image: url(menu.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
+    margin: auto;
+}
 
-    .Addmenu-field {
-        font-size: 1.25vw;
-        padding: 0.5vw 0.75vw;
-        border-radius: 0.5vw;
-        border: 0;
-        width: max-content;
-        background-color: rgb(235, 243, 226);
-    }
+.Add-menu {
+    max-width: max-content;
+    margin: 5vw auto;
+}
 
-    .AddMenu-submit {
-        border-radius: 0.4vw;
-        background-color: rgb(74, 36, 124);
-        font-size: 0.75vw;
-        font-family: sans-serif;
-        width: max-content;
-        padding: 0.75vw;
-        box-shadow: none;
-        color: white;
-        font-weight: bold;
-        border: 0;
-        margin-left: 2vw;
-        text-decoration: none;
-    }
+.Addmenu-field {
+    font-size: 1.25vw;
+    padding: 0.5vw 0.75vw;
+    border-radius: 0.5vw;
+    border: 0;
+    width: max-content;
+    background-color: rgb(235, 243, 226);
+}
 
-    .Menu-available {
-        font-size: 1.5vw !important;
-        margin-top: 1.5vw !important;
-        font-family: sans-serif !important;
-        text-decoration: underline !important;
-    }
+.AddMenu-submit {
+    border-radius: 0.4vw;
+    background-color: rgb(74, 36, 124);
+    font-size: 0.75vw;
+    font-family: sans-serif;
+    width: max-content;
+    padding: 0.75vw;
+    box-shadow: none;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    margin-left: 2vw;
+    text-decoration: none;
+}
 
-    .Menu-display {
-        margin-top: 1vw;
-    }
+.Menu-available {
+    font-size: 2vw !important;
+    font-weight: 700;
+    margin-top: 1.5vw !important;
+    font-family: sans-serif !important;
+    text-decoration: underline !important;
+}
 
-    .MenuSection-icon {
-        height: 20px;
-        width: 16px;
-        margin-left: 10px;
-        visibility: hidden;
-    }
+.Menu-display {
+    margin-top: 1vw;
+}
