@@ -4,15 +4,15 @@
         <%= form_with url: users_path do |form|%>
             <div class="Form-section">
                 <p> First name: </p>
-                <%= form.text_field :first_name, class: "Form-input", placeholder: "Enter First Name" %>
+                <%= form.text_field :first_name, class: "Form-input", placeholder: "Enter First Name", required: true %>
             </div>
             <div class="Form-section">
                 <p> Last name: </p>
-                <%= form.text_field :last_name, class: "Form-input", placeholder: "Enter Last Name"  %>
+                <%= form.text_field :last_name, class: "Form-input", placeholder: "Enter Last Name", required: true  %>
             </div>
             <div class="Form-section">
                 <p> Email: </p>
-                <%= form.email_field :email, class: "Form-input", placeholder: "Enter Email ID" %>
+                <%= form.email_field :email, class: "Form-input", placeholder: "Enter Email ID", required: true %>
             </div>
             <div class="Form-section">
                 <p> Password: </p>
