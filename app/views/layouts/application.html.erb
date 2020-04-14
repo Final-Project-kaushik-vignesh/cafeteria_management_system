@@ -11,7 +11,7 @@
 
   <body>
   <div class="Header-title">
-      <img src="logo.png" class="LogoImage">
+      <%=image_tag 'logo.png', class: 'LogoImage'%>
       <h1 >Cafeteria Management System</h1>
       <% if @current_user %>
         <p class="User-details">
