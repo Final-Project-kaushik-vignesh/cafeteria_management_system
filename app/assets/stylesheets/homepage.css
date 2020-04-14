@@ -8,6 +8,17 @@
     background-repeat: no-repeat;
 }
 
+.LogoImage {
+    width: 5vw;
+    margin-bottom: 1.2vw;
+    margin-right: 1vw;
+    background-color: rgb(198, 179, 214);
+    border-radius: 0.5vw;
+    border: rgb(92, 36, 36);
+    border-width: 0.2vw;
+    border-style: dotted;
+}
+
 .Header-title {
     font-size: 3vw !important;
     height: 5vw;

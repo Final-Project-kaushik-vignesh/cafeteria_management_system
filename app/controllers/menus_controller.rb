@@ -11,10 +11,14 @@ class MenusController < ApplicationController
     redirect_to new_menu_path
   end
 
+  def new
+    @user_role = @current_user.role
+  end
+
   def destroy
     id = params[:id]
     menu = Menu.find(id)
     menu.destroy
-    redirect_to menus_path
+    redirect_to new_menu_path
   end
 end

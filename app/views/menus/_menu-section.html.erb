@@ -3,23 +3,16 @@
     <% Menu.all.each do |menu| %>
         <ul>
             <div class="Menu-list">
-                <li class="Menu-listDetails"><%= menu.name %>
-                    
-                        <a href="javascript:void(0)">
+                <li class="Menu-listDetails">
+                    <%= menu.name %>
+                    <% if @user_role == "owner" %>
                         <%= form_with(url: "/menus/#{menu.id}", method: "delete") do %>
-                        <input type='image' src="trash.png" class="MenuSection-icon">
+                            <%= image_submit_tag("delete.png", options = {class: "MenuSection-icon"}) %>
+                            <%= image_submit_tag("delete.png", options = {class: "MenuSection-icon"}) %>
                         <%end%>
-                    
-                    </a>
+                    <% end %>
                 </li>
             </div>
         </ul>
     <% end %>
-
-
-
-
-
-
-
 </section>

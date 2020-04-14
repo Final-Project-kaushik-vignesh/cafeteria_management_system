@@ -1,14 +1,12 @@
     .Menu {
         display: flex;
     }
-    
+
     .Menu-image {
         max-width: 50%;
-        opacity: 50%;
     }
-    
+
     .Menu-modifyButton {
-        align-content: flex-end;
         right: 1vw;
         position: absolute;
         border-radius: 0.4vw;
@@ -24,12 +22,12 @@
         margin-left: 3vw;
         text-decoration: none;
     }
-    
+
     .Menu-list {
         padding: 1.5vw;
         max-width: 50%;
     }
-    
+
     .Menu-listTitle {
         font-size: 2.5vw;
         font-family: sans-serif;
@@ -41,7 +39,7 @@
         border-radius: 2vw;
         border-width: 0.2vw;
     }
-    
+
     .Menu-listDetails {
         font-size: 1.5vw;
         font-family: sans-serif;
@@ -55,7 +53,7 @@
         max-width: max-content;
         display: flex;
     }
-    
+
     .Menu-listDetails:hover .MenuSection-icon {
         border-width: 0.2vw;
         color: white;
@@ -63,7 +61,7 @@
         background-color: rgb(180, 181, 187);
         visibility: visible;
     }
-    
+
     .AddMenu-body {
         font-size: 2vw;
         background-image: url(menu.jpg);
@@ -72,12 +70,12 @@
         align-content: center;
         margin: auto;
     }
-    
+
     .Add-menu {
         max-width: max-content;
         margin: 5vw auto;
     }
-    
+
     .Addmenu-field {
         font-size: 1.25vw;
         padding: 0.5vw 0.75vw;
@@ -86,7 +84,7 @@
         width: max-content;
         background-color: rgb(235, 243, 226);
     }
-    
+
     .AddMenu-submit {
         border-radius: 0.4vw;
         background-color: rgb(74, 36, 124);
@@ -101,18 +99,18 @@
         margin-left: 2vw;
         text-decoration: none;
     }
-    
-    h3 {
+
+    .Menu-available {
         font-size: 1.5vw !important;
         margin-top: 1.5vw !important;
         font-family: sans-serif !important;
         text-decoration: underline !important;
     }
-    
+
     .Menu-display {
         margin-top: 1vw;
     }
-    
+
     .MenuSection-icon {
         height: 20px;
         width: 16px;
