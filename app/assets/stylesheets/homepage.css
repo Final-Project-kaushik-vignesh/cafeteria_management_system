@@ -3,7 +3,7 @@
     margin: 0 auto;
     background-image: url(Cafe.jpg);
     max-width: 100%;
-    height: 400px;
+    height: 20vw;
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -13,12 +13,12 @@
     height: 5vw;
     align-items: stretch;
     background: rgb(227, 243, 241);
-    border-radius: 10px;
+    border-radius: 1vw;
     opacity: 80%;
-    padding-top: 26px !important;
+    padding-top: 1vw !important;
     color: rgb(122, 80, 0);
-    padding-left: 50px !important;
-    margin-bottom: 20px !important;
+    padding-left: 2.5vw !important;
+    margin-bottom: 0.9vw !important;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     display: flex;
 }
@@ -27,13 +27,13 @@
     font-size: 1.5vw;
     font-family: sans-serif;
     max-width: max-content;
-    padding: 20px;
+    padding: 1vw;
     color: rgb(85, 12, 12);
     opacity: 90%;
-    border-radius: 10px;
+    border-radius: 1vw;
     background-color: rgb(221, 255, 249);
-    margin: 50px auto;
-    border-radius: 10px;
+    margin: 2.5vw auto;
+    border-radius: 1vw;
     position: relative;
 }
 
@@ -41,39 +41,39 @@
     font-size: 2vw;
     font-weight: bold;
     margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    max-width: 500px;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    max-width: 25vw;
     color: rgb(14, 10, 73);
     text-align: center;
     font-family: sans-serif;
 }
 
 .Login-form {
-    margin-bottom: 30px;
+    margin-bottom: 1.5vw;
     padding: 2vw 2vw;
 }
 
 .Login-details {
-    border-radius: 8px;
+    border-radius: 2vw;
     font-size: 0.755vw;
     font-family: sans-serif;
     width: auto;
-    height: 20px;
+    height: 1vw;
     padding: 0.5vw 0.5vw;
     color: black;
     align-content: center;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-top: 0.5vw;
+    margin-bottom: 0.75vw;
     background-color: rgb(252, 243, 227);
     border: 0;
 }
 
 .User-authentication {
-    padding: 10px;
-    margin: 50px auto;
+    padding: 0.5vw;
+    margin: 2.5vw auto;
     max-width: max-content;
-    border-radius: 10px;
+    border-radius: 1vw;
     background-color: rgb(202, 200, 200);
     opacity: 80%;
 }
@@ -83,33 +83,33 @@
     color: rgb(146, 18, 18);
     opacity: 150% !important;
     text-align: center !important;
-    margin-top: 20px;
-    margin-bottom: 20px !important;
+    margin-top: 1vw;
+    margin-bottom: 1vw !important;
 }
 
 .HomeSign-button {
-    margin-right: 20px;
-    border-radius: 8px;
+    margin-right: 1vw;
+    border-radius: 2vw;
     background-color: rgb(74, 36, 124);
     font-size: 0.75vw;
     font-family: sans-serif;
     box-shadow: none;
     color: white;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 0.5vw;
     align-items: center;
     padding: 0.75vw;
     text-decoration: none;
 }
 
 .Home-welcomeContent {
-    margin-bottom: 20px;
+    margin-bottom: 1.5vw;
     text-align: center;
 }
 
 .Footer {
-    margin-right: 10px;
-    font-size: 16px;
+    margin-right: 0.5vw;
+    font-size: 0.75vw;
     font-family: sans-serif;
     background-color: lightgray;
     display: flex;
@@ -117,6 +117,6 @@
 }
 
 .Footer-content {
-    margin-right: 10px;
-    padding: 6px 12px;
+    margin-right: 0.5vw;
+    padding: 0.75vw;
 }
