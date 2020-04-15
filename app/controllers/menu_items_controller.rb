@@ -1,5 +1,5 @@
 class MenuItemsController < ApplicationController
   def index
-    render "/"
+    render plain: "This is success"
   end
 end
