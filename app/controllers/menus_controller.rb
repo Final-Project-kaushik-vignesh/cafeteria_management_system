@@ -13,6 +13,7 @@ class MenusController < ApplicationController
 
   def new
     @user_role = @current_user.role
+    render "new"
   end
 
   def destroy
