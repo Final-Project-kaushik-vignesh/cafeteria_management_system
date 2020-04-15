@@ -2,10 +2,16 @@
     <div class="User-authentication">
             <h2 class="Login-title">Sign In</h2>
             <%= form_with(url: sessions_path, class: "Login-form") do |form|%>
+<<<<<<< HEAD
                 <%= form.email_field :email, placeholder: "Enter your ID here", class:"Login-details", required: true, autofocus: true %>
+=======
+                <p><%= form.email_field :email, placeholder: "Enter your ID here", class:"Login-details", required: true %></p>
+>>>>>>> 2c20e0cf4bae5a3ce4cf7a130c0e475b427393d7
                 <p><%= form.password_field :password, placeholder: "Enter your password here", class:"Login-details", required: true %></p>
+                <p class="Form-flashMessage"><%= flash[:error] %><p>
                 <p>
-                <%= form.submit(:"Sign In", class: "Sign-button") %></p>
+                    <%= form.submit(:"Sign In", class: "Sign-button") %>
+                </p>
             <% end %>
     </div>
 </body>
