@@ -50,12 +50,13 @@
     border: solid black;
     border-width: 0.02vw;
     border-radius: 0.75vw;
-    background-color: rgb(137, 130, 231);
+    background-color: rgb(173, 171, 199);
     display: flex;
+    opacity: 80%;
 }
 
 .MenuSection-icon {
-    height: max-content;
+    height: 2vw;
     width: 2.3vw;
     margin-left: 1.5vw;
     visibility: hidden;
