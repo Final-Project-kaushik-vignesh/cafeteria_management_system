@@ -14,6 +14,6 @@ class MenuItemsController < ApplicationController
       menu_id: current_menu_id,
     )
 
-    redirect_to "/menu/#{current_menu_id}/edit"
+    redirect_to edit_menu_path(id: current_menu_id)
   end
 end
