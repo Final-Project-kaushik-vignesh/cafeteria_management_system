@@ -2,7 +2,8 @@ class MenuItemsController < ApplicationController
   skip_before_action :ensure_admin_logged_in
 
   def index
-    @menu_items = MenuItem.of_menu()
+    active_menu = Menu.find_by(Active_Menu: true)
+    @menu_item = MenuItem.of_menu(active_menu)
   end
 
   def create
@@ -13,6 +14,6 @@ class MenuItemsController < ApplicationController
       menu_id: current_menu_id,
     )
 
-    redirect_to "/menus/#{current_menu_id}/edit"
+    redirect_to "/menu/#{current_menu_id}/edit"
   end
 end

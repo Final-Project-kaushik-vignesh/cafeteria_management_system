@@ -5,14 +5,10 @@
             <p>
                 <ul class="Menu-list">
                     <li class="Menu-listTitle">
-                        Pick your favourite menu-item !!
-                        <% if @user_role == "owner" %>
-                            <%= link_to "Modify", new_menu_path, class: "Menu-modifyButton" %>
-                        <% end %>
+                        <%= render partial: "menu-item-section"%>
+                        
                     </li>
-                    <%= render partial: "menu-section" ,locals:{
-                    show_edit: false,
-                    }%>
+                   
                 </ul>
             </p>
         </main>        

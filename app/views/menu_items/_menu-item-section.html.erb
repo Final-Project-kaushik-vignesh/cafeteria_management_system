@@ -1,0 +1,12 @@
+<section class="Menu-display">
+    <% @menu_item.all.each do |menu_item| %>
+        <ul>
+            <li>
+             <p><%= menu_item.name%></p>
+             <p><%= menu_item.price%></p>
+             <p><%= menu_item.description%></p>
+                
+            </li>
+        </ul>
+    <% end %>
+</section

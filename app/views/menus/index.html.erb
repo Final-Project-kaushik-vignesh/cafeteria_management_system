@@ -1,4 +1,4 @@
-<main class="AddMenu-body">
+ <body class="AddMenu-body">
     <section class="Add-menu">
         <%= form_with(url: "/menus" , method: "post") do |menu|%>
                     <%= menu.text_field :name, placeholder: "Enter Menu Name", class: "Addmenu-field", required: true, autofocus: true %>
@@ -7,4 +7,4 @@
         <h3 class="Menu-listTitle">Available Menu</h3>
         <%= render partial: "menu-section"%>
     </section>
-</main>
+</body>
