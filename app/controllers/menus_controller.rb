@@ -5,15 +5,11 @@ class MenusController < ApplicationController
   end
 
   def create
-    Menu.create!(
+    menu = Menu.create!(
       name: params[:name].capitalize,
     )
-    redirect_to new_menu_path
-  end
 
-  def new
-    @user_role = @current_user.role
-    render "new"
+    redirect_to new_menu_path
   end
 
   def destroy
@@ -21,5 +17,9 @@ class MenusController < ApplicationController
     menu = Menu.find(id)
     menu.destroy
     redirect_to new_menu_path
+  end
+
+  def edit
+    id = params[:id]
   end
 end

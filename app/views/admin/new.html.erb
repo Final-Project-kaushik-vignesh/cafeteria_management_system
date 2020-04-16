@@ -1,7 +1,7 @@
 <body class="Signup">
-        <h2 class="NewUsers-title">Welcome new user ! </h2>
+        <h2 class="NewUsers-title">Welcome Admin ! </h2>
         <section class="UsersNew">
-            <%= form_with url: users_path do |form|%>
+            <%= form_with url: admin_index_path do |form|%>
                 <div class="Form-section">
                     <p> First name: </p>
                     <%= form.text_field :first_name, class: "Form-input", placeholder: "Enter First Name", required: true, autofocus: true %>
@@ -19,7 +19,7 @@
                     <%= form.password_field :password, class: "Form-input", placeholder: "Enter Password" %>
                 </div>
                 <div class="Form-section">
-                    <%=form.submit :"Sign Up", class: "Form-submit"%>
+                    <%=form.submit :"Add", class: "Form-submit"%>
             <% end %>
         </section>
     

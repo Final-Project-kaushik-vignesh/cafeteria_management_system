@@ -1,5 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :ensure_user_logged_in
+  before_action :ensure_admin_logged_in
+
+  def ensure_admin_logged_in
+    current_user_role = @current_user.role
+
+    unless current_user_role == "owner"
+      redirect_to "/"
+    end
+  end
 
   def ensure_user_logged_in
     unless current_user

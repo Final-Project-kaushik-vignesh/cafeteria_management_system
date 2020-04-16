@@ -16,6 +16,9 @@
       <% if @current_user %>
         <p class="User-details">
           Hello <%= @current_user.first_name %> (._.)
+          <% if @current_user.role == "customer"%>
+            <%= link_to image_tag("edit.png"), orders_path, class: "Cart-icon" %>
+          <% end %>
           <%= link_to "Sign-out", destroy_session_path, method: "delete", class:"Sign-button" %>
         </p>
       <% end %>

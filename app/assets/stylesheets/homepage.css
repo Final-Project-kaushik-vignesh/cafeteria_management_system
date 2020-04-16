@@ -131,3 +131,10 @@
     margin-right: 0.5vw;
     padding: 0.75vw;
 }
+
+.Cart-icon {
+    height: 2.5vw;
+    width: 2.5vw;
+    scale: 0.6;
+    margin-left: 1.5vw;
+}

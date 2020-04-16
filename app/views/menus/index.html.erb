@@ -1,20 +1,10 @@
-<html>
-    <body >
-        <main class="Menu">
-            <img src="Menu_img1.jpg" class="Menu-image"/>
-            <p>
-                <ul class="Menu-list">
-                    <li class="Menu-listTitle">
-                        Pick your favourite menu !!
-                        <% if @user_role == "owner" %>
-                            <%= link_to "Modify", new_menu_path, class: "Menu-modifyButton" %>
-                        <% end %>
-                    </li>
-                    <%= render partial: "menu-section" ,locals:{
-                    show_edit: false,
-                    }%>
-                </ul>
-            </p>
-        </main>        
-    </body>
-</html>
+<main class="AddMenu-body">
+    <section class="Add-menu">
+        <%= form_with(url: "/menus" , method: "post") do |menu|%>
+                    <%= menu.text_field :name, placeholder: "Enter Menu Name", class: "Addmenu-field", required: true, autofocus: true %>
+                    <%= menu.submit :Add, class:"AddMenu-submit"%>
+        <% end %>
+        <h3 class="Menu-listTitle">Available Menu</h3>
+        <%= render partial: "menu-section"%>
+    </section>
+</main>

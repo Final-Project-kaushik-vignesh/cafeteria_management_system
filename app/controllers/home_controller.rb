@@ -1,9 +1,16 @@
 class HomeController < ApplicationController
   skip_before_action :ensure_user_logged_in
+  skip_before_action :ensure_admin_logged_in
 
   def index
     if current_user
-      redirect_to menus_path
+      if current_user.role == "owner"
+        redirect_to admin_index_path
+      elsif current_user.role == "clerk"
+        redirect_to orders_path
+      else
+        redirect_to menu_items_path
+      end
     else
       render "index"
     end
