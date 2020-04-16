@@ -9,14 +9,15 @@ class MenusController < ApplicationController
       name: params[:name].capitalize,
     )
 
-    redirect_to new_menu_path
+    redirect_to menus_path
   end
 
   def destroy
     id = params[:id]
+    MenuItem.all.where(menu_id: id).destroy_all
     menu = Menu.find(id)
     menu.destroy
-    redirect_to new_menu_path
+    redirect_to menus_path
   end
 
   def edit
