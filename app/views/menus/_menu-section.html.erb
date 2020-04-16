@@ -7,10 +7,7 @@
                     <%= form_with(url: "/menus/#{menu.id}", method: "delete") do %>
                         <%= image_submit_tag("delete.png", options = {class: "MenuSection-icon"}) %>
                     <% end%>
-                    <%= form_with(url: "/menus/#{menu.id}/edit", method: "Get") do %>
-                        <%= image_submit_tag("edit.png", options = {class: "MenuSection-icon"}) %>
-                    <% end%>
-
+                    <%= link_to image_tag("edit.png"), "/menus/#{menu.id}/edit", class: "MenuSection-icon"%>
                 </div>
             </li>
         </ul>

@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_menu_id
+    @current_menu_id = session[:current_menu_id]
+  end
+
   def current_user
     return @current_user if @current_user
     current_user_id = session[:current_user_id]

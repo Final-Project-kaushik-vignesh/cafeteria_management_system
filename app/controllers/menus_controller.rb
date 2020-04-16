@@ -20,6 +20,7 @@ class MenusController < ApplicationController
   end
 
   def edit
-    id = params[:id]
+    session[:current_menu_id] = params[:id]
+    render "edit"
   end
 end
