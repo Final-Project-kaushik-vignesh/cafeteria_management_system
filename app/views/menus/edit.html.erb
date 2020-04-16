@@ -1,11 +1,31 @@
-<%= form_with(url: menu_items_path , method: "post", class: "Add_Todo") do |menu_item| %>
-                <%= menu_item.text_field :name, placeholder: "Item Name" ,class: "InputTodo-text" , required: true%>
-                <%= menu_item.number_field :price, placeholder: "Item Price" ,class: "InputTodo-text" , required: true%>
-                <%= menu_item.text_area :description, placeholder: "Item description" ,class: "InputTodo-text" , required: true%>
-                <%= menu_item.submit :"Add", class: "InputTodo-submit" %>
-<% end %>
+<main class="MenuItem">
+    <%= form_with(url: menu_items_path , method: "post", class: "Add_Todo") do |menu_item| %>
+        <%= menu_item.text_field :name, placeholder: "Item Name" ,class: "InputTodo-text" , required: true%>
+        <%= menu_item.number_field :price, placeholder: "Item Price" ,class: "InputTodo-text" , required: true%>
+        <%= menu_item.text_area :description, placeholder: "Item description" ,class: "InputTodo-text" , required: true%>
+        <%= menu_item.submit :"Add", class: "InputTodo-submit" %>
+    <% end %>
 
-<% MenuItem.all.where(menu_id: @current_menu_id).each do |menu_item|%>
-    <p><%= menu_item.name%></p>
-<% end %>
+    <% MenuItem.all.where(menu_id: @current_menu_id).each do |menu_items|%>
+        <section class="MenuItem-display">
+            <p class="MenuItem-details">
+                <%= menu_items.name%>
+            </p>       
+            <p class="MenuItem-display"> 
+                <%= form_with(url: menu_item_path(id: menu_items.id) , method: "put") do |menu_item| %>
+                    <%= menu_item.number_field :price, value: "#{menu_items.price}" ,class: "MenuItem-price" , required: true, onenter: "this.form.submit()"%> 
+                <% end %>
+            </p>
+            <p class="MenuItem-details">
+                 <%= menu_items.description%>
+            </p>
+            <p>
+                <%= form_with(url: menu_item_path(id: menu_items.id), method: "delete") do %>
+                        <%= image_submit_tag("delete.png"gi ) %>
+                <% end%>
+            </p>
+        </section>
+
+    <% end %>
+</main>
 

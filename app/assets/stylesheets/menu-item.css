@@ -1,0 +1,21 @@
+.MenuItem {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.MenuItem-display {
+    display: flex;
+    align-items: center;
+    margin-top: 2vw;
+}
+
+.MenuItem-details {
+    padding: 1vw 1.5vw;
+}
+
+.MenuItem-price {
+    max-width: max-content;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    font-size: 0.75vw;
+}

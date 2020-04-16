@@ -8,16 +8,26 @@ class MenuItemsController < ApplicationController
 
   def create
     menu_item = MenuItem.create!(
-      name: params[:name],
+      name: params[:name].capitalize,
       price: params[:price],
-      description: params[:description],
+      description: params[:description].capitalize,
       menu_id: current_menu_id,
     )
 
-<<<<<<< HEAD
     redirect_to edit_menu_path(id: current_menu_id)
-=======
-    redirect_to "/menus/#{current_menu_id}/edit"
->>>>>>> 32d31d81b78a78ff7df3306adc5704d50d624078
+  end
+
+  def update
+    id = params[:id]
+    menu_item = MenuItem.find_by(id: id)
+    menu_item.update(price: params[:price])
+    redirect_to edit_menu_path(id: current_menu_id)
+  end
+
+  def destroy
+    id = params[:id]
+    menu_item = MenuItem.find_by(id: id)
+    menu_item.destroy
+    redirect_to edit_menu_path(id: current_menu_id)
   end
 end
