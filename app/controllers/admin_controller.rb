@@ -1,4 +1,6 @@
 class AdminController < ApplicationController
+  skip_before_action :ensure_order_created
+
   def new
     render "new"
   end

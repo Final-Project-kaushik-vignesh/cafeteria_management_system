@@ -7,9 +7,15 @@
                 <p><%= menu_item.price%></p>
                 <p><%= menu_item.description%></p>
                 <%= form_with(url: order_items_path, method: "post") do |order_item| %>
+<<<<<<< HEAD
                    <%= hidden_field_tag :menu_item_id, "#{menu_item.id}" %>
                    <%= order_item.number_field :quantity, value: "1", class: "MenuItem-price", min: "1" %>
                    <%= image_submit_tag("add.png")%>
+=======
+                    <%= hidden_field_tag :menu_item_id, "#{menu_item.id}" %>
+                    <%= order_item.number_field :quantity, value: "1", class: "MenuItem-price", min: "1" %>
+                    <%= image_submit_tag("add.png")%>
+>>>>>>> 5ec75813dd48036603bdea657ca44762fb960509
                 <% end %>
             </li>
         <% end %>
