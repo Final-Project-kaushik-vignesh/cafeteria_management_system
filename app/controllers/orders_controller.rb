@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
   end
 
   def complete
-    if OrderItem.all.where(order_id: current_order_id) == nil
+    if OrderItem.find_by(order_id: current_order_id) == nil
       flash[:error] = "Empty Cart"
       redirect_to order_items_path
     else

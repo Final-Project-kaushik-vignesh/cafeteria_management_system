@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_order_created
     unless current_order_id
-      redirect_to orders_path
+      redirect_to "/"
     end
   end
 
