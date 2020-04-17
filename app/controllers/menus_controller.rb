@@ -7,7 +7,7 @@ class MenusController < ApplicationController
   def create
     menu = Menu.create!(
       name: params[:name].capitalize,
-      Active_Menu: false,
+      active_menu: false,
     )
 
     redirect_to menus_path
@@ -28,10 +28,10 @@ class MenusController < ApplicationController
   end
 
   def update
-    Menu.all.each { |menu| menu.update(Active_Menu: false) }
+    Menu.all.each { |menu| menu.update(active_menu: false) }
     id = params[:id]
     menu = Menu.find_by(id: id)
-    menu.update(Active_Menu: true)
+    menu.update(active_menu: true)
     redirect_to menus_path
   end
 end
