@@ -1,1 +1,12 @@
-<% @order_items.all.each { |order_item| order_item. }%>
+<%= @current_user.first_name %>
+<% @order_items.all.each do |order_item| %>
+    <br>
+    <%= order_item.menu_item_name %>
+    <%= order_item.menu_item_price %>
+    <%= form_with(url: order_item_path(id: order_item.id), method: "put") do |form| %>
+        <%= form.number_field :quantity, value: "#{order_item.quantity}", class: "MenuItem-price", min: "1", onenter: "this.form.sumit()" %>
+    <% end %>
+<% end %>
+<br><%= link_to :"Add More", menu_items_path %>
+<br><%= link_to :"Proceed to complete order", complete_order_path %>
+

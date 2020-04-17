@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   skip_before_action :ensure_admin_logged_in
+  skip_before_action :ensure_order_created
 
   def index
     render "index"
@@ -13,5 +14,18 @@ class OrdersController < ApplicationController
     )
     session[:current_order_id] = order.id
     redirect_to menu_items_path
+  end
+
+  def complete
+    session[:current_order_id] = nil
+    @current_order_id = nil
+    redirect_to orders_path
+  end
+
+  def update
+    id = params[:id]
+    order = Order.find_by(id: id)
+    order.update(delivered_at: Date.today)
+    redirect_to orders_path
   end
 end

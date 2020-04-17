@@ -1,0 +1,38 @@
+<% if role == "owner" %>
+    <%= Order.all.each do |order| %>
+        <%= order.id%>
+        <%= order.date%>
+        <%= order.user_id%>
+        <%= form_with(url: order_path(id: order.id), method: "put") do %>
+            <%= check_box_tag(:delivered_at,
+                nil,
+                order.delivered_at ? true : false,
+                onclick: "this.form.submit()") %>
+        <% end %>
+        <%= order.delivered_at %>
+    <%end%>
+<% elsif role == "clerk" %>
+    <%= Order.all.where(delivered_at: nil).each do |order| %>
+        <%= order.id%>
+        <%= order.date%>
+        <%= order.user_id%>
+        <%= form_with(url: order_path(id: order.id), method: "put") do %>
+            <%= check_box_tag(:delivered_at,
+                nil,
+                order.delivered_at ? true : false,
+                onclick: "this.form.submit()") %>
+        <% end %>
+        <%= order.delivered_at %>
+    <%end%>
+<% else %>
+    <%= Order.all.where(user_id: @current_user.id).each do |order| %>
+        <%= order.id%>
+        <%= order.date%>
+        <%= order.user_id%>
+        <% if order.delivered_at == nil %>
+            <p>Not Delivered yet</p>
+        <% else %>
+            <p>Delivered at</p><%= order.deliverd_at%>
+        <%end%>
+    <%end%>
+<% end %>

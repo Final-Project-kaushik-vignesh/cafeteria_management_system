@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :ensure_user_logged_in
   before_action :ensure_admin_logged_in
+  before_action :ensure_order_created
 
   def ensure_admin_logged_in
     current_user_role = @current_user.role
@@ -16,11 +17,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def ensure_order_created
+    unless current_order_id
+      redirect_to orders_path
+    end
+  end
+
   def current_menu_id
     @current_menu_id = session[:current_menu_id]
   end
 
   def current_order_id
+    return @current_order_id if @current_order_id
     @current_order_id = session[:current_order_id]
   end
 

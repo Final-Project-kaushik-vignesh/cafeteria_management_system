@@ -1,4 +1,6 @@
 class MenusController < ApplicationController
+  skip_before_action :ensure_order_created
+
   def index
     @user_role = @current_user.role
     render "index"
