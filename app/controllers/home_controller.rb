@@ -6,10 +6,8 @@ class HomeController < ApplicationController
     if current_user
       if current_user.role == "owner"
         redirect_to admin_index_path
-      elsif current_user.role == "clerk"
-        redirect_to orders_path
       else
-        redirect_to menu_items_path
+        redirect_to orders_path
       end
     else
       render "index"
