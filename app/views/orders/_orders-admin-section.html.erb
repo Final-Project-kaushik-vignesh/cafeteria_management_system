@@ -7,9 +7,12 @@
                 onclick: "this.form.submit()") %>
         <% end %>
     </section>
+    
     <%= link_to :"#{order.id}", view_invoice_path(id: order.id) %>
+
     <p><%= order.date%></p>
-    <p><%= order.user_id%></p>
+    <p>Id: <%= order.role_of == "clerk" ? "Walk-In Customer" : order.user_id%></p>
+
     <% if order.delivered_at == nil %>
             <p>Not Delivered yet</p>
     <% else %>

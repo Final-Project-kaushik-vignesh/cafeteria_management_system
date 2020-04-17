@@ -1,5 +1,6 @@
 class OrderItemsController < ApplicationController
   skip_before_action :ensure_admin_logged_in
+  skip_before_action :ensure_order_created
 
   def index
     @order_items = OrderItem.all.where(order_id: current_order_id)
