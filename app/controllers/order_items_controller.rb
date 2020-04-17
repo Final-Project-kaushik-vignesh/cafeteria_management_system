@@ -12,4 +12,7 @@ class OrderItemsController < ApplicationController
     )
     redirect_to menu_items_path
   end
+
+  def index
+  end
 end
