@@ -3,6 +3,13 @@ class OrdersController < ApplicationController
   skip_before_action :ensure_order_created
 
   def index
+    if @current_user.role == "owner"
+      @orders = Order.all
+    elsif @current_user.role == "clerk"
+      @orders = Order.clerk
+    else
+      @orders = current_user.orders
+    end
     render "index"
   end
 

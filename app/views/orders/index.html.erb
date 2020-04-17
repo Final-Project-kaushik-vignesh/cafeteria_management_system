@@ -1,8 +1,14 @@
-<%if @current_user.role != "owner" %>
+<% if @current_user.role != "owner" %>
     <%= form_with(url: orders_path, method: "post") do %>
         <%= submit_tag :"Place new order" %>
     <% end %>
 <% end %>
-<%= render partial: "order-section", locals: {
-    role: @current_user.role
-}%>
+<% if @current_user.role != "customer" %>
+    <%= render partial: "orders-admin-section", locals: {
+        orders: @orders,
+    }%>
+<% else %>
+    <%= render partial: "orders-customer-section", locals: {
+        orders: @orders,
+    }%>
+<% end %>
