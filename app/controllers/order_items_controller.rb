@@ -31,4 +31,11 @@ class OrderItemsController < ApplicationController
     @order_items = OrderItem.all.where(order_id: id)
     render "invoice"
   end
+
+  def destroy
+    id = params[:id]
+    order_item = OrderItem.find(id)
+    order_item.destroy
+    redirect_to order_items_path
+  end
 end
