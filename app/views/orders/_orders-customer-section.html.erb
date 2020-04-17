@@ -1,0 +1,9 @@
+<%= @orders.each do |order| %>
+    <%= order.date%>
+    <%= order.user_id%>
+    <% if order.delivered_at == nil %>
+        <p>Not Delivered yet</p>
+    <% else %>
+        <p>Delivered at</p><%= order.delivered_at%>
+    <%end%>
+<% end %>

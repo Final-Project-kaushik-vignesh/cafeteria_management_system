@@ -1,0 +1,17 @@
+<%= @orders.all.each do |order| %>
+    <%= order.id%>
+    <%= order.date%>
+    <%= order.user_id%>
+    <%= form_with(url: order_path(id: order.id), method: "put") do %>
+        <%= check_box_tag(:delivered_at,
+            nil,
+            order.delivered_at ? true : false,
+            onclick: "this.form.submit()") %>
+    <% end %>
+    <% if order.delivered_at == nil %>
+        <p>Not Delivered yet</p>
+    <% else %>
+        <p>Delivered at</p><%= order.delivered_at%>
+    <%end%>
+<% end %>
+
