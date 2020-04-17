@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   delete "/signout", to: "sessions#destroy", as: :destroy_session
   get "/complete", to: "orders#complete", as: :complete_order
   resources :admin
+  get "/view", to: "admin#view", as: :view_users
+  get "/invoice/:id", to: "order_items#view", as: :view_invoice
 end

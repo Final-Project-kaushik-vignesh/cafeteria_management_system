@@ -2,6 +2,7 @@
 <%= render partial: "user-section", locals:{
     role: "clerk",
 }%>
+<%=link_to :"Add a new clerk", new_admin_path %>
 <h1>CUSTOMER</h1>
 <%= render partial: "user-section", locals:{
     role: "customer",
