@@ -1,6 +1,11 @@
 class OrderItemsController < ApplicationController
   skip_before_action :ensure_admin_logged_in
 
+  def index
+    @order_items = OrderItem.all.where(order_id: current_order_id)
+    render "index"
+  end
+
   def create
     menu_item = MenuItem.find_by(id: params[:menu_item_id])
     order_item = OrderItem.create!(
