@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
     else
       @orders = current_user.orders
     end
-    render "index"
   end
 
   def create
