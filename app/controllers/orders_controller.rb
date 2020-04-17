@@ -23,21 +23,24 @@ class OrdersController < ApplicationController
   end
 
   def complete
-    order = Order.find_by(id: @current_order_id)
     if OrderItem.all.where(order_id: current_order_id) == nil
+      flash[:error] = "Empty Cart"
+      redirect_to order_items_path
+    else
       session[:current_order_id] = nil
       @current_order_id = nil
       redirect_to orders_path
-    else
-      flash[:error] = "Empty Cart"
-      redirect_to order_items_path
     end
   end
 
   def update
     id = params[:id]
     order = Order.find_by(id: id)
-    order.update(delivered_at: DateTime.now)
+    if (params[:delivered_at])
+      order.update(delivered_at: DateTime.now)
+    else
+      order.update(delivered_at: nil)
+    end
     redirect_to orders_path
   end
 end
