@@ -6,9 +6,9 @@
                 <p><%= menu_item.name%></p>
                 <p><%= menu_item.price%></p>
                 <p><%= menu_item.description%></p>
-                <%= form_with(url: order_items_path, method: "post") do  %>
+                <%= form_with(url: order_items_path, method: "post") do |order_item| %>
                    <%= hidden_field_tag :menu_item_id, "#{menu_item.id}" %>
-                   <%= number_field_tag :quantity, value: "1", class: "MenuItem-price" %>
+                   <%= order_item.number_field :quantity, placeholder: "Please Enter the quantity of item required", class: "MenuItem-price", min: "1" %>
                    <%= image_submit_tag("add.png")%>
                 <% end %>
             </li>
