@@ -18,14 +18,10 @@ class OrderItemsController < ApplicationController
     redirect_to menu_items_path
   end
 
-<<<<<<< HEAD
-  def index
-=======
   def update
     id = params[:id]
     order_item = OrderItem.find_by(id: id)
     order_item.update(quantity: params[:quantity])
     redirect_to order_items_path
->>>>>>> 5ec75813dd48036603bdea657ca44762fb960509
   end
 end

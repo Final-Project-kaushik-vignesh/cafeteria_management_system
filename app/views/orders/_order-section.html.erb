@@ -9,10 +9,14 @@
                 order.delivered_at ? true : false,
                 onclick: "this.form.submit()") %>
         <% end %>
-        <%= order.delivered_at %>
+        <% if order.delivered_at == nil %>
+            <p>Not Delivered yet</p>
+        <% else %>
+            <p>Delivered at</p><%= order.delivered_at%>
+        <%end%>    
     <%end%>
 <% elsif role == "clerk" %>
-    <%= Order.all.where(delivered_at: nil).each do |order| %>
+    <%= Order.where(delivered_at: nil).each do |order| %>
         <%= order.id%>
         <%= order.date%>
         <%= order.user_id%>
@@ -22,17 +26,16 @@
                 order.delivered_at ? true : false,
                 onclick: "this.form.submit()") %>
         <% end %>
-        <%= order.delivered_at %>
     <%end%>
 <% else %>
-    <%= Order.all.where(user_id: @current_user.id).each do |order| %>
+    <%= Order.where(user_id: @current_user.id).each do |order| %>
         <%= order.id%>
         <%= order.date%>
         <%= order.user_id%>
         <% if order.delivered_at == nil %>
             <p>Not Delivered yet</p>
         <% else %>
-            <p>Delivered at</p><%= order.deliverd_at%>
+            <p>Delivered at</p><%= order.delivered_at%>
         <%end%>
     <%end%>
 <% end %>
