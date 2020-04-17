@@ -1,4 +1,4 @@
-<%= @orders.each do |order| %>
+<% orders.all.each do |order| %>
     <%= order.date%>
     <%= order.user_id%>
     <% if order.delivered_at == nil %>
