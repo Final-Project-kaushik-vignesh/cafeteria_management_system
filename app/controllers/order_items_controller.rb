@@ -24,4 +24,10 @@ class OrderItemsController < ApplicationController
     order_item.update(quantity: params[:quantity])
     redirect_to order_items_path
   end
+
+  def view
+    id = params[:id]
+    @order_items = OrderItem.all.where(order_id: id)
+    render "invoice"
+  end
 end

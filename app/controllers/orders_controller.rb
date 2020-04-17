@@ -23,15 +23,21 @@ class OrdersController < ApplicationController
   end
 
   def complete
-    session[:current_order_id] = nil
-    @current_order_id = nil
-    redirect_to orders_path
+    order = Order.find_by(id: @current_order_id)
+    if OrderItem.all.where(order_id: current_order_id) == nil
+      session[:current_order_id] = nil
+      @current_order_id = nil
+      redirect_to orders_path
+    else
+      flash[:error] = "Empty Cart"
+      redirect_to order_items_path
+    end
   end
 
   def update
     id = params[:id]
     order = Order.find_by(id: id)
-    order.update(delivered_at: Date.today)
+    order.update(delivered_at: DateTime.now)
     redirect_to orders_path
   end
 end
