@@ -20,7 +20,7 @@
                  <%= menu_items.description%>
             </p>
             <p>
-                <%= form_with(url: menu_item_path(id: menu_items.id), method: "delete") do %>
+                <%= form_with(url: menu_item_path(id: menu_items.id), method: "delete",data: { confirm: '!! Are you sure to remove this Menu Item ? !!' }) do %>
                         <%= image_submit_tag("delete.png") %>
                 <% end%>
             </p>

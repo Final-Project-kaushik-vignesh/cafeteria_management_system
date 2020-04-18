@@ -1,7 +1,7 @@
 <body class="Signup">
-        <h2 class="NewUsers-title">Welcome Admin ! </h2>
+        <h2 class="NewUsers-title">Type in the changes to update: </h2>
         <section class="UsersNew">
-            <%= form_with url: user_path(id: @user.id), method: "put" do |form|%>
+            <%= form_with url: admin_path(id: @user.id), method: "put" do |form|%>
                 <div class="Form-section">
                     <p> First name: </p>
                     <%= form.text_field :first_name, class: "Form-input", value: "#{@user.first_name}", required: true, autofocus: true %>

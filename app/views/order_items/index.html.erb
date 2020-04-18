@@ -5,10 +5,16 @@
     <%= form_with(url: order_item_path(id: order_item.id), method: "put") do |form| %>
         <%= form.number_field :quantity, value: "#{order_item.quantity}", class: "MenuItem-price", min: "1", onenter: "this.form.sumit()" %>
     <% end %>
+    <%= form_with(url: order_item_path(id: order_item.id), method: "delete", data: { confirm: 'Confirm: Remove from cart ??' }) do %>
+        <%= image_submit_tag("delete.png") %>
+    <% end%>
 <% end %>
-<br><%= link_to :"Add More", menu_items_path %>
-<% if @current_order_id !=nil%>
-    <br><%= link_to :"Proceed to complete order", complete_order_path %>
-     <p class="Form-flashMessage"><%= flash[:error] %><p>
+<br>
+<%= link_to :"Add More", menu_items_path %>
+
+<% if @current_order_id != nil%>
+    <br>
+    <%= link_to :"Proceed to complete order", complete_order_path %>
+    <p class="Form-flashMessage"><%= flash[:error] %></p>
 <% end %>
 

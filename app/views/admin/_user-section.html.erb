@@ -5,7 +5,7 @@
                 <%= users.first_name%>
                 <%= users.email%>
                 <% if role == "clerk"%>
-                    <%= form_with(url: admin_path(id: users.id), method: "delete") do %>
+                    <%= form_with(url: admin_path(id: users.id), method: "delete", data: { confirm: 'Confirm: Remove User !! Are you sure?' }) do %>
                         <%= image_submit_tag("delete.png") %>
                     <% end%>
                     <%= link_to image_tag("edit.png"), edit_admin_path(id: users.id)%>
