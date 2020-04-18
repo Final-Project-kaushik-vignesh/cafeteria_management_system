@@ -43,4 +43,15 @@ class OrdersController < ApplicationController
     end
     redirect_to orders_path
   end
+
+  def destroy
+    id = params[:id]
+    order = Order.find_by(id: id)
+    order_item = OrderItem.all.where(order_id: id)
+    order_item.destroy_all
+    order.destroy
+    session[:current_order_id] = nil
+    @current_order_id = nil
+    redirect_to orders_path
+  end
 end
