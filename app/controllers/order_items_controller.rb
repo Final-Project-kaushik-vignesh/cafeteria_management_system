@@ -15,7 +15,12 @@ class OrderItemsController < ApplicationController
       menu_item_name: menu_item.name,
       menu_item_price: menu_item.price,
       quantity: params[:quantity],
+      item_value: menu_item.price * params[:quantity].to_f,
     )
+    order = Order.find_by(id: current_order_id)
+    order_items = OrderItem.all.where(order_id: order.id)
+    total_price = order_items.sum(:item_value)
+    order.update(total_price: total_price)
     flash[:notice] = "Order is placed in your cart"
     redirect_to menu_items_path
   end
@@ -24,6 +29,11 @@ class OrderItemsController < ApplicationController
     id = params[:id]
     order_item = OrderItem.find_by(id: id)
     order_item.update(quantity: params[:quantity])
+    order_item.update(item_value: order_item.menu_item.price * params[:quantity].to_f)
+    order = Order.find_by(id: current_order_id)
+    order_items = OrderItem.all.where(order_id: order.id)
+    total_price = order_items.sum(:item_value)
+    order.update(total_price: total_price)
     redirect_to order_items_path
   end
 

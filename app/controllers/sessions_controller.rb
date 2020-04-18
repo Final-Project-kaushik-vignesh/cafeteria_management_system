@@ -18,6 +18,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    if session[:current_order_id]
+      order = Order.find_by(id: current_order_id)
+      order_item = OrderItem.all.where(order_id: @current_order_id)
+      order_item.destroy_all
+      order.destroy
+    end
     session[:current_user_id] = nil
     session[:current_order_id] = nil
     @current_order_id = nil

@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
       date: Date.today,
       user_id: current_user.id,
       delivered_at: nil,
+      total_price: 0,
     )
     session[:current_order_id] = order.id
     redirect_to menu_items_path
