@@ -1,5 +1,5 @@
 <main class="MenuItem">
-    <%= form_with(url: menu_items_path , method: "post", class: "Add_Todo") do |menu_item| %>
+    <%= form_with(url: new_item_path, method: "post", class: "Add_Todo") do |menu_item| %>
         <%= menu_item.text_field :name, placeholder: "Item Name" ,class: "InputTodo-text" , required: true%>
         <%= menu_item.number_field :price, placeholder: "Item Price" ,class: "InputTodo-text" , required: true%>
         <%= menu_item.text_area :description, placeholder: "Item description" ,class: "InputTodo-text" , required: true%>

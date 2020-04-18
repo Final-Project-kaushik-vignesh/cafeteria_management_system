@@ -11,13 +11,14 @@
     <% end%>
     
 <% end %>
-<%= Order.find_by(id: @current_order_id).total_price%>
+
 
 
 <br>
 <%= link_to :"Add More", menu_items_path %>
 
 <% if @current_order_id != nil%>
+    <%= Order.find_by(id: @current_order_id).total_price%>
     <br>
     <%= link_to :"Proceed to complete order", complete_order_path %>
     <p class="Form-flashMessage"><%= flash[:error] %></p>

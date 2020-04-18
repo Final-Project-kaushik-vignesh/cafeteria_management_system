@@ -36,4 +36,15 @@ class MenusController < ApplicationController
     menu.update(active_menu: true)
     redirect_to menus_path
   end
+
+  def new_item
+    menu_item = MenuItem.create!(
+      name: params[:name].capitalize,
+      price: params[:price],
+      description: params[:description].capitalize,
+      menu_id: current_menu_id,
+    )
+
+    redirect_to edit_menu_path(id: current_menu_id)
+  end
 end
