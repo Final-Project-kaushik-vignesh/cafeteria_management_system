@@ -1,14 +1,13 @@
-<html>
-    <body >
-        <main class="Menu">
-            <img src="Menu_img1.jpg" class="Menu-image"/>
-            <p>
-                <ul class="Menu-list">
-                    <li class="Menu-listTitle">
-                        <%= render partial: "menu-item-section"%>
-                    </li>  
-                </ul>
-            </p>
-        </main>        
-    </body>
-</html>
+<body class="Menu">
+    <section >
+        <p class="Menu-display">  
+        <section class="MenuItem-title" >
+            <P class="MenuItem-page">NAME</p>
+            <P class="MenuItem-page">Price</p>
+            <P class="MenuItem-page">Item Description</p>
+            <P class="MenuItem-page">Quantity</p>
+        </section>
+             <%= render partial: "menu-item-section"%>                
+        </p>
+    </section>
+</body>

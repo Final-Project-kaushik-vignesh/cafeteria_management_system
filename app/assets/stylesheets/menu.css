@@ -1,26 +1,16 @@
 .Menu {
-    display: flex;
+    background-image: url('Menu_img1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .Menu-image {
-    max-width: 50%;
+    max-width: 100%;
+    margin-right: 0.5vw;
 }
 
-.Menu-modifyButton {
-    right: 1vw;
-    position: absolute;
-    border-radius: 0.4vw;
-    background-color: rgb(102, 230, 140);
-    font-size: 0.75vw;
-    font-family: sans-serif;
-    width: max-content;
-    padding: 0.75vw;
-    box-shadow: none;
-    color: white;
-    font-weight: bold;
-    border: 0;
-    margin-left: 3vw;
-    text-decoration: none;
+.Menu-display {
+    max-width: max-content;
 }
 
 .Menu-list {
@@ -115,8 +105,4 @@
     margin-top: 1.5vw !important;
     font-family: sans-serif !important;
     text-decoration: underline !important;
-}
-
-.Menu-display {
-    margin-top: 1vw;
 }

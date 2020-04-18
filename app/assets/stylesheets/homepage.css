@@ -125,6 +125,11 @@
     background-color: lightgray;
     display: flex;
     width: 100%;
+    visibility: hidden;
+}
+
+.Footer:hover {
+    visibility: visible;
 }
 
 .Footer-content {
@@ -133,8 +138,7 @@
 }
 
 .Cart-icon {
-    height: 2.5vw;
-    width: 2.5vw;
-    scale: 0.6;
+    width: 2vw;
     margin-left: 1.5vw;
+    padding: 0.25vw;
 }
