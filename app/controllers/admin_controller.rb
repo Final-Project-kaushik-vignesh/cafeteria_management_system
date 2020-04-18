@@ -13,7 +13,7 @@ class AdminController < ApplicationController
       password: params[:password],
       role: "clerk",
     )
-    redirect_to admin_index_path
+    redirect_to view_users_path
   end
 
   def edit

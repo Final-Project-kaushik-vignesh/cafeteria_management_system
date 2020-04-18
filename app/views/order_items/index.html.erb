@@ -3,7 +3,7 @@
     <%= order_item.menu_item_name %>
     <%= order_item.menu_item_price %>
     <%= form_with(url: order_item_path(id: order_item.id), method: "put") do |form| %>
-        <%= form.number_field :quantity, value: "#{order_item.quantity}", class: "MenuItem-price", min: "1", onenter: "this.form.sumit()" %>
+        <%= form.number_field :quantity, value: "#{order_item.quantity}", onclick:"this.form.submit()", max:"10", min:"1"%>
     <%= order_item.item_value%>
     <% end %>
     <%= form_with(url: order_item_path(id: order_item.id), method: "delete", data: { confirm: 'Confirm: Remove from cart ??' }) do %>

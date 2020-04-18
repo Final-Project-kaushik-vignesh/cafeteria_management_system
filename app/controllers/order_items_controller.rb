@@ -9,19 +9,29 @@ class OrderItemsController < ApplicationController
 
   def create
     menu_item = MenuItem.find_by(id: params[:menu_item_id])
-    order_item = OrderItem.create!(
-      order_id: current_order_id,
-      menu_item_id: menu_item.id,
-      menu_item_name: menu_item.name,
-      menu_item_price: menu_item.price,
-      quantity: params[:quantity],
-      item_value: menu_item.price * params[:quantity].to_f,
-    )
     order = Order.find_by(id: current_order_id)
     order_items = OrderItem.all.where(order_id: order.id)
+    existing_order_count = order_items.all.where(menu_item_id: menu_item.id).count
+    if existing_order_count == 0
+      order_item = OrderItem.create!(
+        order_id: current_order_id,
+        menu_item_id: menu_item.id,
+        menu_item_name: menu_item.name,
+        menu_item_price: menu_item.price,
+        quantity: params[:quantity],
+        item_value: menu_item.price * params[:quantity].to_f,
+      )
+      flash[:notice] = "Order is placed in your cart"
+    else
+      existing_order_item = order_items.find_by(menu_item_id: menu_item.id)
+      existing_order_quantity = existing_order_item.quantity
+      new_order_quantity = existing_order_quantity + params[:quantity].to_f
+      existing_order_item.update(quantity: new_order_quantity)
+      existing_order_item.update(item_value: menu_item.price * new_order_quantity)
+      flash[:notice] = "Order quantity has been updated in your cart"
+    end
     total_price = order_items.sum(:item_value)
     order.update(total_price: total_price)
-    flash[:notice] = "Order is placed in your cart"
     redirect_to menu_items_path
   end
 
@@ -47,6 +57,10 @@ class OrderItemsController < ApplicationController
     id = params[:id]
     order_item = OrderItem.find(id)
     order_item.destroy
+    order = Order.find_by(id: current_order_id)
+    order_items = OrderItem.all.where(order_id: order.id)
+    total_price = order_items.sum(:item_value)
+    order.update(total_price: total_price)
     redirect_to order_items_path
   end
 end
