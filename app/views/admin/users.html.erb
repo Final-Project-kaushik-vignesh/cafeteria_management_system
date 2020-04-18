@@ -1,9 +1,11 @@
-<h1>CLERK</h1>
-<%= render partial: "user-section", locals:{
+<section class="AdminUsers-page">
+    <h1 class="AdminUsers-title">CLERK</h1>
+    <%= render partial: "user-section", locals:{
     role: "clerk",
-}%>
-<%=link_to :"Add a new clerk", new_admin_path %>
-<h1>CUSTOMER</h1>
-<%= render partial: "user-section", locals:{
-    role: "customer",
-}%>
+    }%>
+    <%=link_to :"Add a new clerk", new_admin_path %>
+    <h1 class="AdminUsers-title">CUSTOMER</h1>
+    <%= render partial: "user-section", locals:{
+        role: "customer",
+    }%>
+</section>
