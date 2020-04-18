@@ -16,6 +16,7 @@ class OrderItemsController < ApplicationController
       menu_item_price: menu_item.price,
       quantity: params[:quantity],
     )
+    flash[:notice] = "Order is placed in your cart"
     redirect_to menu_items_path
   end
 
