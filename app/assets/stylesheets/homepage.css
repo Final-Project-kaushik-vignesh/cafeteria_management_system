@@ -1,5 +1,5 @@
 .Home {
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0 auto;
     background-image: url(Cafe.jpg);
     max-width: 100%;
@@ -30,13 +30,13 @@
     color: rgb(122, 80, 0);
     padding-left: 2.5vw !important;
     margin-bottom: 0.9vw !important;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
 }
 
 .Home-welcome {
     font-size: 1.5vw;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     max-width: max-content;
     padding: 1vw;
     color: rgb(85, 12, 12);
@@ -57,7 +57,7 @@
     max-width: 25vw;
     color: rgb(14, 10, 73);
     text-align: center;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .Login-form {
@@ -68,7 +68,7 @@
 .Login-details {
     border-radius: 2vw;
     font-size: 0.755vw;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: auto;
     height: 1vw;
     padding: 0.5vw 0.5vw;
@@ -103,7 +103,7 @@
     border-radius: 2vw;
     background-color: rgb(74, 36, 124);
     font-size: 0.75vw;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-shadow: none;
     color: white;
     font-weight: bold;
@@ -121,7 +121,7 @@
 .Footer {
     margin-right: 0.5vw;
     font-size: 0.75vw;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: lightgray;
     display: flex;
     width: 100%;

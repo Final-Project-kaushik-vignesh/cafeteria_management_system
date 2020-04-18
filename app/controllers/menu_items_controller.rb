@@ -15,7 +15,7 @@ class MenuItemsController < ApplicationController
 
   def destroy
     id = params[:id]
-    menu_item = MenuItem.find_by(id: id)
+    menu_item = MenuItem.find(id: id)
     menu_item.destroy
     redirect_to edit_menu_path(id: current_menu_id)
   end
