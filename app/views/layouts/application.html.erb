@@ -16,8 +16,10 @@
       <% if @current_user %>
         <p class="User-details">
           Hello <%= @current_user.first_name %> (._.)
-          <% if @current_user.role != "owner" %>
+          <% if @current_user.role != "owner" && @current_order_id %>
             <%= link_to image_tag("cart.png" , class: "Cart-icon"), order_items_path	 %>
+          <% else %>
+            <%= link_to image_tag("cart.png" , class: "Cart-icon"), orders_path,:onclick => 'alert("Empty Cart ! Place a new order")' %>
           <% end %>
           <%= link_to "Sign-out", destroy_session_path, method: "delete", class:"Sign-button" %>
         </p>

@@ -1,14 +1,33 @@
-<% if @current_user.role != "owner" %>
-    <%= form_with(url: orders_path, method: "post") do %>
-        <%= submit_tag :"Place new order" %>
-    <% end %>
-<% end %>
-<% if @current_user.role != "customer" %>
-    <%= render partial: "orders-admin-section", locals: {
-        orders: @orders,
-    }%>
-<% else %>
-    <%= render partial: "orders-customer-section", locals: {
-        orders: @orders,
-    }%>
-<% end %>
+<body class= "Orders">
+    <% if @current_user.role != "owner" %>
+            <%= form_with(url: orders_path, method: "post") do %>
+                <%= submit_tag :"Place a new order", class: "Order-button" %>
+            <% end %>
+        <% end %>
+    <main class="Order-main">
+        <p class="OrderHistory-Maintitle">Order History</p>
+        <% if @current_user.role != "customer" %>
+            <%= render partial: "orders-admin-section", locals: {
+                orders: @orders,
+            }%>
+        <% else %>
+            <p class="OrderHistory-title">Not delivered</p>
+            <section class="Order-title">
+                <p>Order Date</p>
+                <p>Delivery Status</p>
+            </section>
+            <%= render partial: "orders-customer-section", locals: {
+                orders: @orders.not_delivered,
+            }%>
+            <p class="OrderHistory-title">Previous Orders</p>
+            <section class="Order-title">
+                <p>Order Date</p>
+                <p>Delivery Status</p>
+                <p>Delivery Date</p>
+            </section>
+            <%= render partial: "orders-customer-section", locals: {
+                orders: @orders.delivered,
+            }%>
+        <% end %>
+    </main>
+</body>

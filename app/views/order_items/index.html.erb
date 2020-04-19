@@ -8,9 +8,9 @@
                     <P class="OrderItem-total">Total</p>
             </section>
             <p>
-                <%= form_with(url: order_path(id: @current_order_id), method: "delete", data: { confirm: 'Are you sure you want to cancel the order?'}) do %>
-                 <%= image_submit_tag("close.png", class:"Cancel-icon") %>
-                <% end %>
+            <%= form_with(url: order_path(id: @current_order_id), method: "delete", data: { confirm: 'Are you sure you want to cancel the order?'}) do %>
+                <%= image_submit_tag("close.png", class:"Cancel-icon") %>
+            <% end %>
             </p>
         </div>
 
@@ -44,12 +44,9 @@
     <section class="Order">
         <br>
         <%= link_to :"Add More", menu_items_path, class: "ModifyOrder" %>
-        <% if @current_order_id != nil%>
-
-            <br>
-            <%= link_to :"Proceed to complete order", complete_order_path, class: "CompleteOrder" %>
-            <p class="Form-flashMessage"><%= flash[:error] %></p>
-        <% end %>
+        <br>
+        <%= link_to :"Proceed to complete order", complete_order_path, class: "CompleteOrder" %>
+        <p class="Form-flashMessage"><%= flash[:error] %></p>
     </section>
 </body>
 

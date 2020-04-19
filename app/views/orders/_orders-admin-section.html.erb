@@ -1,4 +1,4 @@
-<% @orders.all.each do |order| %>
+<% orders.all.each do |order| %>
     <section >
         <%= form_with(url: order_path(id: order.id), method: "put") do %>
             <%= check_box_tag(:delivered_at,

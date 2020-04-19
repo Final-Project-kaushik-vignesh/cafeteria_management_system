@@ -49,8 +49,13 @@ class OrderItemsController < ApplicationController
 
   def view
     id = params[:id]
-    @order_items = OrderItem.all.where(order_id: id)
-    render "invoice"
+    order = Order.all.where(user_id: @current_user).find_by(id: id)
+    if order == nil
+      redirect_to orders_path
+    else
+      @order_items = OrderItem.all.where(order_id: id)
+      render "invoice"
+    end
   end
 
   def destroy

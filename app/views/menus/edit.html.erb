@@ -12,7 +12,7 @@
                 <%= menu_items.name%>
             </p>       
             <p class="MenuItem-display"> 
-                <%= form_with(url: menu_item_path(id: menu_items.id) , method: "put") do |menu_item| %>
+                <%= form_with(url: update_item_path(id: menu_items.id) , method: "put") do |menu_item| %>
                     <%= menu_item.number_field :price, value: "#{menu_items.price}" ,class: "MenuItem-price" , required: true, onenter: "this.form.submit()"%> 
                 <% end %>
             </p>
@@ -20,7 +20,7 @@
                  <%= menu_items.description%>
             </p>
             <p>
-                <%= form_with(url: menu_item_path(id: menu_items.id), method: "delete" ,data: { confirm: '!! Are you sure to remove this Menu Item ? !!' }) do  %>
+                <%= form_with(url: delete_item_path(id: menu_items.id), method: "delete" ,data: { confirm: '!! Are you sure to remove this Menu Item ? !!' }) do  %>
                         <%= image_submit_tag("delete.png") %>
                 <% end%>
             </p>

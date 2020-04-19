@@ -47,4 +47,18 @@ class MenusController < ApplicationController
 
     redirect_to edit_menu_path(id: current_menu_id)
   end
+
+  def delete_item
+    id = params[:id]
+    menu_item = MenuItem.find(id)
+    menu_item.destroy
+    redirect_to edit_menu_path(id: current_menu_id)
+  end
+
+  def update_item
+    id = params[:id]
+    menu_item = MenuItem.find_by(id: id)
+    menu_item.update(price: params[:price])
+    redirect_to edit_menu_path(id: current_menu_id)
+  end
 end
