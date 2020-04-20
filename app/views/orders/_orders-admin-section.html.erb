@@ -2,18 +2,21 @@
     <section class="Order-section">
         <div class="Order-div">
             <%= form_with(url: order_path(id: order.id), method: "put") do %>
+                <label class="container">
                 <%= check_box_tag(:delivered_at,
                     nil,
                     order.delivered_at ? true : false,
-                    onclick: "this.form.submit()", ) %>
+                    onclick: "this.form.submit()") %>
+                    <span class="checkmark"></span>
+                </label>
             <% end %>
-            <p><%= order.id%></p>
-            <p><%= order.date%></p>
-            <p><%= order.role_of == "clerk" ? "Walk-In Customer" : "Online Customer"%></p>
+            |<p> <%= order.id%> </p>
+            |<p> <%= order.date%> </p>
+            |<p><%= order.role_of == "clerk" ? "Walk-In Customer" : "Online Customer"%></p>
             <% if order.delivered_at == nil %>
-                    <p>Not Delivered</p>
+                    |<p>Not Delivered</p>
             <% else %>
-                    <p><%= order.delivered_at.to_s(:short)%></p>
+                    |<p><%= order.delivered_at.to_s(:short)%></p>
             <%end%>
         </div>
         <p class= "Order-details" ><%= link_to :"CLick here to view order details", view_invoice_path(id: order.id), class: "Order-details-tag" %></p>
