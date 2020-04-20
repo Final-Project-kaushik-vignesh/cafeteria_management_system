@@ -56,7 +56,6 @@
     padding: 0.75vw;
     margin: 0.5vw auto;
     opacity: 90%;
-    justify-content: space-between;
 }
 
 .OrderItem-list:hover {
@@ -69,14 +68,25 @@
     visibility: visible;
 }
 
-.OrderItem-details {
+.OrderItem-detailsName {
     padding: 1vw 1vw;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: white;
     font-size: 1.25vw;
     text-align: left;
-    margin-left: 1.5vw;
-    margin-right: 1.5vw;
+    left: 0.5vw;
+    position: relative;
+    max-width: 2vw;
+}
+
+.OrderItem-detailsPrice {
+    padding: 1vw 1vw;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: white;
+    font-size: 1.25vw;
+    text-align: left;
+    left: 40vw;
+    position: absolute;
 }
 
 .OrderItem-quantity {
@@ -88,15 +98,28 @@
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     font-weight: bold;
-    margin-top: 0.5vw;
-    margin-right: 2vw;
+    left: 51.5vw;
+    position: absolute;
+    margin-top: 0.6vw;
+}
+
+.OrderItem-detailsValue {
+    padding: 1vw 1vw;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: white;
+    font-size: 1.25vw;
+    text-align: left;
+    left: 59vw;
+    position: absolute;
 }
 
 .delete-icon {
-    max-width: 3vw;
-    max-width: 3vw;
+    max-width: 1.5vw;
+    max-width: 1.5vw;
     margin-top: 1vw;
     visibility: hidden;
+    left: 66vw;
+    position: absolute;
 }
 
 .OrderItem-total {

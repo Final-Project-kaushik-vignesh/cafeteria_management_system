@@ -17,18 +17,18 @@
 
         <% @order_items.all.each do |order_item| %>
             <main class="OrderItem-list">
-                <p class="OrderItem-details">
+                <p class="OrderItem-detailsName">
                     <%= order_item.menu_item_name %>
                 </p>
-                <p class="OrderItem-details">
+                <p class="OrderItem-detailsPrice">
                     ₹.<%= order_item.menu_item_price %>
                 </p>
-                <p class="OrderItem-details">
+                <p >
                     <%= form_with(url: order_item_path(id: order_item.id), method: "put") do |form| %>
                         <%= form.number_field :quantity, value: "#{order_item.quantity}", onclick:"this.form.submit()", max:"10", min:"1", class: "OrderItem-quantity" %>
                     <% end %>
                 </p>
-                <p class="OrderItem-details">
+                <p class="OrderItem-detailsValue">
                     ₹.<%= order_item.item_value%>
                 </p>
                 <%= form_with(url: order_item_path(id: order_item.id), method: "delete", data: { confirm: 'Confirm: Remove from cart ??' }) do %>

@@ -1,4 +1,7 @@
 <body class="Signup">
+    <p>
+    <%= link_to image_tag("return.png", class:"Return-icon"), view_users_path %>
+    </p>
         <h2 class="NewUsers-title">Type in the changes to update: </h2>
         <section class="UsersNew">
             <%= form_with url: admin_path(id: @user.id), method: "put" do |form|%>
