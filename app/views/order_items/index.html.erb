@@ -1,10 +1,12 @@
-<body class="Order-Backdrop">
+<body class="Order-backdrop">
+    <p class="Form-flashMessage"><%= flash[:error] %></p>
+
     <section class="OrderItem">
         <div class="OrderItems-title">
             <section class="MenuItem-title" >
-                    <P class="MenuItem-page">Name</p>
-                    <P class="MenuItem-page">Item Price</p>
-                    <P class="OrderItem-title">Quantity</p>
+                    <P class="MenuItem-page">Name</p>|
+                    <P class="MenuItem-page">Item Price</p>|
+                    <P class="OrderItem-title">Quantity</p>|
                     <P class="OrderItem-total">Total</p>
             </section>
             <p>
@@ -39,14 +41,13 @@
         <% end %>
     </section>
     <p class="TotalPrice">
-    Total Price: ₹. <%= Order.find_by(id: @current_order_id).total_price%>
+        Total Price: ₹. <%= Order.find_by(id: @current_order_id).total_price%>
     </p>
     <section class="Order">
         <br>
         <%= link_to :"Add More", menu_items_path, class: "ModifyOrder" %>
         <br>
         <%= link_to :"Proceed to complete order", complete_order_path, class: "CompleteOrder" %>
-        <p class="Form-flashMessage"><%= flash[:error] %></p>
     </section>
 </body>
 

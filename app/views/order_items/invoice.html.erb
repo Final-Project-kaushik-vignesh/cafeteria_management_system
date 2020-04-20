@@ -24,16 +24,16 @@
             </div>
             <hr>
             <div class="Invoice-div-title">
-                <p>Item Name</p>
-                <p>Quantity</p>
+                <p>Item Name</p>|
+                <p>Quantity</p>|
                 <p>Item Price</p>          
             </div>
             <hr>
             <% @order_items.all.each do |order_item| %>
                 <section class="Invoice-section">
-                    <p><%= order_item.menu_item_name %></p>
+                    <p class="Invoice-sectionName"><%= order_item.menu_item_name %></p>
                     <p class="Invoice-quantity"><%= order_item.quantity %></p>
-                    <p>₹ <%= order_item.menu_item_price.to_i %></p>
+                    <p class="Invoice-sectionPrice">₹ <%= order_item.menu_item_price.to_i %></p>
                 </section>
             <% end %>
             <hr>
