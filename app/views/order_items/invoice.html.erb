@@ -3,27 +3,22 @@
     <% user = User.all.find_by(id: order.user_id) %>
     <body class="Invoice-body">
         <p>
-        <%= link_to image_tag("return.png", class:"Return-icon"), orders_path %>
+            <%= link_to image_tag("return.png", class:"Return-icon"), orders_path %>
         </p>
         <h1 class="InvoiceTitle">Invoice No: <%= @id %> </h1>
 
        <main class="Invoice-main">
 
-            <div class="Invoice-div">
+            <div class="Invoice-division">
                 <p>User ID: <%= user.role == "clerk" ? "Walk-In Customer" : order.user_id%></p>
                 <p>Order ID: <%= @id%></p>
             </div>
             <div class="Invoice-div">
                 <p>User Name: <%= user.first_name %></p>
                 <p>Order Date: <%= order.date%></p>
-                <% if order.delivered_at == nil%>
-
-                <% else %>
-                    <p>Delivered On:<%= order.delivered_at.to_s(:short) %></p>
-                <% end %>
             </div>
             <hr>
-            <div class="Invoice-div-title">
+            <div class="Invoice-divisionTitle">
                 <p>Item Name</p>|
                 <p>Quantity</p>|
                 <p>Item Price</p>          
@@ -37,7 +32,14 @@
                 </section>
             <% end %>
             <hr>
-            <p class="Invoice-total">Total: ₹ <%= order.total_price.to_f%></p>
+            <section class="Invoice-deliveryTotal">
+                <% if order.delivered_at != nil %>
+                    <p class="Invoice-delivered">Delivered on: (<%= order.delivered_at.to_s(:short) %>)</p>
+                <% else %>
+                    <p class="Invoice-notDelivered">Not Delivered Yet</p>
+                <% end %>
+                <p class="Invoice-total">Total: ₹ <%= order.total_price.to_f%></p>
+            </section>
         </main>
 
     </body>
