@@ -5,81 +5,98 @@
 }
 
 .MenuItem-display {
-    align-items: center;
     background-color: rgb(51, 51, 51);
-    height: max-content;
+    border: solid white;
+    border-radius: 2vw;
+    border-width: 0.05vw;
     opacity: 90%;
     max-width: 50vw;
     padding: 0.5vw;
     margin: auto;
-    justify-content: space-between;
-    justify-self: center;
+    justify-content: space-evenly;
 }
 
 .MenuItem-userList {
-    align-items: center;
     background-color: rgb(0, 0, 0);
     border-radius: 2vw;
     opacity: 90%;
-    margin-bottom: 1.5vw;
-    max-width: 75vw;
-    justify-content: space-between;
+    margin-bottom: 0.5vw;
+    padding: 0.5vw;
+    align-items: center;
 }
 
 .MenuItem-userSection {
     display: flex;
-    max-width: 75vw;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1vw;
 }
 
 .MenuItem-userList:hover {
-    background-color: rgb(103, 71, 155);
+    background-color: rgb(45, 18, 90);
 }
 
 .MenuItem-detailsName {
-    padding: 1vw 1vw;
+    padding: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
     font-size: 1.25vw;
-    text-align: left;
     max-height: max-content;
     left: 2vw;
     position: relative;
 }
 
+.MenuItem-detailsPrice {
+    padding: 1vw;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 1.25vw;
+    max-width: 5vw;
+    left: 45vw;
+    position: absolute;
+}
+
 .MenuItem-price {
-    max-width: max-content;
+    max-width: 5vw;
     border-radius: 1vw;
     padding: 0.5vw;
     font-size: 0.75vw;
 }
 
-.MenuItem-addIcon {
-    width: 1vw;
-    height: 1vw;
-    margin-left: 0.5vw;
-    align-items: baseline;
-    border: coral;
-}
-
 .MenuItem-quantity {
-    max-width: 2vw;
-    padding: 0.5vw;
-    margin-left: 0vw;
-    align-items: center;
+    margin-top: 0.9vw;
+    max-width: 3vw;
     border-radius: 0.5vw;
-    border: 0;
-    text-align: center;
-    background-color: rgb(0, 0, 0);
+    border-width: 0.1vw;
+    background-color: rgb(14, 12, 12);
     color: white;
+    text-align: center;
     font-weight: bold;
+    left: 68vw;
+    position: absolute;
 }
 
 .MenuItem-quantity:hover {
     background-color: white;
     color: black;
+}
+
+.MenuItem-addIcon {
+    width: 1vw;
+    height: 1vw;
+    left: 72vw;
+    margin-top: 0.9vw;
+    border: solid white;
+    border-radius: 0.2vw;
+    border-width: 0.05vw;
+    position: absolute;
+    padding: 0.2vw;
+    visibility: hidden;
+}
+
+.MenuItem-addIcon:hover {
+    transform: scale(1.2);
+}
+
+.MenuItem-userList:hover .MenuItem-addIcon {
+    visibility: visible;
 }
 
 .MenuItem-description {
@@ -91,6 +108,7 @@
     display: none;
     text-align: center;
     font-weight: bold;
+    font-style: italic;
 }
 
 .MenuItem-userList:hover .MenuItem-description {
