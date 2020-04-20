@@ -1,15 +1,16 @@
-<% orders.each do |order| %>
-    <section class="Order-section">
-        <div class="Order-div">
-            <%= order.date.to_s(:short)%>
+<section class="Order-section">
+    <hr>
+    <% orders.each do |order| %>
+        <div class="Order-division">
+            <p class= "Order-details" ><%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %></p>
+            <p class= "Order-detailsDate" ><%= order.date.to_s(:long)%></p>
             <% if order.delivered_at == nil %>
-                <p>Not Delivered</p>
+                <p class="OrderDetails-notDelivered">Not Delivered</p>
             <% else %>
-                <p>Delivered</p>
-                <p><%= order.delivered_at.to_s(:short)%></p>
-            <%end%>
+                <p class="OrderDetails-delivered">Delivered</p>
+                <p class="OrderDetails-deliveredAt"><%= order.delivered_at.to_s(:short)%></p>
+            <%end%>   
         </div>
-    
-    <p class= "Order-details" ><%= link_to :"Click Here to View Order Details", view_invoice_path(id: order.id), class: "Order-details-tag" %></p>
-    </section>
-<% end %>
+        <hr>
+    <% end %> 
+ </section>

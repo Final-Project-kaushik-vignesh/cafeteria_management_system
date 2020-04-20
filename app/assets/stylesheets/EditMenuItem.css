@@ -92,7 +92,7 @@
 
 .EditMenuItem-display {
     display: flex;
-    padding: 1.5vw;
+    padding: 1vw;
 }
 
 .EditMenuItem-name {
@@ -102,7 +102,7 @@
 }
 
 .EditMenuItem-divider {
-    left: 46vw;
+    left: 44.5vw;
     position: absolute;
 }
 
@@ -113,16 +113,14 @@
 }
 
 .EditMenuItem-price {
-    max-width: 3vw;
+    max-width: 4vw;
     text-align: center;
-    padding: 0.5vw;
     border-radius: 0.25vw;
-    border: 0 solid black;
+    border: solid black;
     border-width: 0.2vw;
     color: black;
     left: 56vw;
     position: absolute;
-    align-self: center;
 }
 
 .EditMenuItem-division:hover .Edi-MenuItem-price {
@@ -144,8 +142,10 @@
     display: none;
     font-weight: bold;
     text-align: center;
+    margin: 1vw;
     padding: 0.75vw;
     font-style: italic;
+    background-color: rgb(63, 87, 226);
 }
 
 .EditMenuItem-division:hover .EditMenuItem-description {

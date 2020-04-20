@@ -10,11 +10,11 @@
        <main class="Invoice-main">
 
             <div class="Invoice-division">
-                <p>User ID: <%= user.role == "clerk" ? "Walk-In Customer" : order.user_id%></p>
+                <p>User ID: <%= user.role == "clerk" ? "#{order.user_id}(Clerk)" : order.user_id%></p>
                 <p>Order ID: <%= @id%></p>
             </div>
             <div class="Invoice-div">
-                <p>User Name: <%= user.first_name %></p>
+                <p>User Name: <%= user.role == "clerk" ? "Walk-In Customer" : user.first_name %></p>
                 <p>Order Date: <%= order.date%></p>
             </div>
             <hr>

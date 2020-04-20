@@ -23,14 +23,26 @@
 .Order-main {
     max-width: 50vw;
     margin: 4.4vw auto;
-    background-color: rgb(5, 110, 114);
+    background-color: rgb(180, 225, 226);
     padding: 1vw;
     opacity: 85%;
-    color: white;
+    color: rgb(5, 5, 5);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 2vw;
+}
+
+.Order-title {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5vw;
+    font-size: 1.5vw;
+    background-color: rgb(88, 231, 227);
+    color: black;
+    border-radius: 0.5vw;
+    font-weight: bold;
+    margin-bottom: 1vw;
 }
 
 .OrderHistory-Maintitle {
@@ -42,57 +54,126 @@
 
 .OrderHistory-title {
     font-size: 1.5vw;
-    padding: 1vw;
-    text-decoration: underline;
+    padding: 0.5vw;
     font-weight: bold;
+    border: solid black;
+    border-radius: 1vw;
+    margin: 0.2vw;
+    text-align: center;
 }
 
 .Order-section {
-    justify-content: space-between;
-    padding: 0.5vw;
-    background-color: rgb(143, 69, 69);
-    margin: 0.5vw;
-    border-radius: 0.5vw;
+    background-color: rgb(86, 240, 227);
+    margin: 2vw auto;
+    padding: 1vw;
+    border-radius: 1vw;
 }
 
-.Order-section:hover {
-    background-color: cornflowerblue;
-}
-
-.Order-title {
+.Order-division {
     display: flex;
-    justify-content: space-between;
-    padding: 0.5vw;
-    font-size: 1.5vw;
-    background-color: rgb(130, 233, 228);
-    color: black;
-    border-radius: 0.5vw;
+    padding: 1vw;
     font-weight: bold;
-    margin-bottom: 1vw;
+    margin: 1vw auto;
+    align-items: center;
+    border-radius: 1vw;
+}
+
+.Order-division:hover {
+    background-color: rgb(235, 255, 51);
 }
 
 .Order-details {
-    display: none;
+    visibility: hidden;
+    left: 0;
+    position: relative;
+}
+
+.Order-division:hover .Order-details {
+    visibility: visible;
+}
+
+.Order-detailsDate {
+    left: 30vw;
+    position: absolute;
+}
+
+.OrderDetails-notDelivered {
+    border: solid rgb(184, 2, 2);
+    border-radius: 0.75vw;
+    padding: 0.2vw;
+    font-weight: bolder;
+    color: rgb(182, 0, 0);
+    left: 56vw;
+    position: absolute;
+}
+
+.OrderDetails-delivered {
+    border: solid green;
+    border-radius: 0.75vw;
+    padding: 0.2vw;
+    font-weight: bolder;
+    color: green;
+    left: 45vw;
+    position: absolute;
+}
+
+.OrderDetails-deliveredAt {
+    border: solid green;
+    border-radius: 0.75vw;
+    padding: 0.2vw;
+    font-weight: bolder;
+    color: green;
+    left: 60vw;
+    position: absolute;
 }
 
 .Order-details-tag {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+    width: 2vw;
+    height: 2vw;
 }
 
-.Order-section:hover .Order-details {
-    display: block;
+.OrderAdminDetails-id {
+    left: 36vw;
+    position: absolute;
 }
 
-.Order-div {
-    display: flex;
-    justify-content: space-around;
-    padding: 0.5vw;
-    font-weight: bold;
+.OrderAdminDetails-date {
+    left: 42vw;
+    position: absolute;
+}
+
+.OrderAdminDetails-customer {
+    left: 52vw;
+    position: absolute;
+    font-size: 1vw;
+    border: solid black;
+    border-radius: 0.75vw;
+    padding: 0.2vw;
+    border-width: 0.1vw;
+}
+
+.OrderAdminDetails-notDelivered {
+    border: solid rgb(184, 2, 2);
+    border-radius: 0.75vw;
+    padding: 0.2vw;
+    font-weight: bolder;
+    color: rgb(182, 0, 0);
+    left: 63vw;
+    position: absolute;
+}
+
+.OrderAdminDetails-delivered {
+    border: solid green;
+    border-radius: 0.75vw;
+    padding: 0.2vw;
+    font-weight: bolder;
+    color: green;
+    left: 63vw;
+    position: absolute;
 }
 
 .container {
+    left: 0.5vw;
     display: block;
     position: relative;
     padding-left: 1.5vw;
@@ -121,6 +202,10 @@
     width: 1.1vw;
     border-radius: 0.3vw;
     background-color: #eee;
+}
+
+.Order-division:hover input~.checkmark {
+    background-color: rgb(236, 150, 211);
 }
 
 .container:hover input~.checkmark {
