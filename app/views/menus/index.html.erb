@@ -1,6 +1,10 @@
  <body class="AddMenu-body">
     <p>
-    <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
+        <% if Menu.all.find_by(active_menu: true) != nil%>
+            <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
+        <% else %>
+            <%= link_to image_tag("return.png", class:"Return-icon"), menus_path, onclick: 'alert("No Menu is currently active !!")'%>
+        <% end %>
     </p>
     <section class="Add-menu">
         <%= form_with(url: "/menus" , method: "post") do |menu|%>
@@ -9,5 +13,6 @@
         <% end %>
         <h3 class="Menu-listTitle">Available Menu</h3><hr class="line">
         <%= render partial: "menu-section"%>
+
     </section>
 </body>

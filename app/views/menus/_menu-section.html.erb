@@ -10,9 +10,12 @@
                     
                     <p><%= menu.name %></p>
                     <%= form_with(url: "/menus/#{menu.id}", method: "delete", data: { confirm: '!! Please confirm deletion of this menu: Are you sure? !!' }) do %>
-                        <%= image_submit_tag("delete.png", options = {class: "MenuSection-icon"}) %>
+                        <%= image_submit_tag("delete.png", options = {class: "MenuSection-deleteIcon"}) %>
                     <% end%>
-                    <%= link_to image_tag("edit.png", class: "MenuSection-icon"), "/menus/#{menu.id}/edit"%>
+                    <%= link_to image_tag("edit.png", class: "MenuSection-editIcon"), "/menus/#{menu.id}/edit"%>
+                    <% if menu.active_menu %>
+                        <p class="ActiveMenuTag">Active Menu</p>
+                    <% end %>
                 </div>
             </li>
         </ul>
