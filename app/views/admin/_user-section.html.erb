@@ -1,16 +1,21 @@
-
+<section>
     <ul>
         <% User.all.where(role: role).each do |users|%>
             <li class="AdminUsers-list">
-                <%= users.first_name%>
-                <%= users.email%>
+                <section class="AdminUsers-section">
+                    <p><%= users.first_name%></p>
+                    <p><%= users.email%></p>
+                </section>
                 <% if role == "clerk"%>
-                    <%= form_with(url: admin_path(id: users.id), method: "delete", data: { confirm: 'Confirm: Remove User !! Are you sure?' }) do %>
-                        <%= image_submit_tag("delete.png") %>
-                    <% end%>
-                    <%= link_to image_tag("edit.png"), edit_admin_path(id: users.id), class: "AdminUsers-editIcon"%>
+                    <section class="AdminUsers-sectionIcon">
+                        <%= form_with(url: admin_path(id: users.id), method: "delete", data: { confirm: 'Confirm: Remove User !! Are you sure?' }) do %>
+                            <%= image_submit_tag("delete.png", class: "AdminUsers-editIcon") %>
+                        <% end%>
+                        <%= link_to image_tag("edit.png", class: "AdminUsers-editIcon"), edit_admin_path(id: users.id)%>
+                    </section>
                 <% end %>
             </li>
         <% end %>
     </ul>
+</section>
     
