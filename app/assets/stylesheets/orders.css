@@ -61,7 +61,7 @@
 
 .Order-title {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0.5vw;
     font-size: 1.5vw;
     background-color: rgb(130, 233, 228);
@@ -86,6 +86,7 @@
 
 .Order-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0.5vw;
+    font-weight: bold;
 }

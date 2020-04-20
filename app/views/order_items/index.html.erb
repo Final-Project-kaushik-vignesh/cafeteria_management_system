@@ -8,9 +8,9 @@
                     <P class="OrderItem-total">Total</p>
             </section>
             <p>
-            <%= form_with(url: order_path(id: @current_order_id), method: "delete", data: { confirm: 'Are you sure you want to cancel the order?'}) do %>
-                <%= image_submit_tag("close.png", class:"Cancel-icon") %>
-            <% end %>
+                <%= form_with(url: order_path(id: @current_order_id), method: "delete", data: { confirm: 'Are you sure you want to cancel the order?'}) do %>
+                    <%= image_submit_tag("close.png", class:"Cancel-icon") %>
+                <% end %>
             </p>
         </div>
 

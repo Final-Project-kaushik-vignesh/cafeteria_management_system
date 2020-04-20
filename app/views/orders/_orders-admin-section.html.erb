@@ -7,12 +7,9 @@
                     order.delivered_at ? true : false,
                     onclick: "this.form.submit()", ) %>
             <% end %>
-
-
-
+            <p><%= order.id%></p>
             <p><%= order.date%></p>
             <p><%= order.role_of == "clerk" ? "Walk-In Customer" : "Online Customer"%></p>
-
             <% if order.delivered_at == nil %>
                     <p>Not Delivered</p>
             <% else %>
