@@ -38,15 +38,15 @@
     background-color: rgb(103, 71, 155);
 }
 
-.MenuItem-details {
+.MenuItem-detailsName {
     padding: 1vw 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
     font-size: 1.25vw;
-    margin-left: 0.5vw;
-    margin-right: 1.5vw;
     text-align: left;
     max-height: max-content;
+    left: 2vw;
+    position: relative;
 }
 
 .MenuItem-price {

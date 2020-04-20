@@ -1,4 +1,4 @@
-<body class="Edit-MenuItem">
+<body class="EditMenuItem">
     <p>
     <%= link_to image_tag("return.png", class:"Return-icon"), menus_path %>
     </p>
@@ -7,8 +7,8 @@
         <hr>
         <section class="EditMenuItem-section">
             <%= form_with(url: new_item_path, method: "post", class:"EditMenuItem-section") do |menu_item| %>
-                <p><%= menu_item.text_field :name, placeholder: "Item Name" ,class: "InputMenuItem-details" , required: true%></p>
-                <p><%= menu_item.number_field :price, placeholder: "Item Price" ,class: "InputMenuItem-details" , required: true%></p>
+                <p><%= menu_item.text_field :name, placeholder: "Item Name" ,class: "InputMenuItem-detailsName" , required: true%></p>
+                <p><%= menu_item.number_field :price, placeholder: "Item Price" ,class: "InputMenuItem-detailsPrice" , required: true%></p>
                 <p><%= menu_item.text_area :description, placeholder: "Item description" ,class: "InputMenuItem-description" , required: true%></p>
                 <p><%= menu_item.submit :"Add", class: "InputMenutItem-submit" %></p>
             <% end %>
@@ -21,14 +21,15 @@
          </section>
          <hr>
         <% MenuItem.all.where(menu_id: @current_menu_id).each do |menu_items|%>
-            <div class="EditMenuItem-div">
-                <section class="Edit-MenuItem-display">
-                    <p class="Edit-MenuItem-details">
+            <div class="EditMenuItem-division">
+                <section class="EditMenuItem-display">
+                    <p class="EditMenuItem-name">
                         <%= menu_items.name%>
-                    </p>       
-                    <p class="Edit-MenuItem-display"> 
+                    </p>
+                    <p class="EditMenuItem-divider">|</p>
+                    <p  class="EditMenuItem-displayPrice" > ₹.
                         <%= form_with(url: update_item_path(id: menu_items.id) , method: "put") do |menu_item| %>
-                           ₹.  <%= menu_item.number_field :price, value: "#{menu_items.price}" ,class: "Edit-MenuItem-price" , required: true, onenter: "this.form.submit()"%> 
+                            <%= menu_item.number_field :price, value: "#{menu_items.price}" ,class: "EditMenuItem-price" , required: true, onenter: "this.form.submit()"%> 
                         <% end %>
 
                         <%= form_with(url: delete_item_path(id: menu_items.id), method: "delete" ,data: { confirm: '!! Are you sure to remove this Menu Item ? !!' }) do  %>
@@ -36,8 +37,8 @@
                         <% end%>
                     </p>
                 </section>
-                <p class="Edit-MenuItem-description">
-                         <%= menu_items.description%>
+                <p class="EditMenuItem-description">
+                    " <%= menu_items.description%> "
                 </p>
             </div>
         <% end %>
