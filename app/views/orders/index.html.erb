@@ -1,4 +1,7 @@
 <body class= "Orders">
+    <p>
+    <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
+    </p>
     <% if @current_user.role != "owner" %>
             <%= form_with(url: orders_path, method: "post") do %>
                 <%= submit_tag :"Place a new order", class: "Order-button" %>
@@ -7,10 +10,17 @@
     <main class="Order-main">
         <p class="OrderHistory-Maintitle">Order History</p>
         <% if @current_user.role != "customer" %>
+            <section class="Order-title">
+                <p>Completed</p>
+                <p>Order Date</p>
+                <p>User Name</p>
+                <p>Delivery Status</p>
+            </section>
             <%= render partial: "orders-admin-section", locals: {
                 orders: @orders,
             }%>
         <% else %>
+            <p class="Form-flashMessage"><%= flash[:alert] %></p>
             <p class="OrderHistory-title">Not delivered</p>
             <section class="Order-title">
                 <p>Order Date</p>

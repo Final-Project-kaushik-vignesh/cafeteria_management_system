@@ -1,6 +1,38 @@
-<% @order_items.all.each do |order_item| %>
-    <br>
-    <%= order_item.menu_item_name %>
-    <%= order_item.menu_item_price %>
-    <%= order_item.quantity %>
-<% end %>
+<body class="Invoice-body">
+    <p>
+    <%= link_to image_tag("return.png", class:"Return-icon"), orders_path %>
+    </p>
+   <main class="Invoice-main">
+       
+        <%order=Order.all.find_by(id: @id)%>
+        <div class="Invoice-div">
+            <p>Order ID:<%= @id%></p>
+            <p>User ID:<%= User.all.find_by(id: order.user_id).role == "clerk" ? "Walk-In Customer" : order.user_id%></p>
+        </div>
+         <div class="Invoice-div">
+            <p>Order Date:<%= order.date%></p>
+            <% if order.delivered_at == nil%>
+                
+            <% else %>
+                <p>Delivered On:<%= order.delivered_at.to_s(:short) %></p>
+            <% end %>
+        </div>
+        <hr>
+        <div class="Invoice-div-title">
+            <p>Item Name</p>
+            <p>Quantity</p>
+            <p>Item Price</p>          
+        </div>
+        <hr>
+        <% @order_items.all.each do |order_item| %>
+            <section class="Invoice-section">
+                <p><%= order_item.menu_item_name %></p>
+                <p class="Invoice-quantity"><%= order_item.quantity %></p>
+                <p>₹ <%= order_item.menu_item_price.to_i %></p>
+            </section>
+        <% end %>
+        <hr>
+        <p class="Invoice-total">Total: ₹ <%= order.total_price.to_f%></p>
+    </main>
+    
+</body>

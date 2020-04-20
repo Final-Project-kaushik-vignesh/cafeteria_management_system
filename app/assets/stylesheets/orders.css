@@ -9,24 +9,25 @@
     background-color: rgb(38, 141, 38);
     max-width: max-content;
     font-size: 1.5vw;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     border: 0;
     padding: 0.5vw;
     color: white;
     border-radius: 0.5vw;
     margin: 2vw;
-    left: 36vw;
+    left: 25vw;
     position: absolute;
+    top: 5vw;
 }
 
 .Order-main {
-    max-width: 25vw;
-    margin: 7vw auto;
+    max-width: 50vw;
+    margin: 4.4vw auto;
     background-color: rgb(5, 110, 114);
     padding: 1vw;
     opacity: 85%;
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 2vw;
@@ -62,11 +63,11 @@
     display: flex;
     justify-content: space-between;
     padding: 0.5vw;
-    font-size: 1.15vw;
+    font-size: 1.5vw;
     background-color: rgb(130, 233, 228);
-    text-decoration: underline;
     color: black;
     border-radius: 0.5vw;
+    font-weight: bold;
 }
 
 .Order-details {

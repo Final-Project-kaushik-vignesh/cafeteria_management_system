@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
     else
       session[:current_order_id] = nil
       @current_order_id = nil
+      flash[:alert] = "Order placed Successfully !!"
       redirect_to orders_path
     end
   end

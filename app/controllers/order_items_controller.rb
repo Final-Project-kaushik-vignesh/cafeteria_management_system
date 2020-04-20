@@ -48,12 +48,12 @@ class OrderItemsController < ApplicationController
   end
 
   def view
-    id = params[:id]
-    order = Order.all.where(user_id: @current_user).find_by(id: id)
-    if order == nil
+    @id = params[:id]
+    order = Order.all.where(user_id: @current_user.id).find_by(id: @id)
+    if order == nil && @current_user.role == "customer"
       redirect_to orders_path
     else
-      @order_items = OrderItem.all.where(order_id: id)
+      @order_items = OrderItem.all.where(order_id: @id)
       render "invoice"
     end
   end

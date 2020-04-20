@@ -3,7 +3,7 @@
         <div class="Order-div">
             <%= order.date.to_s(:short)%>
             <% if order.delivered_at == nil %>
-                <p>Not Delivered yet</p>
+                <p>Not Delivered</p>
             <% else %>
                 <p>Delivered</p>
                 <p><%= order.delivered_at.to_s(:short)%></p>
@@ -12,6 +12,4 @@
     
     <p class= "Order-details" ><%= link_to :"Click Here to View Order Details", view_invoice_path(id: order.id), class: "Order-details-tag" %></p>
     </section>
-    
-
 <% end %>
