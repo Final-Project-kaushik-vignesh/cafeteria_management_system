@@ -1,6 +1,6 @@
 <section class="Order-section">
     <hr>
-    <% orders.all.each do |order| %>
+    <% orders.all.order(:id).each do |order| %>
         <div class="Order-division">
             <p class= "Order-details" ><%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %></p>
             <%= form_with(url: order_path(id: order.id), method: "put") do %>
@@ -15,7 +15,7 @@
             <% end %>
             <p class="OrderAdminDetails-id"> <%= order.id%> </p>
             <p class="OrderAdminDetails-date"> <%= order.date%> </p>
-            <p class="OrderAdminDetails-customer"><%= order.role_of == "clerk" ? "Walk-In Customer" : "Online Customer"%></p>
+            <p class="OrderAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online Customer"%></p>
             <% if order.delivered_at == nil %>
                     <p class="OrderAdminDetails-notDelivered">Not Delivered</p>
             <% else %>

@@ -8,14 +8,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create!(
+    user = User.new(
       first_name: params[:first_name].capitalize,
       last_name: params[:last_name].capitalize,
       email: params[:email],
       password: params[:password],
       role: "customer",
     )
-    session[:current_user_id] = user.id
-    redirect_to "/"
+    if user.valid?
+      user.save
+      session[:current_user_id] = user.id
+      redirect_to "/"
+    else
+      redirect_to new_user_path
+      flash[:errors] = user.errors
+    end
   end
 end

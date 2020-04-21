@@ -6,14 +6,20 @@ class AdminController < ApplicationController
   end
 
   def create
-    user = User.create!(
+    user = User.new(
       first_name: params[:first_name].capitalize,
       last_name: params[:last_name].capitalize,
       email: params[:email],
       password: params[:password],
       role: "clerk",
     )
-    redirect_to view_users_path
+    if user.valid?
+      user.save
+      redirect_to view_users_path
+    else
+      redirect_to new_admin_path
+      flash[:errors] = user.errors
+    end
   end
 
   def edit
@@ -29,14 +35,17 @@ class AdminController < ApplicationController
   def update
     id = params[:id]
     user = User.find_by(id: id)
-    user.update(
-      first_name: params[:first_name].capitalize,
-      last_name: params[:last_name].capitalize,
-      email: params[:email],
-      password: params[:password],
-      role: "clerk",
-    )
-    redirect_to view_users_path
+    user.first_name = params[:first_name].capitalize
+    user.last_name = params[:last_name].capitalize
+    user.email = params[:email]
+    user.password = params[:password]
+    if user.valid?
+      user.save
+      redirect_to view_users_path
+    else
+      redirect_to edit_admin_path
+      flash[:errors] = user.errors
+    end
   end
 
   def destroy

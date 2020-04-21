@@ -2,6 +2,7 @@
     background-image: url(checkout.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .OrderItem {

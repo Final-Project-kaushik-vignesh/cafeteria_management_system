@@ -1,6 +1,6 @@
 <section class="Order-section">
     <hr>
-    <% orders.each do |order| %>
+    <% orders.order(:id).each do |order| %>
         <div class="Order-division">
             <p class= "Order-details" ><%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %></p>
             <p class= "Order-detailsDate" ><%= order.date.to_s(:long)%></p>

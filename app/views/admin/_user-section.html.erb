@@ -1,6 +1,6 @@
 <section>
     <ul>
-        <% User.all.where(role: role).each do |users|%>
+        <% User.all.where(role: role).order(:first_name).each do |users|%>
             <li class="AdminUsers-list">
                 <section class="AdminUsers-section">
                     <p class="AdminUsers-sectionName"><%= users.first_name%></p>

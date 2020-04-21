@@ -1,8 +1,9 @@
 .Orders {
     background-image: url(orderbck.jpg);
-    background-size: cover;
     background-repeat: no-repeat;
     max-width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .Order-button {

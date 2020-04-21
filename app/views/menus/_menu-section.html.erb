@@ -1,5 +1,5 @@
 <section class="Menu-display">
-    <% Menu.all.each do |menu| %>
+    <% Menu.all.order(:name).each do |menu| %>
         <ul>
             <li>
                 <div class="Menu-listDetails">
