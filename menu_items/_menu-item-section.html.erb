@@ -1,0 +1,24 @@
+<section class="MenuItem-display">
+    <p class="Form-flashMessage"><%= flash[:notice ]%></p>
+    <% @menu_item.all.each do |menu_item| %>
+        <li class="MenuItem-userList">
+            <section class="MenuItem-userSection">
+                <p class="MenuItem-detailsName">
+                    <%= menu_item.name%>
+                </p>
+                <p class="MenuItem-detailsPrice">
+                    ₹. <%= menu_item.price%>
+                </p>
+                <%= form_with(url: order_items_path, method: "post") do |order_item| %>
+                    <%= hidden_field_tag :menu_item_id, "#{menu_item.id}" %>
+                    <%= order_item.number_field :quantity, value: "1", min: "1", class: "MenuItem-quantity" %>
+                    <%= image_submit_tag("add.png", class: "MenuItem-addIcon") %>
+                <% end %>
+            </section>
+            <p class="MenuItem-description">
+                " <%= menu_item.description %> "
+            </p>
+        </li>
+        
+    <% end %>
+</section>

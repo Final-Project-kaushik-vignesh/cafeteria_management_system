@@ -1,0 +1,17 @@
+ <body class="AddMenu-body">
+    <p>
+        <% if Menu.all.find_by(active_menu: true) != nil%>
+            <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
+        <% else %>
+            <%= link_to image_tag("return.png", class:"Return-icon"), menus_path, onclick: 'alert("No Menu is currently active !!")'%>
+        <% end %>
+    </p>
+    <section class="Add-menu">
+        <%= form_with(url: "/menus" , method: "post") do |menu|%>
+            <%= menu.text_field :name, placeholder: "Enter Menu Name", class: "Addmenu-field", required: true, autofocus: true %>
+            <%= menu.submit :Add, class:"AddMenu-submit"%>
+        <% end %>
+        <h3 class="Menu-listTitle">Available Menu</h3><hr class="line">
+        <%= render partial: "menu-section"%>
+    </section>
+</body>

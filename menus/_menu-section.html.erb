@@ -1,0 +1,21 @@
+<section class="Menu-display">
+    <% Menu.all.order(:name).each do |menu| %>
+        <ul>
+            <li>
+                <div class="Menu-listDetails">
+                    <%= form_with( url: "/menus/#{menu.id}", method: "put") do %>
+                        <%= radio_button_tag(:active_menu, nil, menu.active_menu ? true:false, onclick: "this.form.submit()", class: "Menulist-checkbox") %>
+                    <% end %>
+                    <p><%= menu.name %></p>
+                    <%= form_with(url: "/menus/#{menu.id}", method: "delete", data: { confirm: '!! Please confirm deletion of this menu: Are you sure? !!' }) do %>
+                        <%= image_submit_tag("delete.png", options = {class: "MenuSection-deleteIcon"}) %>
+                    <% end%>
+                    <%= link_to image_tag("edit.png", class: "MenuSection-editIcon"), "/menus/#{menu.id}/edit"%>
+                    <% if menu.active_menu %>
+                        <p class="ActiveMenuTag">Active Menu</p>
+                    <% end %>
+                </div>
+            </li>
+        </ul>
+    <% end %>
+</section
