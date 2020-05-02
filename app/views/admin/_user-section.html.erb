@@ -7,10 +7,10 @@
                     <p class="AdminUsers-sectionEmail"><%= users.email%></p>
                 
                     <% if role == "clerk"%>
-                            <%= form_with(url: admin_path(id: users.id), method: "delete", data: { confirm: 'Confirm: Remove User !! Are you sure?' }) do %>
-                                <%= image_submit_tag("delete.png", class: "AdminUsers-deleteIcon") %>
-                            <% end%>
-                            <%= link_to image_tag("edit.png", class: "AdminUsers-editIcon"), edit_admin_path(id: users.id)%>
+                        <%= form_with(url: admin_path(id: users.id), method: "delete", data: { confirm: 'Confirm: Remove User !! Are you sure?' }) do %>
+                            <%= image_submit_tag("delete.png", class: "AdminUsers-deleteIcon") %>
+                        <% end%>
+                        <%= link_to image_tag("edit.png", class: "AdminUsers-editIcon"), edit_admin_path(id: users.id)%>
                     <% end %>
                 </section>
             </li>
