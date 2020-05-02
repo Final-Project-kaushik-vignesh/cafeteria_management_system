@@ -1,0 +1,17 @@
+<body class="Menu">
+    <section >
+        <p>
+            <%= form_with(url: order_path(id: @current_order_id), method: "delete", data: { confirm: 'Are you sure you want to cancel the order?'}) do %>
+                <%= image_submit_tag("close.png", class:"Cancel-icon") %>
+            <% end %>
+        </p>
+        <p class="Menu-display">  
+            <section class="MenuItem-title" >
+                <P class="MenuItem-page">Name</p>|
+                <P class="MenuItem-page">Price</p>|
+                <P class="OrderItem-title">Quantity</p>
+            </section>
+            <%= render partial: "menu-item-section"%>                
+        </p>
+    </section>
+</body>

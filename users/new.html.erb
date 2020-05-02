@@ -1,0 +1,44 @@
+<body class="Signup">
+    <p>
+        <%= link_to image_tag("return.png", class:"Return-icon"), "/"%>
+    </p>
+    <h2 class="NewUsers-title">Welcome new user ! </h2>
+    <section class="UsersNew">     
+        <%= form_with url: users_path do |form|%>
+            <div class="Form-section">
+                <p> First name: </p>
+                <%= form.text_field :first_name, class: "Form-input", placeholder: "Enter First Name",  autofocus: true %>
+                <% flash.each do |type, errors| %>
+                    <div class="Form-flashMessage">
+                      <%= errors["first_name"].to_a.each { |message| message }.join %>
+                    </div>
+                <% end %>
+            </div>
+            <div class="Form-section">
+                <p> Last name: </p>
+                <%= form.text_field :last_name, class: "Form-input", placeholder: "Enter Last Name"%>
+            </div>
+            <div class="Form-section">
+                <p> Email: </p>
+                <%= form.email_field :email, class: "Form-input", placeholder: "Enter Email ID"%>
+                <% flash.each do |type, errors| %>
+                    <div class="Form-flashMessage">
+                        <%= errors["email"].to_a.each { |message| message }.join %>
+                    </div>
+                <% end %>    
+            </div>
+            <div class="Form-section">
+                <p> Password: </p>
+                <%= form.password_field :password, class: "Form-input", placeholder: "Enter Password" %>
+                <% flash.each do |type, errors| %>
+                    <div class="Form-flashMessage">
+                        <%= errors["password"].to_a.each { |message| message }.join %>
+                    </div>
+                <% end %>    
+            </div>
+            <div class="Form-section">
+                <%=form.submit :"Sign Up", class: "Form-submit"%>
+            </div>
+        <% end %>
+    </section>
+</body>
