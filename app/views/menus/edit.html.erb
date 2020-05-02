@@ -31,9 +31,8 @@
                         <%= form_with(url: update_item_path(id: menu_items.id) , method: "put") do |menu_item| %>
                             <%= menu_item.number_field :price, value: "#{menu_items.price}" ,class: "EditMenuItem-price" , required: true, onenter: "this.form.submit()"%> 
                         <% end %>
-
                         <%= form_with(url: delete_item_path(id: menu_items.id), method: "delete" ,data: { confirm: '!! Are you sure to remove this Menu Item ? !!' }) do  %>
-                                <%= image_submit_tag("delete1.png", class: "EditMenuItem-icon") %>
+                            <%= image_submit_tag("delete1.png", class: "EditMenuItem-icon") %>
                         <% end%>
                     </p>
                 </section>

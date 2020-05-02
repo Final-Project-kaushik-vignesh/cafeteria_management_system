@@ -4,10 +4,10 @@
     <section class="OrderItem">
         <div class="OrderItems-title">
             <section class="MenuItem-title" >
-                    <P class="MenuItem-page">Name</p>|
-                    <P class="MenuItem-page">Item Price</p>|
-                    <P class="OrderItem-title">Quantity</p>|
-                    <P class="OrderItem-total">Total</p>
+                <P class="MenuItem-page">Name</p>|
+                <P class="MenuItem-page">Item Price</p>|
+                <P class="OrderItem-title">Quantity</p>|
+                <P class="OrderItem-total">Total</p>
             </section>
             <p>
                 <%= form_with(url: order_path(id: @current_order_id), method: "delete", data: { confirm: 'Are you sure you want to cancel the order?'}) do %>
@@ -25,7 +25,7 @@
                 <p class="OrderItem-detailsPrice">
                     ₹.<%= order_item.menu_item_price %>
                 </p>
-                <p >
+                <p>
                     <%= form_with(url: order_item_path(id: order_item.id), method: "put") do |form| %>
                         <%= form.number_field :quantity, value: "#{order_item.quantity}", onclick:"this.form.submit()", max:"10", min:"1", class: "OrderItem-quantity" %>
                     <% end %>
@@ -36,7 +36,6 @@
                 <%= form_with(url: order_item_path(id: order_item.id), method: "delete", data: { confirm: 'Confirm: Remove from cart ??' }) do %>
                     <%= image_submit_tag("delete.png", class: "delete-icon") %>
                 <% end%>
-                </p>
             </main>
         <% end %>
     </section>

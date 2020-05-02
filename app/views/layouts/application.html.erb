@@ -10,7 +10,7 @@
   </head>
 
   <body>
-  <div class="Header-title">
+    <div class="Header-title">
       <%=image_tag 'logo.png', class: 'LogoImage'%>
       <h1 >Cafeteria Management System</h1>
       <% if @current_user %>
@@ -24,15 +24,13 @@
           <%= link_to "Sign-out", destroy_session_path, method: "delete", class:"Sign-button" %>
         </p>
       <% end %>
-  </div>
-    <%= yield %>
-    
-   <div style="bottom: 0px; position: fixed">
+    </div>
+    <%= yield %>   
+    <div style="bottom: 0px; position: fixed">
       <div class="Footer">
         <p class="Footer-content">Contact us</p>
         <p class="Footer-content">About us</p>
       </div>
     </div>
-
   </body>
 </html>

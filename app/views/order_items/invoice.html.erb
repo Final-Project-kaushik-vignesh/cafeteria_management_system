@@ -6,9 +6,7 @@
             <%= link_to image_tag("return.png", class:"Return-icon"), orders_path %>
         </p>
         <h1 class="InvoiceTitle">Invoice No: <%= @id %> </h1>
-
        <main class="Invoice-main">
-
             <div class="Invoice-division">
                 <p>User ID: <%= user.role != "customer" ? "#{order.user_id}(#{user.role.capitalize})" : order.user_id%></p>
                 <p>Order ID: <%= @id%></p>
@@ -41,6 +39,5 @@
                 <p class="Invoice-total">Total: ₹ <%= order.total_price.to_f%></p>
             </section>
         </main>
-
     </body>
 </html>
