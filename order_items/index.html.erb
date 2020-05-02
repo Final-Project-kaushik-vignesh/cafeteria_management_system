@@ -1,0 +1,52 @@
+<body class="Order-backdrop">
+    <p class="Form-flashMessage"><%= flash[:error] %></p>
+
+    <section class="OrderItem">
+        <div class="OrderItems-title">
+            <section class="MenuItem-title" >
+                <P class="MenuItem-page">Name</p>|
+                <P class="MenuItem-page">Item Price</p>|
+                <P class="OrderItem-title">Quantity</p>|
+                <P class="OrderItem-total">Total</p>
+            </section>
+            <p>
+                <%= form_with(url: order_path(id: @current_order_id), method: "delete", data: { confirm: 'Are you sure you want to cancel the order?'}) do %>
+                    <%= image_submit_tag("close.png", class:"Cancel-icon") %>
+                <% end %>
+            </p>
+        </div>
+
+
+        <% @order_items.all.each do |order_item| %>
+            <main class="OrderItem-list">
+                <p class="OrderItem-detailsName">
+                    <%= order_item.menu_item_name %>
+                </p>
+                <p class="OrderItem-detailsPrice">
+                    ₹.<%= order_item.menu_item_price %>
+                </p>
+                <p>
+                    <%= form_with(url: order_item_path(id: order_item.id), method: "put") do |form| %>
+                        <%= form.number_field :quantity, value: "#{order_item.quantity}", onclick:"this.form.submit()", max:"10", min:"1", class: "OrderItem-quantity" %>
+                    <% end %>
+                </p>
+                <p class="OrderItem-detailsValue">
+                    ₹.<%= order_item.item_value%>
+                </p>
+                <%= form_with(url: order_item_path(id: order_item.id), method: "delete", data: { confirm: 'Confirm: Remove from cart ??' }) do %>
+                    <%= image_submit_tag("delete.png", class: "delete-icon") %>
+                <% end%>
+            </main>
+        <% end %>
+    </section>
+    <p class="TotalPrice">
+        Total Price: ₹. <%= Order.find_by(id: @current_order_id).total_price%>
+    </p>
+    <section class="Order">
+        <br>
+        <%= link_to :"Add More", menu_items_path, class: "ModifyOrder" %>
+        <br>
+        <%= link_to :"Proceed to complete order", complete_order_path, class: "CompleteOrder" %>
+    </section>
+</body>
+

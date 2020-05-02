@@ -1,0 +1,27 @@
+<body class="AdminUsers">
+    <p>
+        <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
+    </p>
+    <main class="AdminUsers-main">
+        <section >
+            <h1 class="AdminUsers-title">CLERK</h1>
+            <section class="Users-title">
+                <p>User-name</p>|
+                <p>Email-ID</p>
+            </section>
+            <%= render partial: "user-section", locals:{
+                role: "clerk",
+            }%>
+            <%=link_to :"Add a new clerk", new_admin_path, class: "AddUser"%>
+
+            <h1 class="AdminUsers-title">CUSTOMER</h1>
+            <section class="Users-title">
+                <p>User-name</p>|
+                <p>Email-ID</p>
+            </section>
+            <%= render partial: "user-section", locals:{
+                role: "customer",
+            }%>
+        </section>
+    </main>
+</body>

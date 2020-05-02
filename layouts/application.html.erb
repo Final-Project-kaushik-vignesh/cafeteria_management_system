@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cafeteria Management System</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="Header-title">
+      <%=image_tag 'logo.png', class: 'LogoImage'%>
+      <h1 >Cafeteria Management System</h1>
+      <% if @current_user %>
+        <p class="User-details">
+          Hello <%= @current_user.first_name %> (._.)
+          <%if @current_order_id %>
+            <%= link_to image_tag("cart.png" , class: "Cart-icon"), order_items_path	 %>
+          <% else %>
+            <%= link_to image_tag("cart.png" , class: "Cart-icon"), orders_path,:onclick => 'alert("Empty Cart ! Place a new order")' %>
+          <% end %>
+          <%= link_to "Sign-out", destroy_session_path, method: "delete", class:"Sign-button" %>
+        </p>
+      <% end %>
+    </div>
+    <%= yield %>   
+    <div style="bottom: 0px; position: fixed">
+      <div class="Footer">
+        <p class="Footer-content">Contact us</p>
+        <p class="Footer-content">About us</p>
+      </div>
+    </div>
+  </body>
+</html>

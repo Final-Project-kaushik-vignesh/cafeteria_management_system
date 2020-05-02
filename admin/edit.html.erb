@@ -1,0 +1,38 @@
+<body class="Signup">
+    <p>
+    <%= link_to image_tag("return.png", class:"Return-icon"), view_users_path %>
+    </p>
+        <h2 class="NewUsers-title">Type in the changes to update: </h2>
+        <section class="UsersNew">
+            <%= form_with url: admin_path(id: @user.id), method: "put" do |form|%>
+                <div class="Form-section">
+                    <p> First name: </p>
+                    <%= form.text_field :first_name, class: "Form-input", value: "#{@user.first_name}", autofocus: true %>
+                    <% flash.each do |type, errors| %>
+                        <div class="Form-flashMessage">
+                          <%= errors["first_name"].to_a.each { |message| message }.join %>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="Form-section">
+                    <p> Last name: </p>
+                    <%= form.text_field :last_name, class: "Form-input",  value: "#{@user.last_name}"  %>
+                </div>
+                <div class="Form-section">
+                    <p> Email: </p>
+                    <%= form.email_field :email, class: "Form-input",  value: "#{@user.email}" %>
+                    <% flash.each do |type, errors| %>
+                        <div class="Form-flashMessage">
+                            <%= errors["email"].to_a.each { |message| message }.join %>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="Form-section">
+                    <p> Password: </p>
+                    <%= form.password_field :password, class: "Form-input", placeholder: "Enter New Password", required: true %>
+                </div>
+                <div class="Form-section">
+                    <%=form.submit :"Update and Change Password", class: "Form-submit"%>
+            <% end %>
+        </section>
+</body>
