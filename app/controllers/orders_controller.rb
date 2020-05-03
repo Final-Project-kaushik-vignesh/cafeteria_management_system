@@ -13,14 +13,19 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Order.create!(
-      date: Date.today,
-      user_id: current_user.id,
-      delivered_at: nil,
-      total_price: 0,
-    )
-    session[:current_order_id] = order.id
-    redirect_to menu_items_path
+    if Menu.all.find_by(active_menu: true)
+      order = Order.create!(
+        date: Date.today,
+        user_id: current_user.id,
+        delivered_at: nil,
+        total_price: 0,
+      )
+      session[:current_order_id] = order.id
+      redirect_to menu_items_path
+    else
+      flash[:error] = "No Active Menu. Contact Admin"
+      redirect_to orders_path
+    end
   end
 
   def complete
