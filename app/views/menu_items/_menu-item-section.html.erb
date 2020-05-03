@@ -9,7 +9,6 @@
                 <p class="MenuItem-detailsPrice">
                     ₹. <%= menu_item.price%>
                 </p>
-               
                 <%= form_with(url: order_items_path, method: "post") do |order_item| %>
                     <%= hidden_field_tag :menu_item_id, "#{menu_item.id}" %>
                     <%= order_item.number_field :quantity, value: "1", min: "1", class: "MenuItem-quantity" %>

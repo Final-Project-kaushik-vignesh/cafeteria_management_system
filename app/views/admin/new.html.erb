@@ -32,7 +32,7 @@
                 <%= form.password_field :password, class: "Form-input", placeholder: "Enter Password" %>
                 <% flash.each do |type, errors| %>
                     <div class="Form-flashMessage">
-                      <%= errors["password"].to_a.each { |message| message }.join %>
+                        <%= errors["password"].to_a.each { |message| message }.join %>
                     </div>
                 <% end %> 
             </div>
