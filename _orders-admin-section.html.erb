@@ -1,0 +1,30 @@
+<section class="Order-section">
+    <hr>
+    <% orders.all.order(:id).each do |order| %>
+        <div class="Order-division">
+            <p class= "Order-details" ><%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %></p>
+            <%= form_with(url: order_path(id: order.id), method: "put") do %>
+                <label class="container">
+                    <%= check_box_tag(:delivered_at,
+                        nil,
+                        order.delivered_at ? true : false,
+                        onclick: "this.form.submit()"
+                    )%>
+                    <span class="checkmark"></span>
+                </label>
+            <% end %>
+            <p class="OrderAdminDetails-id"> <%= order.id%> </p>
+            <p class="OrderAdminDetails-date"> <%= order.date%> </p>
+            <p class="OrderAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online Customer"%></p>
+            <% if order.delivered_at == nil %>
+                    <p class="OrderAdminDetails-notDelivered">Not Delivered</p>
+            <% else %>
+                    <p class="OrderAdminDetails-delivered"><%= order.delivered_at.to_s(:short)%></p>
+            <%end%>
+        </div>
+        <hr>
+    <% end %>    
+</section>
+    
+
+
