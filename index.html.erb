@@ -1,0 +1,48 @@
+<body class= "Orders">
+    <p>
+        <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
+    </p>
+    <%= form_with(url: orders_path, method: "post") do %>
+        <%= submit_tag :"Place a new order", class: "Order-button" %>
+    <% end %>
+    <p class="Form-flashMessage"><%= flash[:error] %></p>
+    <p class="Form-flashMessage"><%= flash[:alert] %></p>
+    <main class="Order-main">
+        <p class="OrderHistory-Maintitle">Order History</p>
+        <% if @current_user.role != "customer" %>
+            <section class="Order-title">
+                <p>Status</p>|
+                <p>Order Id</p>|
+                <p>Order Date</p>|
+                <p>User Status</p>|
+                <p>Delivery Status</p>
+            </section>
+            <p class="OrderHistory-title">Yet to be Delivered</p>
+            <%= render partial: "orders-admin-section", locals: {
+                orders: @orders.not_delivered,
+            }%>
+            <p class="OrderHistory-title">Previous Orders</p>
+            <%= render partial: "orders-admin-section", locals: {
+                orders: @orders.delivered,
+            }%>
+        <% else %>
+            <p class="OrderHistory-title">Yet to be Delivered</p>
+            <section class="Order-title">
+                <p>Order Date</p>|
+                <p>Delivery Status</p>
+            </section>
+            <%= render partial: "orders-customer-section", locals: {
+                orders: @orders.not_delivered,
+            }%>
+            <p class="OrderHistory-title">Previous Orders</p>
+            <section class="Order-title">
+                <p>Order Date</p>|
+                <p>Delivery Status</p>|
+                <p>Delivery Date</p>
+            </section>
+            <%= render partial: "orders-customer-section", locals: {
+                orders: @orders.delivered,
+            }%>
+        <% end %>
+    </main>
+</body>
