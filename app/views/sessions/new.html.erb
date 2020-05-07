@@ -7,7 +7,7 @@
         <%= form_with(url: sessions_path, class: "Login-form") do |form|%>
             <p><%= form.email_field :email, placeholder: "Enter your ID here", class:"Login-details", required: true %></p>
             <p><%= form.password_field :password, placeholder: "Enter your password here", class:"Login-details", required: true %></p>
-            <p class="Form-flashMessage"><%= flash[:error] %><p>
+            <p class="Form-flashMessageLogin"><%= flash[:error] %><p>
             <p>
                 <%= form.submit(:"Sign In", class: "Sign-button") %>
             </p>

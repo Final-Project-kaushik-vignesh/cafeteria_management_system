@@ -1,3 +1,18 @@
+<head>
+    <script type="text/javascript">
+        function handleWindowClose()
+            {
+              var evtobj=window.event? event : e
+              if((evtobj.clientX<0) || (evtobj.clientY<0))
+                {
+                  evtobj.returnValue = "If you have made any changes to the fields without clicking the Save button, your changes will be lost.";
+                }
+            }
+        window.onbeforeunload = handleWindowClose;
+    </script>
+    
+
+</head>
 <body class="Menu">
     <section >
         <p>
