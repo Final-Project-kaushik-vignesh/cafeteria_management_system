@@ -4,14 +4,23 @@
         <div class="Order-division">
             <p class= "Order-details" ><%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %></p>
             <%= form_with(url: order_path(id: order.id), method: "put") do %>
-                <label class="container">
-                    <%= check_box_tag(:delivered_at,
-                        nil,
-                        order.delivered_at ? true : false,
-                        onclick: "this.form.submit()"
-                    )%>
-                    <span class="checkmark"></span>
-                </label>
+                <div class="tooltip">
+                    <label class="container">
+                        <%= check_box_tag(:delivered_at,
+                            nil,
+                            order.delivered_at ? true : false,
+                            onclick: "this.form.submit()"
+                        )%>
+                        <span class="checkmark"></span>
+                    </label>
+                    <span class="tooltiptext">
+                        <% if order.delivered_at == nil%>               
+                            Mark as delivered ?
+                        <% else %>
+                            Do you want to mark it as Undelivered?
+                        <% end %>
+                    </span>
+                </div>
             <% end %>
             <p class="OrderAdminDetails-id"> <%= order.id%> </p>
             <p class="OrderAdminDetails-date"> <%= order.date%> </p>
