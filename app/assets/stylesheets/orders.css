@@ -246,7 +246,7 @@
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 10vw;
+    width: 6vw;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -266,7 +266,7 @@
     content: "";
     position: absolute;
     top: 100%;
-    left: 35%;
+    left: 50%;
     margin-left: -0.25vw;
     border-width: 0.25vw;
     border-style: solid;

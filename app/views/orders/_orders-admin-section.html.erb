@@ -2,7 +2,14 @@
     <hr>
     <% orders.all.order(:id).each do |order| %>
         <div class="Order-division">
-            <p class= "Order-details" ><%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %></p>
+            <div class="tooltip">
+                <p class= "Order-details">
+                    <%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %>   
+                </p>
+                <span class="tooltiptext">
+                    Click to view Order Invoice details
+                </span>
+            </div>    
             <%= form_with(url: order_path(id: order.id), method: "put") do %>
                 <div class="tooltip">
                     <label class="container">
@@ -15,9 +22,9 @@
                     </label>
                     <span class="tooltiptext">
                         <% if order.delivered_at == nil%>               
-                            Mark as delivered ?
+                            Mark as Delivered ?
                         <% else %>
-                            Do you want to mark it as Undelivered?
+                            Do you want to mark it as Not-delivered?
                         <% end %>
                     </span>
                 </div>
