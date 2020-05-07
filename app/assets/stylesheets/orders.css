@@ -242,7 +242,6 @@
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
@@ -252,7 +251,7 @@
     color: #fff;
     text-align: center;
     border-radius: 0.3vw;
-    padding: 0.25vw 0;
+    padding: 0.25vw 0.25vw;
     position: absolute;
     font-style: italic;
     z-index: 1;
@@ -267,7 +266,7 @@
     content: "";
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 35%;
     margin-left: -0.25vw;
     border-width: 0.25vw;
     border-style: solid;
