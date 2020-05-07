@@ -2,7 +2,14 @@
     <hr>
     <% orders.order(:id).each do |order| %>
         <div class="Order-division">
-            <p class= "Order-details" ><%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %></p>
+            <div class="tooltip">
+                <p class= "Order-details">
+                    <%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %>   
+                </p>
+                <span class="tooltiptext">
+                    Click to view Order Invoice details
+                </span>
+            </div>   
             <p class= "Order-detailsDate" ><%= order.date.to_s(:long)%></p>
             <% if order.delivered_at == nil %>
                 <p class="OrderDetails-notDelivered">Not Delivered</p>
