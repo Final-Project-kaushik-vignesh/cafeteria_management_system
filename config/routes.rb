@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   resources :admin
   get "/view", to: "admin#view", as: :view_users
   get "/invoice/:id", to: "order_items#view", as: :view_invoice
+  get "/update_user/:id", to: "update_user#index", as: :view_edit_user
+  patch "/update_user/:id", to: "update_user#update", as: :update_user
 end

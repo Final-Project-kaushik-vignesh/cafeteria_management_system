@@ -38,7 +38,6 @@ class AdminController < ApplicationController
     user.first_name = params[:first_name].capitalize
     user.last_name = params[:last_name].capitalize
     user.email = params[:email]
-    user.password = params[:password]
     if user.valid?
       user.save
       redirect_to view_users_path

@@ -1,10 +1,10 @@
 <body class="Signup">
     <p>
-    <%= link_to image_tag("return.png", class:"Return-icon"), view_users_path %>
+    <%= link_to image_tag("return.png", class:"Return-icon"), orders_path %>
     </p>
         <h2 class="NewUsers-title">Type in the changes to update: </h2>
         <section class="UsersNew">
-            <%= form_with url: admin_path(id: @user.id), method: "put" do |form|%>
+            <%= form_with url: update_user_path(id: @user.id), method: "patch" do |form|%>
                 <div class="Form-section">
                     <p> First name: </p>
                     <%= form.text_field :first_name, class: "Form-input", value: "#{@user.first_name}", autofocus: true %>
@@ -28,7 +28,12 @@
                     <% end %>
                 </div>
                 <div class="Form-section">
-                    <%=form.submit :"Save Changes", class: "Form-submit"%>
+                    <p> Password: </p>
+                    <p></p>
+                    <%= form.password_field :password, class: "Form-input", placeholder: "Enter New Password", required: true %>
+                </div>
+                <div class="Form-section">
+                    <%=form.submit :"Update and Save changes", class: "Form-submit"%>
             <% end %>
         </section>
 </body>

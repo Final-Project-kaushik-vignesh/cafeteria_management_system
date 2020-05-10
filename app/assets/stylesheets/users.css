@@ -54,7 +54,8 @@
     font-weight: bold;
     font-size: 0.75vw;
     padding: 1vw 1.2vw;
-    margin-left: 1vw;
+    position: relative;
+    left: 25%;
     border-radius: 1vw;
     border: 0;
 }
