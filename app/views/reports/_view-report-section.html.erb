@@ -17,9 +17,10 @@
         </div>
         <hr>
     <% end %> 
-    <p>Total Price: <%= orders.sum(:total_price) %></p>   
-    <p>Total Orders: <%= orders.count %></p>   
-
+    <p>
+        Total Price: <%= orders.sum(:total_price) %> 
+        Total Orders: <%= orders.count %>
+    </p>   
 </section>
     
 
