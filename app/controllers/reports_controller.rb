@@ -12,7 +12,6 @@ class ReportsController < ApplicationController
       total_sales: Order.sort(params[:start_date].to_date, params[:end_date].to_date).sum(:total_price),
       total_orders: Order.sort(params[:start_date].to_date, params[:end_date].to_date).count,
     )
-    @report = Order.sort(report.start_date.to_date, report.end_date.to_date).where.not(delivered_at: nil)
     redirect_to reports_path
   end
 
@@ -29,5 +28,16 @@ class ReportsController < ApplicationController
 
   def destroy
     Report.destroy_all
+  end
+
+  def view
+    @id = params[:id]
+    order = Order.all.where(user_id: @current_user.id).find_by(id: @id)
+    if order == nil && @current_user.role == "customer"
+      redirect_to reports_path
+    else
+      @order_items = OrderItem.all.where(order_id: @id)
+      render "report-invoice"
+    end
   end
 end

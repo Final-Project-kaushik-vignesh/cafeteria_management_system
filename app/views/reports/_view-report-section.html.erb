@@ -4,7 +4,7 @@
         <div class="Order-division">
             <div class="tooltip">
                 <p class= "Order-details">
-                    <%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %>   
+                    <%= link_to image_tag("info.png", class: "Order-details-tag"),  view_report_invoice_path(id: order.id) %>   
                 </p>
                 <span class="tooltiptext">
                     Click to view Order Invoice details
@@ -13,14 +13,13 @@
             <p class="OrderAdminDetails-id"> <%= order.id%> </p>
             <p class="OrderAdminDetails-date"> <%= order.date%> </p>
             <p class="OrderAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online Customer"%></p>
-            <% if order.delivered_at == nil %>
-                    <p class="OrderAdminDetails-notDelivered">Not Delivered</p>
-            <% else %>
-                    <p class="OrderAdminDetails-delivered"><%= order.delivered_at.to_s(:short)%></p>
-            <%end%>
+            <p class="OrderAdminDetails-delivered"><%= order.delivered_at.to_s(:short)%></p>
         </div>
         <hr>
-    <% end %>    
+    <% end %> 
+    <p>Total Price: <%= orders.sum(:total_price) %></p>   
+    <p>Total Orders: <%= orders.count %></p>   
+
 </section>
     
 

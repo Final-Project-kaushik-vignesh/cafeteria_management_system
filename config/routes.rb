@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
-  resources :reports
   get "/", to: "home#index"
   resources :menus
   resources :menu_items
@@ -19,4 +18,6 @@ Rails.application.routes.draw do
   get "/invoice/:id", to: "order_items#view", as: :view_invoice
   get "/update_user/:id", to: "update_user#index", as: :view_edit_user
   patch "/update_user/:id", to: "update_user#update", as: :update_user
+  resources :reports
+  get "/report-invoice/:id", to: "reports#view", as: :view_report_invoice
 end
