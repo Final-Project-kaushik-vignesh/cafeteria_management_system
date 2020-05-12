@@ -14,9 +14,11 @@ class Order < ApplicationRecord
   def self.delivered
     all.where.not(delivered_at: nil)
   end
+
   def self.not_delivered
     all.where(delivered_at: nil)
   end
+
   def self.sort(start_date, end_date)
     Order.all.where("date BETWEEN ? AND ?", start_date, end_date)
   end
