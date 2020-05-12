@@ -32,7 +32,7 @@
             <% end %>
         </p>
         <%= render partial: "view-report-section",locals:{
-            orders: Order.all.sort().where.not(delivered_at: nil),
+            orders: @report,
         }
         %>
 
