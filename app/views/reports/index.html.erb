@@ -1,0 +1,43 @@
+<body class= "Report-body">
+    <h1 class="Report-title">Sales Report</h1>
+    <% if Report.count == 0%>
+        <p>
+            <%= form_with(url: reports_path, method: "post") do %>
+                <div class="Report-sort">
+                    <label>Start Date:</label>
+                    <%= date_field(nil, :start_date, class: "Date-input",) %>
+                    <label>End Date:</label>
+                    <%= date_field(nil,:end_date,class: "Date-input", max: Date.today, min: ":start_date") %>
+                    <%= submit_tag :"Generate Report", class: "Sort-submit" %>
+                </div>
+            <% end %>
+        </p>
+        <%= render partial: "view-report-section",locals:{
+            orders: Order.all.where.not(delivered_at: nil),
+        }
+        %>
+    <% else %>
+        <%= form_with(url: report_path(id: Report.last.id), method: "delete", data: { confirm: 'Are you sure you want to delete the search?'}) do %>
+                    <%= image_submit_tag("close.png", class:"Cancel-icon") %>
+        <% end %>
+        <p>
+            <%= form_with(url: report_path(id: Report.last.id), method: "patch") do %>
+                <div class="Report-sort">
+                    <label>Start Date:</label>
+                    <%= date_field(nil, :start_date, class: "Date-input",) %>
+                    <label>End Date:</label>
+                    <%= date_field(nil,:end_date,class: "Date-input", max: Date.today, min: ":start_date") %>
+                    <%= submit_tag :"Generate Report", class: "Sort-submit" %>
+                </div>
+            <% end %>
+        </p>
+        <%= render partial: "view-report-section",locals:{
+            orders: Order.all.sort().where.not(delivered_at: nil),
+        }
+        %>
+
+    <%end%>
+    
+
+
+</body>
