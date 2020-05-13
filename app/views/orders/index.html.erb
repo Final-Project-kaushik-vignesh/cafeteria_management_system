@@ -23,10 +23,12 @@
             <%= render partial: "orders-admin-section", locals: {
                 orders: @orders.not_delivered,
             }%>
-            <p class="OrderHistory-title">Previous Orders</p>
-            <%= render partial: "orders-admin-section", locals: {
-                orders: @orders.delivered,
-            }%>
+            <% if @current_user.role != "clerk"%>
+                <p class="OrderHistory-title">Previous Orders</p>
+                <%= render partial: "orders-admin-section", locals: {
+                    orders: @orders.delivered,
+                }%>
+            <% end %>
         <% else %>
             <p class="OrderHistory-title">Yet to be Delivered</p>
             <section class="Order-title">

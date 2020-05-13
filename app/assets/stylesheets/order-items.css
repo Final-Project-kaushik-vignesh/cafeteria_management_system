@@ -115,6 +115,8 @@
     margin-bottom: 2vw;
     background-color: rgb(6, 74, 129);
     opacity: 80%;
+    border: 0.15vw solid black;
+    border-radius: 0.5vw;
 }
 
 .Order {
@@ -185,4 +187,5 @@
     margin-right: 3.85vw;
     margin-left: 3vw;
     max-width: 4vw;
+    font-weight: bold;
 }

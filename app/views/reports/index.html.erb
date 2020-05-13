@@ -1,5 +1,22 @@
 <body class= "Report-body">
+    <p>
+        <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
+    </p>
+    <% if Report.count != 0%>
+        <%= form_with(url: report_path(id: Report.last.id), method: "delete", data: { confirm: 'Are you sure you want to delete the search?'}) do %>
+            <%= image_submit_tag("close.png", class:"ReportCancel-icon") %>
+        <% end %>
+    <% end %>
+
     <h1 class="Report-title">Sales Report</h1>
+    <% flash.each do |type, errors| %>
+        <div class="Report-flashMessage">
+            <%= errors["start_date"].to_a.each { |message| message }.join %>
+            <br>
+            <%= errors["end_date"].to_a.each { |message| message }.join %>
+        </div>
+    <% end %>
+
     <% if Report.count == 0%>
         <p>
             <%= form_with(url: reports_path, method: "post") do %>
@@ -7,19 +24,24 @@
                     <label>Start Date:</label>
                     <%= date_field(nil, :start_date, class: "Date-input", max: Date.today ) %>
                     <label>End Date:</label>
-                    <%= date_field(nil,:end_date,class: "Date-input",min: ":start_date", max: Date.today ) %>
+                    <%= date_field(nil,:end_date,class: "Date-input",min: ":start_date", max: Date.today ) %>   
                     <%= submit_tag :"Generate Report", class: "Sort-submit" %>
                 </div>
             <% end %>
         </p>
+        <section class="ReportView-title">
+                <p>Info</p>|
+                <p>Order Date</p>|
+                <p>User Status</p>|
+                <p>Delivery Status</p>|
+                <p>Order Total</p>
+                
+        </section>
         <%= render partial: "view-report-section",locals:{
             orders: Order.all.where.not(delivered_at: nil),
         }
         %>
     <% else %>
-        <%= form_with(url: report_path(id: Report.last.id), method: "delete", data: { confirm: 'Are you sure you want to delete the search?'}) do %>
-            <%= image_submit_tag("close.png", class:"Cancel-icon") %>
-        <% end %>
         <p>
             <%= form_with(url: report_path(id: Report.last.id), method: "patch") do %>
                 <div class="Report-sort">
@@ -30,6 +52,14 @@
                     <%= submit_tag :"Update Report", class: "Sort-submit" %>
                 </div>
             <% end %>
+            <section class="ReportView-title">
+                <p>Info</p>|
+                <p>Order Date</p>|
+                <p>User Status</p>|
+                <p>Delivery Status</p>|
+                <p>Order Total</p>
+                
+            </section>
         </p>
         <%= render partial: "view-report-section",locals:{
             orders: Order.sort(Report.last.start_date.to_date, Report.last.end_date.to_date).where.not(delivered_at: nil),

@@ -103,12 +103,12 @@
 }
 
 .EditMenuItem-divider {
-    left: 44.5vw;
+    left: 50vw;
     position: absolute;
 }
 
 .EditMenuItem-displayPrice {
-    left: 54vw;
+    left: 59vw;
     position: absolute;
     padding: 0.5vw;
 }
@@ -120,7 +120,7 @@
     border: solid black;
     border-width: 0.2vw;
     color: black;
-    left: 56vw;
+    left: 61vw;
     position: absolute;
 }
 

@@ -1,26 +1,31 @@
-<section class="Order-section">
+<section class="Report-section">
     <hr>
-    <% orders.all.order(:id).each do |order| %>
-        <div class="Order-division">
+    <% orders.all.order(:date).each do |order| %>
+        <div class="Report-division">
             <div class="tooltip">
-                <p class= "Order-details">
+                <p class= "Report-details">
                     <%= link_to image_tag("info.png", class: "Order-details-tag"),  view_report_invoice_path(id: order.id) %>   
                 </p>
                 <span class="tooltiptext">
                     Click to view Order Invoice details
                 </span>
             </div>    
-            <p class="OrderAdminDetails-id"> <%= order.id%> </p>
-            <p class="OrderAdminDetails-date"> <%= order.date%> </p>
-            <p class="OrderAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online Customer"%></p>
-            <p class="OrderAdminDetails-delivered"><%= order.delivered_at.to_s(:short)%></p>
+            <p class="ReportAdminDetails-date"> <%= order.date.strftime('%d/%m/%y')%> </p>
+            <p class="ReportAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online Customer"%></p>
+            <p class="ReportAdminDetails-delivered"><%= order.delivered_at.to_s(:short)%></p>
+            <p class="ReportAdminDetails-price">₹.<%= order.total_price%> </p>
+            
         </div>
         <hr>
     <% end %> 
-    <p>
-        Total Price: <%= orders.sum(:total_price) %> 
-        Total Orders: <%= orders.count %>
-    </p>   
+    <div class="ReportData-div">
+        <p class="Report-data">
+            Total Orders: <%= orders.count %>
+        </p>
+        <p class="Report-data">
+            Total Sales: ₹.<%= orders.sum(:total_price) %>
+        </p>
+    </div>     
 </section>
     
 
