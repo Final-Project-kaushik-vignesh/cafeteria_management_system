@@ -1,15 +1,14 @@
 .MenuItem {
-    max-width: 600px;
+    max-width: 30vw;
     margin: 0 auto;
     display: flex;
 }
 
 .MenuItem-display {
-    background-color: rgb(51, 51, 51);
+    background-color: hsla(0, 0%, 100%, 0.9);
     border: solid white;
     border-radius: 2vw;
     border-width: 0.05vw;
-    opacity: 90%;
     max-width: 50vw;
     padding: 0.5vw;
     margin: auto;
@@ -17,7 +16,6 @@
 }
 
 .MenuItem-userList {
-    background-color: rgb(0, 0, 0);
     border-radius: 2vw;
     opacity: 90%;
     margin-bottom: 0.5vw;
@@ -30,24 +28,24 @@
 }
 
 .MenuItem-userList:hover {
-    background-color: rgb(45, 18, 90);
+    background-color: rgba(94, 255, 247, 0.664);
 }
 
 .MenuItem-detailsName {
     padding: 1vw;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
-    font-size: 1.25vw;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: black;
     max-height: max-content;
     left: 2vw;
     position: relative;
+    font-size: 1.5vw;
 }
 
 .MenuItem-detailsPrice {
     padding: 1vw;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
-    font-size: 1.25vw;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: black;
+    font-size: 1.5vw;
     max-width: 5vw;
     left: 45vw;
     position: absolute;
@@ -57,20 +55,21 @@
     max-width: 5vw;
     border-radius: 1vw;
     padding: 0.5vw;
-    font-size: 0.75vw;
+    font-size: 1.25vw;
 }
 
 .MenuItem-quantity {
     margin-top: 0.9vw;
-    max-width: 3vw;
+    max-width: 2vw;
     border-radius: 0.5vw;
     border-width: 0.1vw;
-    background-color: rgb(14, 12, 12);
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
     text-align: center;
     font-weight: bold;
     left: 68vw;
     position: absolute;
+    padding: 0.25vw;
 }
 
 .MenuItem-quantity:hover {
@@ -101,8 +100,8 @@
 
 .MenuItem-description {
     padding: 1vw 1vw;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: black;
     font-size: 1.25vw;
     opacity: 80%;
     display: none;
@@ -134,18 +133,19 @@
 
 .MenuItem-page {
     padding: 0.5vw;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: white;
     font-size: 1.25vw;
     margin-right: 1.5vw;
     margin-left: 2vw;
     word-break: break-all;
     max-width: 3.5vw;
+    font-weight: bold;
 }
 
 .MenuItem-description-title {
     padding: 0.5vw;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: white;
     font-size: 1.25vw;
     margin-left: 2vw;

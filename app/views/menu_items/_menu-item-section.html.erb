@@ -1,7 +1,7 @@
 <section class="MenuItem-display">
     <p class="Form-flashMessage"><%= flash[:notice ]%></p>
     <% @menu_item.all.each do |menu_item| %>
-        <li class="MenuItem-userList">
+        <div class="MenuItem-userList">
             <section class="MenuItem-userSection">
                 <p class="MenuItem-detailsName">
                     <%= menu_item.name%>
@@ -18,7 +18,7 @@
             <p class="MenuItem-description">
                 " <%= menu_item.description %> "
             </p>
-        </li>
+        </div>
         
     <% end %>
 </section>
