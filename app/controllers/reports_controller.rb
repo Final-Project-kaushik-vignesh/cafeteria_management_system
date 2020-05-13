@@ -28,6 +28,7 @@ class ReportsController < ApplicationController
 
   def destroy
     Report.destroy_all
+    redirect_to reports_path
   end
 
   def view

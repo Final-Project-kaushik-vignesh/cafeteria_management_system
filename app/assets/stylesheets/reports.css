@@ -33,10 +33,12 @@
     color: white;
     font-weight: bold;
     padding: 0.5vw;
+    font-size: 1.25vw;
 }
 
 .Date-input {
-    max-width: max-content;
+    max-width: fit-content;
+    max-height: fit-content;
     padding: 0.75vw;
     margin: 0.5vw;
     background-color: white;

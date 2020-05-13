@@ -1,7 +1,9 @@
 <body class= "Orders">
-    <p>
-        <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
-    </p>
+    <% if @current_user.role == "owner"%>
+        <p>
+            <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
+        </p>
+    <% end %>
     <%= form_with(url: orders_path, method: "post") do %>
         <%= submit_tag :"Place a new order", class: "Order-button" %>
     <% end %>
