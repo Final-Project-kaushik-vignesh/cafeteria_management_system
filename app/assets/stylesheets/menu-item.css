@@ -117,9 +117,8 @@
 .MenuItem-title {
     align-items: center;
     margin-top: 2vw;
-    background-color: rgb(85, 99, 98);
+    background-color: rgba(255, 255, 255, 0.9);
     height: max-content;
-    opacity: 90%;
     max-width: 50vw;
     padding: 0.5vw;
     margin: 1vw auto;
@@ -129,12 +128,13 @@
     justify-content: space-between;
     opacity: 85%;
     border-radius: 0.5vw;
+    border: 0.2vw solid black;
 }
 
 .MenuItem-page {
     padding: 0.5vw;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: white;
+    color: black;
     font-size: 1.25vw;
     margin-right: 1.5vw;
     margin-left: 2vw;
