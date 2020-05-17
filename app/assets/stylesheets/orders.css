@@ -24,9 +24,8 @@
 .Order-main {
     max-width: 50vw;
     margin: 4.4vw auto;
-    background-color: rgb(180, 225, 226);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 1vw;
-    opacity: 85%;
     color: rgb(5, 5, 5);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     justify-content: space-evenly;
@@ -39,11 +38,12 @@
     justify-content: space-evenly;
     padding: 0.5vw;
     font-size: 1.5vw;
-    background-color: rgb(88, 231, 227);
     color: black;
+    border: 0.15vw solid black;
     border-radius: 0.5vw;
     font-weight: bold;
     margin-bottom: 1vw;
+    margin-top: 0.5vw;
 }
 
 .OrderHistory-Maintitle {
@@ -64,7 +64,6 @@
 }
 
 .Order-section {
-    background-color: rgb(86, 240, 227);
     margin: 2vw auto;
     padding: 1vw;
     border-radius: 1vw;
@@ -80,7 +79,7 @@
 }
 
 .Order-division:hover {
-    background-color: rgb(235, 255, 51);
+    background-color: rgba(170, 190, 255, 0.9);
 }
 
 .Order-details {
