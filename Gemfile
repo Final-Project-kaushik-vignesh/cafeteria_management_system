@@ -53,5 +53,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "pg", "~> 1.2"
+<<<<<<< HEAD
 gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
+=======
+
+gem "prawn"
+>>>>>>> 99dc39d3339407ed27f13653ab2987a767d2944a

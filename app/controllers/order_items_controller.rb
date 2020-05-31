@@ -57,6 +57,18 @@ class OrderItemsController < ApplicationController
       render "invoice"
     end
   end
+  def show
+    id = params[:id]
+    @order = Order.find_by(id: id)
+      respond_to do |format|
+        format.html
+        format.pdf do
+          pdf = InvoicePdf.new(@order)
+          send_data pdf.render, filename: "Invoice_#{id}.pdf",
+                                type: "application.pdf"
+        end
+      end
+  end
 
   def destroy
     id = params[:id]
