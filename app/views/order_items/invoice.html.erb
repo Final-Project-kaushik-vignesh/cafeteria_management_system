@@ -5,6 +5,9 @@
         <p>
             <%= link_to image_tag("return.png", class:"Return-icon"), orders_path %>
         </p>
+        <p>
+            <%= link_to :"Generate PDF", order_item_path(order.id, format:"pdf") %>
+        </p>
         <h1 class="InvoiceTitle">Invoice No: <%= @id %> </h1>
        <main class="Invoice-main">
             <div class="Invoice-division">
