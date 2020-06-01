@@ -30,7 +30,7 @@
         <hr class="Horizontal">
         <div class="ViewSales-div">
             <div class="ViewSales-info">
-                <h3 class="ViewSales-InfoTitle">Total Orders </h3>
+                <h3 class="ViewSales-InfoTitle"><%= link_to "Total Orders", orders_path, class: "ViewSales-InfoTitle" %> </h3>
                 <hr class="Horizontal">
                 <h3 class="ViewSales-information"><%= Order.all.where(date: Date.today).count %></h3>
             </div>
@@ -47,6 +47,8 @@
                 <h3 class="ViewSales-information"><%= Order.delivered.where(date:Date.today).count %></h3>
             </div>
         </div>
+        <h2 class="ViewSales-InfoTitle">Delivered progress</h2>
+        <progress id="file" value="<%= Order.delivered.where(date:Date.today).count %>" max="<%= Order.all.where(date: Date.today).count %>" ></progress>
     </section>
     <section class="Admin">
         <p class="Admin-button"><%= link_to "Add Billing Clerk", new_admin_path, class: "Admin-button-link_to"%></p>

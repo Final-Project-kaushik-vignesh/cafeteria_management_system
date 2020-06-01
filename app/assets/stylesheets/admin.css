@@ -92,3 +92,24 @@
 .Horizontal {
     border: 0.1vw solid black;
 }
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15vw;
+    height: 1.25vw;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    border: 0.1vw solid black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    margin: 1vw 2.5vw;
+}
+
+progress[value]::-webkit-progress-value {
+    background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 25%, rgba(0, 0, 0, .1) 75%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)), -webkit-linear-gradient(left, rgb(245, 79, 79), rgb(4, 255, 192));
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
