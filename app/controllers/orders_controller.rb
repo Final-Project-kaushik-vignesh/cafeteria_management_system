@@ -3,9 +3,9 @@ class OrdersController < ApplicationController
   skip_before_action :ensure_order_created
 
   def index
-    if @current_user.role == "owner"
+    if @current_user.owner?
       @orders = Order.all
-    elsif @current_user.role == "clerk"
+    elsif @current_user.clerk?
       @orders = Order.clerk
     else
       @orders = current_user.orders
@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
   end
 
   def complete
-    if OrderItem.find_by(order_id: current_order_id) == nil
+    if OrderItem.no_items(current_order_id)
       flash[:error] = "Empty Cart !!"
       redirect_to order_items_path
     else
