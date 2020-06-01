@@ -57,4 +57,5 @@ gem "pg", "~> 1.2"
 gem "wicked_pdf"
 
 gem "wkhtmltopdf-binary"
+gem "activesupport", ">= 6.0.3.1"
 
