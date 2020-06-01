@@ -9,30 +9,86 @@
 
 .Admin {
     max-width: 300px;
-    margin: 10vw auto;
+    margin: 5vw;
+    position: relative;
     align-items: baseline;
-    background-color: lightcyan;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 0.5vw;
     max-width: max-content;
     border-radius: 0.5vw;
     opacity: 90%;
+    border: 0.2vw solid black;
 }
 
 .Admin-button {
     margin: 1vw;
     padding: 0.5vw 0.5vw;
-    background-color: rgb(3, 139, 139);
+    background-color: rgba(27, 201, 149, 0.9);
     text-align: center;
-    border-radius: 2vw;
-    border: 0;
+    border-radius: 0.5vw;
+    border: 0.1vw black;
+    border-style: dashed;
 }
 
 .Admin-button-link_to {
     padding: 1vw 0.5vw;
     font-size: 1.5vw;
-    color: white;
+    color: black;
     text-decoration: none;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-weight: bold;
     max-width: 7vw;
+}
+
+.Admin-home {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ViewCurrentSales {
+    max-width: 20vw;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 5vw;
+    position: relative;
+    padding: 2vw 2vw;
+    border: 0.2vw solid black;
+    border-radius: 0.5vw;
+}
+
+.ViewSales-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    font-size: 1.5vw;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.25vw;
+}
+
+.ViewSales-div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ViewSales-info {
+    padding: 1vw 1vw
+}
+
+.ViewSales-InfoTitle {
+    font-size: 1.25vw;
+    color: black;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.ViewSales-information {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.25vw;
+    text-align: center;
+    padding: 1vw;
+    font-weight: bold;
+}
+
+.Horizontal {
+    border: 0.1vw solid black;
 }

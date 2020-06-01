@@ -1,4 +1,53 @@
 <body class="Admin-body">
+<div class="Admin-home">
+    <section class="ViewCurrentSales">
+        <h3 class="ViewSales-title">Yesterday's Sales </h3>
+        <h3 class="ViewSales-title"><%=Date.yesterday.strftime('%d/%m/%y')%></h3>
+        <hr class="Horizontal">
+        <div class="ViewSales-div">
+            <div class="ViewSales-info">
+                <h3 class="ViewSales-InfoTitle">Total Orders </h3>
+                <hr class="Horizontal">
+                <h3 class="ViewSales-information"><%= Order.all.where(date: Date.yesterday).count %></h3>
+            </div>
+            <hr class="Horizontal">
+            <div class="ViewSales-info">
+                <h3 class="ViewSales-InfoTitle">Pending Orders </h3>
+                <hr class="Horizontal">
+                <h3 class="ViewSales-information"><%= Order.not_delivered.where(date:Date.yesterday).count %></h3>
+            </div>
+            <hr class="Horizontal">
+            <div class="ViewSales-info">
+                <h3 class="ViewSales-InfoTitle">Delivered Orders </h3>
+                <hr class="Horizontal">
+                <h3 class="ViewSales-information"><%= Order.delivered.where(date:Date.yesterday).count %></h3>
+            </div>
+        </div>
+    </section>
+    <section class="ViewCurrentSales">
+        <h3 class="ViewSales-title">Today's Sales </h3>
+        <h3 class="ViewSales-title"><%=Date.today.strftime('%d/%m/%y')%></h3>
+        <hr class="Horizontal">
+        <div class="ViewSales-div">
+            <div class="ViewSales-info">
+                <h3 class="ViewSales-InfoTitle">Total Orders </h3>
+                <hr class="Horizontal">
+                <h3 class="ViewSales-information"><%= Order.all.where(date: Date.today).count %></h3>
+            </div>
+            <hr class="Horizontal">
+            <div class="ViewSales-info">
+                <h3 class="ViewSales-InfoTitle">Pending Orders </h3>
+                <hr class="Horizontal">
+                <h3 class="ViewSales-information"><%= Order.not_delivered.where(date:Date.today).count %></h3>
+            </div>
+            <hr class="Horizontal">
+            <div class="ViewSales-info">
+                <h3 class="ViewSales-InfoTitle">Delivered Orders </h3>
+                <hr class="Horizontal">
+                <h3 class="ViewSales-information"><%= Order.delivered.where(date:Date.today).count %></h3>
+            </div>
+        </div>
+    </section>
     <section class="Admin">
         <p class="Admin-button"><%= link_to "Add Billing Clerk", new_admin_path, class: "Admin-button-link_to"%></p>
         <p class="Admin-button"><%= link_to "View all Users", view_users_path, class: "Admin-button-link_to"%></p>
@@ -6,4 +55,5 @@
         <p class="Admin-button"><%= link_to "View/Place order", orders_path, class: "Admin-button-link_to"%></p>
         <p class="Admin-button"><%= link_to "View Sales Report", reports_path, class: "Admin-button-link_to"%></p>
     </section>
+</div>
 </body>

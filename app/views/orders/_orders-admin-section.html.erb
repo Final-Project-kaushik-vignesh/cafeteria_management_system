@@ -30,7 +30,7 @@
                 </div>
             <% end %>
             <p class="OrderAdminDetails-id"> <%= order.id%> </p>
-            <p class="OrderAdminDetails-date"> <%= order.date%> </p>
+            <p class="OrderAdminDetails-date"> <%= order.date.strftime('%d/%m/%y')%> </p>
             <p class="OrderAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online Customer"%></p>
             <% if order.delivered_at == nil %>
                     <p class="OrderAdminDetails-notDelivered">Not Delivered</p>
