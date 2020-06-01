@@ -1,6 +1,6 @@
  <body class="AddMenu-body">
     <p>
-        <% if Menu.all.find_by(active_menu: true) != nil%>
+        <% if Menu.active_menu?%>
             <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
         <% else %>
             <%= link_to image_tag("return.png", class:"Return-icon"), menus_path, onclick: 'alert("No Menu is currently active !!")'%>

@@ -3,13 +3,17 @@ class User < ApplicationRecord
   has_many :orders
   validates_presence_of :first_name, message: "This field is compulsory: First name"
   validates_presence_of :email, message: "This field is compulsory: Email - Id"
-  def self.owner?
+  validates_uniqueness_of :email, message: "This email is already taken!"
+
+  def owner?
     role == "owner"
   end
-  def self.clerk?
+
+  def clerk?
     role == "clerk"
   end
-  def self.customer?
+
+  def customer?
     role == "customer"
   end
 end

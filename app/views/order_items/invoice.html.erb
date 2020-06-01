@@ -4,16 +4,16 @@
     <body class="Invoice-body">
         <p>
             <%= link_to image_tag("return.png", class:"Return-icon"), orders_path %>
-            <%= link_to "Generate PDF", %>
+            
         </p>
         <h1 class="InvoiceTitle">Invoice No: <%= @id %> </h1>
        <main class="Invoice-main">
             <div class="Invoice-division">
-                <p>User ID: <%= user.role != "customer" ? "#{order.user_id}(#{user.role.capitalize})" : order.user_id%></p>
+                <p>User ID: <%= !user.customer? ? "#{order.user_id}(#{user.role.capitalize})" : order.user_id%></p>
                 <p>Order ID: <%= @id%></p>
             </div>
             <div class="Invoice-div">
-                <p>User Name: <%= user.role != "customer" ? "Walk-In Customer" : user.first_name %></p>
+                <p>User Name: <%= !user.customer? ? "Walk-In Customer" : user.first_name %></p>
                 <p>Order Date: <%= order.date%></p>
             </div>
             <hr>
