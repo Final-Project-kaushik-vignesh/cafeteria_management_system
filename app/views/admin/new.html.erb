@@ -2,7 +2,7 @@
     <p>
     <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
     </p>
-    <h2 class="NewUsers-title">Enter new user (Billing Clerk) details </h2>
+    <h2 class="NewUsers-title">Enter new Billing Clerk details </h2>
     <section class="UsersNew">
         <%= form_with url: admin_index_path do |form|%>
             <div class="Form-section">
@@ -37,7 +37,7 @@
                 <% end %> 
             </div>
             <div class="Form-section">
-                <%=form.submit :"Add", class: "Form-submit"%>
+                <%=form.submit :"Add User", class: "Form-submit"%>
         <% end %>
     </section>
     

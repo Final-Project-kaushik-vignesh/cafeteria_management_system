@@ -36,7 +36,7 @@
     font-weight: bold;
     font-size: 1.25vw;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    border-radius: 2vw;
+    border-radius: 0.5vw;
 }
 
 .AddUser {
@@ -48,11 +48,12 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     padding: 0.75vw;
     border: 0 black solid;
-    border-radius: 1vw;
-    left: 14vw;
+    border-radius: 0.5vw;
+    left: 17vw;
     position: relative;
-    background-color: rgb(55, 245, 55);
-    color: rgb(255, 255, 255);
+    background-color: rgb(55, 245, 166);
+    color: rgb(0, 0, 0);
+    margin-top: .5vw;
 }
 
 .AddUser:hover {

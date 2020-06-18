@@ -53,7 +53,7 @@
     font-size: 2vw;
     font-weight: bold;
     margin: 0 auto;
-    margin-bottom: 1vw;
+    margin-bottom: 0.75vw;
     margin-top: 1vw;
     max-width: 25vw;
     color: rgb(14, 10, 73);
@@ -77,7 +77,7 @@
     align-content: center;
     margin-top: 0.5vw;
     margin-bottom: 0.75vw;
-    background-color: rgb(252, 243, 227);
+    background-color: rgba(255, 255, 255);
     border: 0.1vw solid black;
 }
 
@@ -86,8 +86,8 @@
     margin: 2.5vw auto;
     max-width: max-content;
     border-radius: 1vw;
-    background-color: rgb(202, 200, 200);
-    opacity: 80%;
+    background-color: rgba(255, 255, 255, 0.75);
+
 }
 
 .Home-pageTitle {

@@ -59,3 +59,8 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 gem "activesupport", ">= 6.0.3.1"
 
+
+gem "websocket-extensions", ">= 0.1.5"
+
+
+
