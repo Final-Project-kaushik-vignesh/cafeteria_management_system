@@ -13,7 +13,7 @@
             <p class="ReportAdminDetails-date"> <%= order.date.strftime('%d/%m/%y')%> </p>
             <p class="ReportAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online Customer"%></p>
             <p class="ReportAdminDetails-delivered"><%= order.delivered_at.to_s(:short)%></p>
-            <p class="ReportAdminDetails-price">₹.<%= order.total_price%> </p>
+            <p class="ReportAdminDetails-price">₹ <%= order.total_price%> </p>
             
         </div>
         <hr>
@@ -23,7 +23,7 @@
             Total Orders: <%= orders.count %>
         </p>
         <p class="Report-data">
-            Total Sales: ₹.<%= orders.sum(:total_price) %>
+            Total Sales: ₹ <%= orders.sum(:total_price) %>
         </p>
     </div>     
 </section>

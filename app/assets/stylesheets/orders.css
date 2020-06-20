@@ -76,6 +76,8 @@
     margin: 1vw auto;
     align-items: center;
     border-radius: 1vw;
+    box-shadow:  5px 5px 10px #606263, 
+             -5px -5px 10px #ffffff;
 }
 
 .Order-division:hover {
@@ -184,6 +186,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
 }
 
 .container input {
@@ -201,7 +204,7 @@
     height: 1.1vw;
     width: 1.1vw;
     border-radius: 0.3vw;
-    background-color: #eee;
+    background-color: rgb(255, 23, 23);
 }
 
 .Order-division:hover input~.checkmark {
@@ -209,11 +212,11 @@
 }
 
 .container:hover input~.checkmark {
-    background-color: #ccc;
+    background-color: rgb(255, 255, 255);
 }
 
 .container input:checked~.checkmark {
-    background-color: #2196f3;
+    background-color: #00c22a;
 }
 
 .checkmark:after {

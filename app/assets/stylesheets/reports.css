@@ -74,6 +74,8 @@
     align-items: center;
     justify-content: stretch;
     border-radius: 1vw;
+    box-shadow:  5px 5px 10px #606263, 
+             -5px -5px 10px #ffffff;
 }
 
 .Report-division:hover {

@@ -1,17 +1,35 @@
 <body class="Menu">
-    <section >
+    <section>
         <p>
             <%= form_with(url: order_path(id: @current_order_id), method: "delete", data: { confirm: 'Are you sure you want to cancel the order?'}) do %>
                 <%= image_submit_tag("close.png", class:"Cancel-icon") %>
             <% end %>
         </p>
-        <p class="Menu-display">  
-            <section class="MenuItem-title" >
-                <P class="MenuItem-page">Name</p>|
-                <P class="MenuItem-page">Price</p>|
-                <P class="OrderItem-title">Quantity</p>
-            </section>
-            <%= render partial: "menu-item-section"%>                
-        </p>
+        <% if @current_user.customer? %>
+            <p class="Menu-display"> 
+                <section class="MenuItem-title" >
+                    <P class="MenuItem-page">Name</p>|
+                    <P class="MenuItem-page">Price</p>|
+                    <P class="OrderItem-title">Quantity</p>
+                </section>
+                <%= render partial: "menu-item-section"%>              
+            </p>
+            <%= link_to :"Proceed to cart", order_items_path, class: "ReviewCart-customer" %>    
+            
+        <% else %>
+                <div class="ClerkMenu-display">  
+                    <section class="ClerkMenuItem-title" >
+                        <P class="ClerkMenuItem-page">Name</p>|
+                        <P class="ClerkMenuItem-page">Price</p>|
+                        <P class="ClerkMenuItem-quantity">Quantity</p>
+                    </section>
+                    <%= render partial: "menu-item-clerk-section"%>                
+                </div>
+                <div> 
+                    <%= render partial: "order-item-clerk-section"%>
+                </div>
+            
+        <% end %>
+
     </section>
 </body>

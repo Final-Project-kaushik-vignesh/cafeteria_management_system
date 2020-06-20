@@ -1,0 +1,39 @@
+<section class="ClerkOrderItem">
+    <p class="ReviewOrder" >Review Order</p>
+    <div class="OrderItems-title">
+        <section class="MenuItem-title" >
+            <P class="MenuItem-page">Name</p>|
+            <P class="MenuItem-page">Item Price</p>|
+            <P class="OrderItem-title">Quantity</p>|
+            <P class="OrderItem-total">Total</p>
+        </section>
+    </div>
+    <% @order_items.all.each do |order_item| %>
+        <main class="ClerkOrderItem-list">
+            <p class="ClerkOrderItem-detailsName">
+                <%= order_item.menu_item_name %>
+            </p>
+            <p class="ClerkOrderItem-detailsPrice">
+                ₹ <%= order_item.menu_item_price %>
+            </p>
+            <p>
+                <%= form_with(url: menu_item_path(id: order_item.id), method: "put") do |form| %>
+                    <%= form.number_field :quantity, value: "#{order_item.quantity}", onclick:"this.form.submit()", max:"10", min:"1", class: "ClerkOrderItem-quantity" %>
+                <% end %>
+            </p>
+            <p class="ClerkOrderItem-detailsValue">
+                ₹ <%= order_item.item_value%>
+            </p>
+            <%= form_with(url: menu_item_path(id: order_item.id), method: "delete", data: { confirm: 'Confirm: Remove from cart ??' }) do %>
+                <%= image_submit_tag("delete.png", class: "Clerkdelete-icon") %>
+            <% end%>
+        </main>
+    <% end %>
+    <hr class="horizontal-line">
+    <%= link_to :"Proceed to cart", order_items_path, class: "ReviewCart" %>    
+    <p class="ClerkTotalPrice">
+        Total : ₹ <%= Order.find_by(id: @current_order_id).total_price%>
+    </p>
+    <hr class="horizontal-line">  
+</section>
+    
