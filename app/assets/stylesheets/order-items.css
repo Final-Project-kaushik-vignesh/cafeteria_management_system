@@ -6,8 +6,11 @@
 }
 
 .OrderItem {
-    max-width: 100%;
+    max-width: 50vw;
+    margin: auto;
     justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0.75vw;
 }
 
 .OrderItems-title {
@@ -32,8 +35,6 @@
 
 .OrderItem-list {
     display: flex;
-    background-color: rgb(65, 114, 114);
-    border-radius: 1vw;
     max-width: 37vw;
     padding: 0.75vw;
     margin: 0.5vw auto;
@@ -41,9 +42,10 @@
 }
 
 .OrderItem-list:hover {
-    background-color: rgb(37, 138, 168);
-    opacity: 80%;
-    color: white;
+    background-color: rgb(148, 230, 255);
+    border-radius: 0.75vw;
+    
+    
 }
 
 .OrderItem-list:hover .delete-icon {
@@ -53,41 +55,45 @@
 .OrderItem-detailsName {
     padding: 1vw 1vw;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: white;
+    color: black;
     font-size: 1.25vw;
     text-align: left;
     left: 0.5vw;
     position: relative;
-    max-width: 2vw;
+    max-width: 5vw;
+    font-weight: bold;
 }
 
 .OrderItem-detailsPrice {
     padding: 1vw 1vw;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: white;
+    color: black;
     font-size: 1.25vw;
     text-align: left;
     left: 40vw;
     position: absolute;
+    font-weight: bold;
 }
 
 .OrderItem-quantity {
     max-width: 3vw;
     margin-left: 0vw;
-    border-radius: 0.5vw;
+    border-radius: 0.25vw;
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.849);
     color: rgb(0, 0, 0);
     font-weight: bold;
     left: 51.5vw;
     position: absolute;
     margin-top: 0.6vw;
+    font-size: 1.25vw;
+    border: none;
 }
 
 .OrderItem-detailsValue {
     padding: 1vw 1vw;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: white;
+    font-weight: bold;
     font-size: 1.25vw;
     text-align: left;
     left: 59vw;
@@ -104,19 +110,16 @@
 }
 
 .TotalPrice {
-    max-width: 100%;
-    margin: 2vw;
-    right: 32.8vw;
-    position: absolute;
+    max-width: max-content;
+    left: 29.5vw;
+    position: relative;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.5vw;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 1vw 1vw;
-    margin-bottom: 2vw;
-    background-color: rgb(6, 74, 129);
-    opacity: 80%;
-    border: 0.15vw solid black;
+    margin-bottom: 1vw;
     border-radius: 0.5vw;
+    font-weight: bold;
 }
 
 .Order {
@@ -137,10 +140,10 @@
     padding: 1vw 1vw;
     border-radius: 1vw;
     height: max-content;
-    margin-left: 1vw;
-    margin-top: 6vw;
-    right: 60vw;
-    position: absolute;
+    margin-left: 3vw;
+    margin-top: 1vw;
+    right: 10vw;
+    position: relative;
     border: solid black;
     border-width: 0.2vw;
 }
@@ -157,9 +160,10 @@
     border-radius: 1vw;
     height: max-content;
     margin-left: 1vw;
-    margin-top: 6vw;
-    left: 50vw;
-    position: absolute;
+    margin-top: 1vw;
+    margin-bottom: 0.75vw;
+    left: 5vw;
+    position: relative;
     border: solid black;
     border-width: 0.2vw;
 }
@@ -190,4 +194,9 @@
     margin-left: 3vw;
     max-width: 4vw;
     font-weight: bold;
+}
+.horizontal-line{
+    width: 40vw;
+    height: 0.05vw;
+    border: 0.1vw solid black;
 }

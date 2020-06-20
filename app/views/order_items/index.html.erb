@@ -23,7 +23,7 @@
                     <%= order_item.menu_item_name %>
                 </p>
                 <p class="OrderItem-detailsPrice">
-                    ₹.<%= order_item.menu_item_price %>
+                    ₹ <%= order_item.menu_item_price %>
                 </p>
                 <p>
                     <%= form_with(url: order_item_path(id: order_item.id), method: "put") do |form| %>
@@ -31,22 +31,25 @@
                     <% end %>
                 </p>
                 <p class="OrderItem-detailsValue">
-                    ₹.<%= order_item.item_value%>
+                    ₹ <%= order_item.item_value%>
                 </p>
                 <%= form_with(url: order_item_path(id: order_item.id), method: "delete", data: { confirm: 'Confirm: Remove from cart ??' }) do %>
                     <%= image_submit_tag("delete.png", class: "delete-icon") %>
                 <% end%>
             </main>
         <% end %>
+        <hr class="horizontal-line">
+        <p class="TotalPrice">
+            Total: ₹ <%= Order.find_by(id: @current_order_id).total_price%>
+        </p>
+        <hr class="horizontal-line">
+        <section class="Order">
+            <br>
+            <%= link_to :"Add More", menu_items_path, class: "ModifyOrder" %>
+            <br>
+            <%= link_to :"Proceed to complete order", complete_order_path, class: "CompleteOrder" %>
+        </section>  
     </section>
-    <p class="TotalPrice">
-        Total Price: ₹. <%= Order.find_by(id: @current_order_id).total_price%>
-    </p>
-    <section class="Order">
-        <br>
-        <%= link_to :"Add More", menu_items_path, class: "ModifyOrder" %>
-        <br>
-        <%= link_to :"Proceed to complete order", complete_order_path, class: "CompleteOrder" %>
-    </section>
+    
 </body>
 
