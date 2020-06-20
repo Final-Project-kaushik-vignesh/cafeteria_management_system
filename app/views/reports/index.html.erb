@@ -24,7 +24,9 @@
                     <label>Start Date:</label>
                     <%= date_field(nil, :start_date, class: "Date-input", max: Date.today ) %>
                     <label>End Date:</label>
-                    <%= date_field(nil,:end_date,class: "Date-input",min: ":start_date", max: Date.today ) %>   
+                    <%= date_field(nil, :end_date, class: "Date-input", min: ":start_date", max: Date.today ) %>   
+                    <label>Search by user-ID:</label>
+                    <%= number_field(nil, :user_id,class: "UserId-input", step: 1, value: 0) %>
                     <%= submit_tag :"Generate Report", class: "Sort-submit" %>
                 </div>
             <% end %>
@@ -38,7 +40,7 @@
                 
         </section>
         <%= render partial: "view-report-section",locals:{
-            orders: Order.all.where.not(delivered_at: nil),
+            orders: Order.delivered,
         }
         %>
     <% else %>
@@ -49,7 +51,9 @@
                     <%= date_field(nil, :start_date, class: "Date-input", max: Date.today, value: Report.last.start_date ) %>
                     <label>End Date:</label>
                     <%= date_field(nil,:end_date,class: "Date-input",min: ":start_date", max: Date.today, value: Report.last.end_date ) %>
-                    <%= submit_tag :"Update Report", class: "Sort-submit" %>
+                    <label>Search by user-ID:</label>
+                    <%= number_field(nil, :user_id,class: "UserId-input", step: 1, value: 0) %>
+                    <%= submit_tag :"Generate Report", class: "Sort-submit" %>
                 </div>
             <% end %>
             <section class="ReportView-title">
@@ -61,9 +65,17 @@
                 
             </section>
         </p>
-        <%= render partial: "view-report-section",locals:{
-            orders: Order.sort(Report.last.start_date.to_date, Report.last.end_date.to_date).where.not(delivered_at: nil),
-        }
-        %>
-    <%end%>
+        <% report_user_id = Report.last.user_id%>
+        <% if report_user_id == 0 %>
+            <%= render partial: "view-report-section",locals:{
+                orders: Order.sort(Report.last.start_date.to_date, Report.last.end_date.to_date).delivered,
+            }
+            %>
+        <% else%>
+            <%= render partial: "view-report-section",locals:{
+                orders: Order.sort(Report.last.start_date.to_date, Report.last.end_date.to_date).where(user_id: report_user_id).delivered,
+            }
+            %>
+        <% end %>
+    <% end %>
 </body>

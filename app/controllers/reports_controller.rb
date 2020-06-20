@@ -6,11 +6,13 @@ class ReportsController < ApplicationController
   end
 
   def create
+    user_id = params[:user_id]
     report = Report.new(
       start_date: params[:start_date],
       end_date: params[:end_date],
       total_sales: Order.sort(params[:start_date].to_date, params[:end_date].to_date).sum(:total_price),
       total_orders: Order.sort(params[:start_date].to_date, params[:end_date].to_date).count,
+      user_id: user_id
     )
     if report.valid?
       report.save
@@ -27,6 +29,7 @@ class ReportsController < ApplicationController
     report.end_date = params[:end_date]
     report.total_sales = Order.sort(params[:start_date].to_date, params[:end_date].to_date).sum(:total_price)
     report.total_orders = Order.sort(params[:start_date].to_date, params[:end_date].to_date).count
+    report.user_id = params[:user_id]
     if report.valid?
       report.save
       redirect_to reports_path
