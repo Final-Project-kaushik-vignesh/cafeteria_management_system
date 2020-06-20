@@ -7,7 +7,7 @@
                     <%= menu_item.name%>
                 </p>
                 <p class="MenuItem-detailsPrice">
-                    ₹. <%= menu_item.price%>
+                    ₹ <%= menu_item.price%>
                 </p>
                 <%= form_with(url: order_items_path, method: "post") do |order_item| %>
                     <%= hidden_field_tag :menu_item_id, "#{menu_item.id}" %>

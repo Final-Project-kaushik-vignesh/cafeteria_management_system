@@ -7,20 +7,26 @@
 .MenuItem-display {
     background-color: hsla(0, 0%, 100%, 0.9);
     border: solid white;
-    border-radius: 2vw;
+    border-radius: 0.75vw;
     border-width: 0.05vw;
     max-width: 50vw;
     padding: 0.5vw;
     margin: auto;
     justify-content: space-evenly;
+    box-shadow: 13px 13px 30px rgba(0, 0, 0, 0.781),
+    -13px -13px 30px black ;
 }
 
 .MenuItem-userList {
-    border-radius: 2vw;
+    border-radius: 0.75vw;
     opacity: 90%;
-    margin-bottom: 0.5vw;
+    margin-bottom: 1vw;
     padding: 0.5vw;
     align-items: center;
+    background-color: rgba(93, 255, 233, 0.432);
+    box-shadow: 5px 5px 60px rgba(255, 251, 251, 0.781),
+    -5px -5px 60px black ;
+   
 }
 
 .MenuItem-userSection {
@@ -39,13 +45,16 @@
     left: 2vw;
     position: relative;
     font-size: 1.5vw;
+    font-weight: bold;
+    max-width: 10vw;
+    word-wrap: break-word;
 }
 
 .MenuItem-detailsPrice {
     padding: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: black;
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     max-width: 5vw;
     left: 45vw;
     position: absolute;
@@ -61,20 +70,21 @@
 .MenuItem-quantity {
     margin-top: 0.9vw;
     max-width: 2vw;
-    border-radius: 0.5vw;
+    border-radius: 0.25vw;
     border-width: 0.1vw;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.822);
     color: white;
     text-align: center;
     font-weight: bold;
     left: 68vw;
     position: absolute;
     padding: 0.25vw;
+    font-size: 1vw;
 }
 
 .MenuItem-quantity:hover {
-    background-color: white;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.733);
+    color: rgb(0, 0, 0);
 }
 
 .MenuItem-addIcon {

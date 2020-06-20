@@ -6,7 +6,7 @@
                     <%= form_with( url: "/menus/#{menu.id}", method: "put") do %>
                         <%= radio_button_tag(:active_menu, nil, menu.active_menu ? true:false, onclick: "this.form.submit()", class: "Menulist-checkbox") %>
                     <% end %>
-                    <p><%= menu.name %></p>
+                    <p class="Menu-name"><%= menu.name %></p>
                     <%= form_with(url: "/menus/#{menu.id}", method: "delete", data: { confirm: '!! Please confirm deletion of this menu: Are you sure? !!' }) do %>
                         <%= image_submit_tag("delete.png", options = {class: "MenuSection-deleteIcon"}) %>
                     <% end%>
