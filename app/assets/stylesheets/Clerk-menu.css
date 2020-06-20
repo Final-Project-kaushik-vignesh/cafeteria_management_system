@@ -273,3 +273,7 @@
     border: solid black;
     border-width: 0.2vw;
   }
+
+.ClerkMenuItem-userList:hover .MenuItem-description {
+  display: block;
+}
