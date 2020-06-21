@@ -96,7 +96,6 @@
   position: absolute;
   max-width: 10vw;
   word-wrap: break-word;
-  word-break: break-all;
 }
 
 .AdminUsers-list:hover {
