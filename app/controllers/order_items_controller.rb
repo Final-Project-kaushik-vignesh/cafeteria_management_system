@@ -54,7 +54,14 @@ class OrderItemsController < ApplicationController
       redirect_to orders_path
     else
       @order_items = OrderItem.all.where(order_id: @id)
-      render "invoice"
+      respond_to do |format|
+        format.html { render "invoice" }
+        format.pdf do
+          render :pdf => "Invoice-#{@id}.pdf",
+                 :margin => { :top => 10, :bottom => 10, :left => 5, :right => 5 },
+                 :template => "order_items/invoice-pdf.html.erb"
+        end
+      end
     end
   end
 

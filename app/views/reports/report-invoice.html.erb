@@ -6,7 +6,7 @@
             <%= link_to image_tag("return.png", class:"Return-icon"), reports_path %>
         </p>
         <h1 class="InvoiceTitle">Invoice No: <%= @id %> </h1>
-       <main class="Invoice-main">
+        <main class="Invoice-main">
             <div class="Invoice-division">
                 <p>User ID: <%= !user.customer? ? "#{order.user_id}(#{user.role.capitalize})" : order.user_id%></p>
                 <p>Order ID: <%= @id%></p>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+        </style>
+    </head>
+
+    <% order = Order.all.find_by(id: @id) %>
+    <% user = User.all.find_by(id: order.user_id) %>
+    
+    <body>
+        <h1 style="text-align: center;">Cafeteria Management System</h1>
+        <p><i> Thank you for shopping with CMS. We hope you enjoy our service. Happy eating !! </i></p>
+        <hr>
+        <h2>Invoice No: <%= @id %> </h2>
+        <hr>
+        <main>
+            <div>
+                <p> <b>User ID:</b> <%= !user.customer? ? "#{order.user_id}(#{user.role.capitalize})" : order.user_id%></p>
+                <p> <b>User Name:</b> <%= !user.customer? ? "Walk-In Customer" : user.first_name %></p>
+            </div>
+            <div>
+                <p> <b>Order ID:</b> <%= @id%></p>
+                <p> <b>Order Date:</b> <%= order.date%></p>
+            </div>
+
+            <table style="width: 100%; align-items: center;">
+                <tr>
+                  <th>Item Name</th>
+                  <th>Quantity</th>
+                  <th>Item Price (Rs.)</th>
+                </tr>
+                <% @order_items.all.each do |order_item| %>
+                    <tr>
+                      <td><%= order_item.menu_item_name %></td>
+                      <td><%= order_item.quantity %></td>
+                      <td><%= order_item.menu_item_price.to_i %></td>
+                    </tr>
+                <% end %>
+            </table>
+            <hr>
+            <section style="text-align: right;">
+                <% if order.delivered_at != nil %>
+                    <p> <b>Delivered on:</b> (<%= order.delivered_at.to_s(:short) %>)</p>
+                <% else %>  
+                    <p> </b>Not Delivered Yet<b> </p>
+                <% end %>
+                <p> <b>Total:</b> Rs. <%= order.total_price.to_f%>/-  </p>
+            </section>
+        </main>
+        <hr>
+        <footer>
+            Contact us for any queries at : <a href="">vk-cms@cms.com</a>
+        </footer>
+    </body>     
+</html>

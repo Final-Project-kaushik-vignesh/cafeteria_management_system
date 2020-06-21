@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
       end_date: params[:end_date],
       total_sales: Order.sort(params[:start_date].to_date, params[:end_date].to_date).sum(:total_price),
       total_orders: Order.sort(params[:start_date].to_date, params[:end_date].to_date).count,
-      user_id: user_id
+      user_id: user_id,
     )
     if report.valid?
       report.save
@@ -51,7 +51,14 @@ class ReportsController < ApplicationController
       redirect_to reports_path
     else
       @order_items = OrderItem.all.where(order_id: @id)
-      render "report-invoice"
+      respond_to do |format|
+        format.html { render "report-invoice" }
+        format.pdf do
+          render :pdf => "Invoice-#{@id}.pdf",
+                 :margin => { :top => 10, :bottom => 10, :left => 5, :right => 5},
+                 :template => 'reports/report-invoice-pdf.html.erb'
+        end
+      end
     end
   end
 end

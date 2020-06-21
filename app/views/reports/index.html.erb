@@ -39,7 +39,7 @@
                 <p>Order Total</p>
                 
         </section>
-        <%= render partial: "view-report-section",locals:{
+        <%= render partial: "reports/view-report-section",locals:{
             orders: Order.delivered,
         }
         %>
@@ -67,12 +67,12 @@
         </p>
         <% report_user_id = Report.last.user_id%>
         <% if report_user_id == 0 %>
-            <%= render partial: "view-report-section",locals:{
+            <%= render partial: "reports/view-report-section",locals:{
                 orders: Order.sort(Report.last.start_date.to_date, Report.last.end_date.to_date).delivered,
             }
             %>
         <% else%>
-            <%= render partial: "view-report-section",locals:{
+            <%= render partial: "reports/view-report-section",locals:{
                 orders: Order.sort(Report.last.start_date.to_date, Report.last.end_date.to_date).where(user_id: report_user_id).delivered,
             }
             %>
