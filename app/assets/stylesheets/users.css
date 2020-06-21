@@ -115,13 +115,14 @@
 }
 
 .Signin {
-  background-image: url(bck.jpg);
+  background-image: url(back1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .Form-flashMessage {
   font-style: italic;
+
   font-size: 1.25vw;
   color: red;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
