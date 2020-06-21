@@ -61,3 +61,4 @@ gem "wkhtmltopdf-binary"
 gem "activesupport", ">= 6.0.3.1"
 
 gem "websocket-extensions", ">= 0.1.5"
+gem 'wkhtmltopdf-heroku', '~> 2.12', '>= 2.12.5.0'
