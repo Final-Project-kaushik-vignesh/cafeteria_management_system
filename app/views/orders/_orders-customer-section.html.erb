@@ -4,7 +4,7 @@
         <div class="Order-division">
             <div class="tooltip">
                 <p class= "Order-details">
-                    <%= link_to image_tag("print.png", class: "Order-details-tag"), view_report_invoice_path(id: order.id, :format => :pdf) %>
+                    <%= link_to image_tag("print.png", class: "Order-details-tag"), view_invoice_path(id: order.id, :format => :pdf) %>
                     <%= link_to image_tag("info.png", class: "Order-details-tag"), view_invoice_path(id: order.id) %>   
                 </p>
                 <span class="tooltiptext">
