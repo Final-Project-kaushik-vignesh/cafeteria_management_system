@@ -1,4 +1,7 @@
- <body class="AddMenu-body">
+<head>
+    <title> CMS | Menu List</title>
+</head>
+<body class="AddMenu-body">
     <p>
         <% if Menu.active_menu?%>
             <%= link_to image_tag("return.png", class:"Return-icon"), admin_index_path %>
@@ -6,6 +9,11 @@
             <%= link_to image_tag("return.png", class:"Return-icon"), menus_path, onclick: 'alert("No Menu is currently active !!")'%>
         <% end %>
     </p>
+    <% flash.each do |type, errors| %>
+        <div class="Form-flashMessage">
+          <%= errors["name"].to_a.each { |message| message }.join %>
+        </div>
+    <% end %>
     <section class="Add-menu">
         <%= form_with(url: "/menus" , method: "post") do |menu|%>
             <%= menu.text_field :name, placeholder: "Enter Menu Name", class: "Addmenu-field", required: true, autofocus: true %>

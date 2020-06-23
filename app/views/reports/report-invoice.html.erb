@@ -1,6 +1,9 @@
 <html>
     <% order = Order.all.find_by(id: @id) %>
     <% user = User.all.find_by(id: order.user_id) %>
+    <head>
+        <title> CMS | Report Invoice</title>
+    </head>
     <body class="Invoice-body">
         <p>
             <%= link_to image_tag("return.png", class:"Return-icon"), reports_path %>

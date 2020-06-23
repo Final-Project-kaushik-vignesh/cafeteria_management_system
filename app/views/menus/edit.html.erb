@@ -1,9 +1,18 @@
+<head>
+    <title> CMS | Edit Menu Item</title>
+</head>
 <body class="EditMenuItem">
     <p>
     <%= link_to image_tag("return.png", class:"Return-icon"), menus_path %>
     </p>
     <main  class="EditMenuItem-main">
         <p class="EditMenuItem-title">Add New Item</p>
+        <% flash.each do |type, errors| %>
+            <div class="Form-flashMessage">
+              <%= errors["name"].to_a.each { |message| message }.join %>
+            </div>
+        <% end %>
+        <p class="Form-flashMessage"><%= flash[:notice ]%></p>
         <hr>
         <section class="EditMenuItem-section">
             <%= form_with(url: new_item_path, method: "post", class:"EditMenuItem-section") do |menu_item| %>
@@ -29,7 +38,7 @@
                     <p class="EditMenuItem-divider">|</p>
                     <p  class="EditMenuItem-displayPrice" >₹
                         <%= form_with(url: update_item_path(id: menu_items.id) , method: "put") do |menu_item| %>
-                            <%= menu_item.number_field :price, value: "#{menu_items.price}" ,class: "EditMenuItem-price" , required: true, onenter: "this.form.submit()"%> 
+                            <%= menu_item.number_field :price, value: "#{menu_items.price}" ,class: "EditMenuItem-price" , required: true,min: "1", onenter: "this.form.submit()" %> 
                         <% end %>
                         <%= form_with(url: delete_item_path(id: menu_items.id), method: "delete" ,data: { confirm: '!! Are you sure to remove this Menu Item ? !!' }) do  %>
                             <%= image_submit_tag("delete1.png", class: "EditMenuItem-icon") %>

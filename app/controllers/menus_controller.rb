@@ -7,12 +7,17 @@ class MenusController < ApplicationController
   end
 
   def create
-    menu = Menu.create!(
+    menu = Menu.new(
       name: params[:name].capitalize,
       active_menu: false,
     )
-
-    redirect_to menus_path
+    if menu.valid?
+      menu.save!
+      redirect_to menus_path
+    else
+      redirect_to menus_path
+      flash[:errors] = menu.errors
+    end
   end
 
   def destroy
@@ -38,14 +43,19 @@ class MenusController < ApplicationController
   end
 
   def new_item
-    menu_item = MenuItem.create!(
+    menu_item = MenuItem.new(
       name: params[:name].capitalize,
       price: params[:price],
       description: params[:description].capitalize,
       menu_id: current_menu_id,
     )
-
-    redirect_to edit_menu_path(id: current_menu_id)
+    if menu_item.valid?
+      menu_item.save!
+      redirect_to edit_menu_path(id: current_menu_id)
+    else
+      redirect_to edit_menu_path(id: current_menu_id)
+      flash[:errors] = menu_item.errors
+    end
   end
 
   def delete_item
@@ -60,5 +70,6 @@ class MenusController < ApplicationController
     menu_item = MenuItem.find_by(id: id)
     menu_item.update(price: params[:price])
     redirect_to edit_menu_path(id: current_menu_id)
+    flash[:notice] = "Price of the Item has been updated !!"
   end
 end
