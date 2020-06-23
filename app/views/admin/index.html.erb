@@ -50,7 +50,7 @@
                 <h3 class="ViewSales-information"><%= Order.not_delivered.where(date:Date.today).count %></h3>
             </div>
         </div>
-        <h2 class="ViewSales-InfoTitle">Delivered progress: [<%= Order.delivered.where(date:Date.today).count %> / <%= Order.all.where(date: Date.today).count %> ] </h2>
+        <h2 class="ViewSales-InfoTitle">Delivered progress: [<%= Order.delivered.where(date:Date.today).count %> / <%= Order.all.where(date: Date.today).count %>] </h2>
         <progress id="file" value="<%= Order.delivered.where(date:Date.today).count %>" max="<%= Order.all.where(date: Date.today).count %>"></progress>
     </section>
     <section class="Admin">
