@@ -3,7 +3,7 @@
 </head>
 <body class="EditMenuItem">
     <p>
-    <%= link_to image_tag("return.png", class:"Return-icon"), menus_path %>
+        <%= link_to image_tag("return.png", class:"Return-icon"), menus_path %>
     </p>
     <main  class="EditMenuItem-main">
         <p class="EditMenuItem-title">Add New Item</p>
@@ -23,12 +23,11 @@
             <% end %>
         </section>
         <hr>
-         <section class="EditMenuItem-section">
-            <p>Item Name</p>|
-            <p>Item Price</p>
-            
-         </section>
-         <hr>
+        <section class="EditMenuItem-section">
+           <p>Item Name</p>|
+           <p>Item Price</p> 
+        </section>
+        <hr>
         <% MenuItem.all.where(menu_id: @current_menu_id).each do |menu_items|%>
             <div class="EditMenuItem-division">
                 <section class="EditMenuItem-display">
@@ -36,7 +35,7 @@
                         <%= menu_items.name%>
                     </p>
                     <p class="EditMenuItem-divider">|</p>
-                    <p  class="EditMenuItem-displayPrice" >₹
+                    <p class="EditMenuItem-displayPrice" >₹
                         <%= form_with(url: update_item_path(id: menu_items.id) , method: "put") do |menu_item| %>
                             <%= menu_item.number_field :price, value: "#{menu_items.price}" ,class: "EditMenuItem-price" , required: true,min: "1", onenter: "this.form.submit()" %> 
                         <% end %>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    
+  <head> 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,16 +18,20 @@
           <%if @current_order_id == nil%>
             <%= link_to image_tag("useredit.png", class: "Cart-icon"), view_edit_user_path(id: @current_user.id), method: "get" %>
           <% end %>
+
           <%if @current_order_id %>
             <%= link_to image_tag("cart.png" , class: "Cart-icon"), order_items_path	 %>
           <% else %>
             <%= link_to image_tag("cart.png" , class: "Cart-icon"), orders_path,:onclick => 'alert("Empty Cart ! Place a new order")' %>
           <% end %>
+
           <%= link_to "Sign-out", destroy_session_path, method: "delete", class:"SignOut-button" %>
         </p>
       <% end %>
     </div>
+
     <%= yield %>   
+    
     <div style="bottom: 0px; position: fixed">
       <div class="Footer">
         <p class="Footer-content">Contact us</p>

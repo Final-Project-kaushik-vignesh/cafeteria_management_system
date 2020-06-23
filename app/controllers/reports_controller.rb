@@ -55,8 +55,8 @@ class ReportsController < ApplicationController
         format.html { render "report-invoice" }
         format.pdf do
           render :pdf => "Invoice-#{@id}.pdf",
-                 :margin => { :top => 10, :bottom => 10, :left => 5, :right => 5},
-                 :template => 'reports/report-invoice-pdf.html.erb'
+                 :margin => { :top => 10, :bottom => 10, :left => 5, :right => 5 },
+                 :template => "reports/report-invoice-pdf.html.erb"
         end
       end
     end

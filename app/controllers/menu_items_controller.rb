@@ -6,6 +6,7 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.of_menu(active_menu)
     @order_items = OrderItem.all.where(order_id: current_order_id)
   end
+
   def update
     id = params[:id]
     order_item = OrderItem.find_by(id: id)
@@ -17,6 +18,7 @@ class MenuItemsController < ApplicationController
     order.update(total_price: total_price)
     redirect_to menu_items_path
   end
+
   def destroy
     id = params[:id]
     order_item = OrderItem.find(id)

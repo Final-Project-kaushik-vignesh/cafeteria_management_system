@@ -3,8 +3,7 @@
     <p>Order Date</p>|
     <p>User Status</p>|
     <p>Delivery Status</p>|
-    <p>Order Total</p>
-    
+    <p>Order Total</p> 
 </section>
 
 <section class="Report-section">
@@ -19,15 +18,16 @@
                 <span class="tooltiptext">
                     Click to view Order Invoice details
                 </span>
-            </div>    
+            </div> 
+
             <p class="ReportAdminDetails-date"> <%= order.date.strftime('%d/%m/%y')%> </p>
             <p class="ReportAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online - Customer"%></p>
             <p class="ReportAdminDetails-delivered"><%= order.delivered_at.to_s(:short)%></p>
-            <p class="ReportAdminDetails-price">₹ <%= order.total_price%> </p>
-            
+            <p class="ReportAdminDetails-price">₹ <%= order.total_price%> </p>    
         </div>
         <hr>
     <% end %> 
+    
     <div class="ReportData-div">
         <p class="Report-data">
             Total Orders: <%= orders.count %>
