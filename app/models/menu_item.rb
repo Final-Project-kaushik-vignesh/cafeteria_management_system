@@ -1,6 +1,6 @@
 class MenuItem < ApplicationRecord
   belongs_to :menu
-  validates_uniqueness_of :name, message: "Menu name exists !"
+  validates_uniqueness_of :name, message: "Menu Item exists !"
 
 
   def self.of_menu(menu)
