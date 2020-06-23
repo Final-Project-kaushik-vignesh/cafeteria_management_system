@@ -15,7 +15,11 @@ class UpdateUserController < ApplicationController
     user.password = params[:password]
     if user.valid?
       user.save
-      redirect_to orders_path
+      if user.owner?
+        redirect_to admin_index_path
+      else
+        redirect_to orders_path
+      end
     else
       redirect_to view_edit_user_path
       flash[:errors] = user.errors

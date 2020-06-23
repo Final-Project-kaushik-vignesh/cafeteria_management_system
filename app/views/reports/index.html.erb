@@ -29,19 +29,11 @@
                     <label>End Date:</label>
                     <%= date_field(nil, :end_date, class: "Date-input", min: ":start_date", max: Date.today ) %>   
                     <label>Search by User:</label>
-                    <%= collection_select(nil, :user_id, User.all, :id, :first_name, { :include_blank => "All" }) %>
+                    <%= collection_select(nil, :user_id, User.all, :id, :name_with_role, { :include_blank => "All" }, class: "Drop-down") %>
                     <%= submit_tag :"Generate Report", class: "Sort-submit" %>
                 </div>
             <% end %>
         </p>
-        <section class="ReportView-title">
-                <p>Info</p>|
-                <p>Order Date</p>|
-                <p>User Status</p>|
-                <p>Delivery Status</p>|
-                <p>Order Total</p>
-                
-        </section>
         <%= render partial: "reports/view-report-section",locals:{
             orders: Order.delivered,
         }
@@ -51,22 +43,14 @@
             <%= form_with(url: report_path(id: Report.last.id), method: "patch") do %>
                 <div class="Report-sort">
                     <label>Start Date:</label>
-                    <%= date_field(nil, :start_date, class: "Date-input", max: Date.today, value: Report.last.start_date ) %>
+                    <%= date_field(nil, :start_date, class: "Date-input", max: Date.today, value: Report.last.start_date) %>
                     <label>End Date:</label>
                     <%= date_field(nil,:end_date,class: "Date-input",min: ":start_date", max: Date.today, value: Report.last.end_date ) %>
                     <label>Search by User:</label>
-                    <%= collection_select(nil, :user_id, User.all, :id, :first_name, { :include_blank => "All" }) %>
+                    <%= collection_select(nil, :user_id, User.all, :id, :name_with_role, { :include_blank => "All" }, class: "Drop-down") %>
                     <%= submit_tag :"Generate Report", class: "Sort-submit" %>
                 </div>
             <% end %>
-            <section class="ReportView-title">
-                <p>Info</p>|
-                <p>Order Date</p>|
-                <p>User Status</p>|
-                <p>Delivery Status</p>|
-                <p>Order Total</p>
-                
-            </section>
         </p>
         <% report_user_id = Report.last.user_id%>
         <% if report_user_id == nil %>

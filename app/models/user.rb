@@ -16,4 +16,7 @@ class User < ApplicationRecord
   def customer?
     role == "customer"
   end
+  def name_with_role
+    "#{first_name}: #{role}"
+  end
 end

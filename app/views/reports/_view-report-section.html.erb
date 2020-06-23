@@ -1,3 +1,12 @@
+<section class="ReportView-title">
+    <p>Info</p>|
+    <p>Order Date</p>|
+    <p>User Status</p>|
+    <p>Delivery Status</p>|
+    <p>Order Total</p>
+    
+</section>
+
 <section class="Report-section">
     <hr>
     <% orders.all.order(:date).each do |order| %>
@@ -12,7 +21,7 @@
                 </span>
             </div>    
             <p class="ReportAdminDetails-date"> <%= order.date.strftime('%d/%m/%y')%> </p>
-            <p class="ReportAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online Customer"%></p>
+            <p class="ReportAdminDetails-customer"><%= order.role_of != "customer" ? "Walk-In Customer" : "Online - Customer"%></p>
             <p class="ReportAdminDetails-delivered"><%= order.delivered_at.to_s(:short)%></p>
             <p class="ReportAdminDetails-price">₹ <%= order.total_price%> </p>
             
