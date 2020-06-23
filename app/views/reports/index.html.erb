@@ -28,8 +28,8 @@
                     <%= date_field(nil, :start_date, class: "Date-input", max: Date.today ) %>
                     <label>End Date:</label>
                     <%= date_field(nil, :end_date, class: "Date-input", min: ":start_date", max: Date.today ) %>   
-                    <label>Search by user-ID:</label>
-                    <%= number_field(nil, :user_id,class: "UserId-input", step: 1, value: 0) %>
+                    <label>Search by User:</label>
+                    <%= collection_select(nil, :user_id, User.all, :id, :first_name, { :include_blank => "All" }) %>
                     <%= submit_tag :"Generate Report", class: "Sort-submit" %>
                 </div>
             <% end %>
@@ -54,8 +54,8 @@
                     <%= date_field(nil, :start_date, class: "Date-input", max: Date.today, value: Report.last.start_date ) %>
                     <label>End Date:</label>
                     <%= date_field(nil,:end_date,class: "Date-input",min: ":start_date", max: Date.today, value: Report.last.end_date ) %>
-                    <label>Search by user-ID:</label>
-                    <%= number_field(nil, :user_id,class: "UserId-input", step: 1, value: 0) %>
+                    <label>Search by User:</label>
+                    <%= collection_select(nil, :user_id, User.all, :id, :first_name, { :include_blank => "All" }) %>
                     <%= submit_tag :"Generate Report", class: "Sort-submit" %>
                 </div>
             <% end %>
@@ -69,12 +69,14 @@
             </section>
         </p>
         <% report_user_id = Report.last.user_id%>
-        <% if report_user_id == 0 %>
+        <% if report_user_id == nil %>
+            <p class = "ReportView-title" >Showing sales-report for all user : All</p>
             <%= render partial: "reports/view-report-section",locals:{
                 orders: Order.sort(Report.last.start_date.to_date, Report.last.end_date.to_date).delivered,
             }
             %>
         <% else%>
+            <p class = "ReportView-title" >Showing sales-report for user : <%= User.find_by(id: report_user_id).first_name %></p>
             <%= render partial: "reports/view-report-section",locals:{
                 orders: Order.sort(Report.last.start_date.to_date, Report.last.end_date.to_date).where(user_id: report_user_id).delivered,
             }
