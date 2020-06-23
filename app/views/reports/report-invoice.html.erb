@@ -29,7 +29,7 @@
                 <section class="Invoice-section">
                     <p class="Invoice-sectionName"><%= order_item.menu_item_name %></p>
                     <p class="Invoice-quantity"><%= order_item.quantity %></p>
-                    <p class="Invoice-sectionPrice">₹ <%= order_item.menu_item_price.to_i %></p>
+                    <p class="Invoice-sectionPrice">₹ <%= order_item.item_value.to_i %></p>
                 </section>
             <% end %>
             <hr>

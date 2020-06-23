@@ -44,12 +44,14 @@
                   <th>Item Name</th>
                   <th>Quantity</th>
                   <th>Item Price (Rs.)</th>
+                  <th>Total Price (Rs.)</th>
                 </tr>
                 <% @order_items.all.each do |order_item| %>
                     <tr>
                       <td><%= order_item.menu_item_name %></td>
                       <td><%= order_item.quantity %></td>
                       <td><%= order_item.menu_item_price.to_i %></td>
+                      <td><%= order_item.item_value.to_i %></td>
                     </tr>
                 <% end %>
             </table>
